@@ -1,0 +1,32 @@
+[
+  {
+    "type": "Sold & Sent Off",
+    "title": "On Sycamore",
+    "image": "sale-1.jpg",
+    "story": "Replace with the real story — one true detail (the light, the garden, who they were) and how it felt to hand this house to its next family.",
+    "pullQuote": "A house isn't square footage. It's the version of your life you get to live inside it."
+  },
+  {
+    "type": "Walked This Week",
+    "title": "Not mine, but I had to show you",
+    "image": "walked-1.jpg",
+    "story": "Replace with a home you previewed recently — neighborhood, one detail that stopped you. This is where the section stays alive between closings."
+  },
+  {
+    "type": "A Neighborhood",
+    "title": "On the Craftsman blocks of Highland Park",
+    "image": "neighborhood-1.jpg",
+    "story": "Replace with a short neighborhood piece — Highland Park's HPOZ, Silver Lake's hills, Sherman Oaks south of Ventura. Expertise and warmth, no transaction required."
+  },
+  {
+    "type": "Sold & Sent Off",
+    "title": "Replace Me — Second Sale",
+    "image": "sale-2.jpg",
+    "story": "Replace with the real story of your second closing — the moment that mattered, not the transaction."
+  },
+  {
+    "type": "In Their Words",
+    "title": "Buyer, Sherman Oaks",
+    "story": "Replace with a real client quote you have permission to use."
+  }
+]
