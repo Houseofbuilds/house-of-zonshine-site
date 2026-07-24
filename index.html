@@ -1,175 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>House of Zonshine | Julia Zonshine, Compass</title>
-<meta name="description" content="Julia Zonshine, House of Zonshine — Compass real estate agent in Los Angeles. Curating belonging. I've got you.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://api.fontshare.com/v2/css?f[]=zodiak@400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House of Zonshine — Coming Soon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Raleway', sans-serif; overflow: hidden; }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: #2B1F1A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(43,31,26,0.5) 0%, rgba(43,31,26,0.3) 50%, rgba(43,31,26,0.6) 100%);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #FBF8F3;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .name {
+      font-size: 4.5rem;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .coming-soon {
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #A9895A;
+      color: #FBF8F3;
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      background: #8f7047;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .name { font-size: 2.8rem; }
+      .coming-soon { font-size: 1.5rem; }
+      .cta-button { padding: 0.8rem 2rem; font-size: 0.9rem; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- ============ INTRO (first visit only, handled by js/script.js) ============ -->
-<div class="intro" id="intro" aria-hidden="true">
-  <div class="intro-lockup">
-    <p class="intro-main">House of Zonshine</p>
-    <p class="intro-sub">By Julia Zonshine</p>
-  </div>
-</div>
-
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <div class="nav-inner container">
-    <a href="#top" class="nav-logo">House of Zonshine</a>
-    <nav class="nav-links" id="nav-links">
-      <a href="#about">About</a>
-      <a href="#houses">The Houses</a>
-      <a href="#freebies">Freebies</a>
-      <a href="#newsletter">Newsletter</a>
-    </nav>
-    <a href="#contact" class="btn btn-primary nav-cta">Schedule a Consultation</a>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <video autoplay muted loop playsinline poster="images/hero-poster.jpg">
-    <source src="videos/hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-lockup">
-    <p class="hero-wordmark">House of Zonshine</p>
-    <p class="hero-tagline">Curating Belonging in Los Angeles</p>
-  </div>
-</section>
-
-<!-- ============ ABOUT ============ -->
-<section class="warm" id="about">
-  <div class="container about-grid">
-    <img src="images/headshot.jpg" alt="Julia Zonshine" class="about-headshot">
-    <div>
-      <p class="section-eyebrow">Hi, I'm Julia</p>
-      <h2 class="section-title">Curating Belonging in Los Angeles</h2>
-      <p>I'm Julia Zonshine — House of Zonshine, Compass. I'm a mom of two in Sherman Oaks, and I walk through more houses in a week than most people see in a year. Whatever brings you here — buying, selling, or just wondering what your place is worth — I've got you.</p>
-      <p class="quote">I've Got You</p>
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="name">House of Zonshine</div>
+      <div class="coming-soon">Coming Soon</div>
+      <a href="mailto:julia.zonshine@compass.com" class="cta-button">Get in Touch</a>
     </div>
   </div>
-</section>
-
-<!-- ============ THE HOUSES (journal — mixed entry types, no listings grid) ============ -->
-<section class="sand" id="houses">
-  <div class="container">
-    <p class="section-eyebrow">An Ongoing Series</p>
-    <h2 class="section-title">The Houses</h2>
-    <p class="houses-intro">Homes I've sold, walked, and fallen for across LA. A house is never just square footage.</p>
-    <div class="stories" id="stories">
-      <!-- populated by js/content.js from data/sales.json — mixes sold homes, previews, neighborhood pieces, and client quotes -->
-    </div>
-  </div>
-</section>
-
-<!-- ============ FEATURED WALKTHROUGH ============ -->
-<section class="warm" id="featured">
-  <div class="container">
-    <p class="section-eyebrow">Inside the House</p>
-    <h2 class="section-title">Step Through the Door</h2>
-    <div class="walkthrough-video">
-      <video controls preload="metadata" poster="images/sycamore-poster.jpg">
-        <source src="videos/sycamore-walkthrough.mp4" type="video/mp4">
-      </video>
-    </div>
-    <p class="media-cap">Full walkthrough — connected to the House of Zonshine YouTube.</p>
-  </div>
-</section>
-
-<!-- ============ FREEBIES ============ -->
-<section class="sand" id="freebies">
-  <div class="container">
-    <p class="section-eyebrow">On the House</p>
-    <h2 class="section-title">Freebies &amp; Giveaways</h2>
-    <div class="freebies-grid" id="freebies-grid">
-      <!-- populated by js/content.js from freebies/freebies.json -->
-    </div>
-  </div>
-</section>
-
-<!-- ============ NEWSLETTER ============ -->
-<section class="warm" id="newsletter">
-  <div class="container">
-    <div class="newsletter-box">
-      <p class="section-eyebrow" style="color: var(--bronze);">The Zonshine Edit</p>
-      <h2 class="section-title">Get the newsletter</h2>
-      <p>Market moves, new listings, and the occasional life update — straight to your inbox.</p>
-      <p class="quote">I've Got You</p>
-      <!-- TODO: replace # with the public Compass newsletter signup link once confirmed -->
-      <a href="#" class="btn btn-primary" id="newsletter-link" target="_blank" rel="noopener">Subscribe to the Newsletter</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT / SCHEDULE A CONSULTATION ============ -->
-<section class="sand" id="contact">
-  <div class="container">
-    <p class="section-eyebrow">Let's Talk</p>
-    <h2 class="section-title">Schedule a Consultation</h2>
-    <form class="contact-form" name="reach-out" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="reach-out">
-      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
-
-      <div class="form-row">
-        <label for="intent">What do you need?</label>
-        <select name="intent" id="intent">
-          <option value="valuation">Home Valuation</option>
-          <option value="buying">Buying</option>
-          <option value="selling">Selling</option>
-          <option value="reach-out">Just Reaching Out</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" required>
-      </div>
-
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-      </div>
-
-      <div class="form-row">
-        <label for="phone">Phone</label>
-        <input type="tel" name="phone" id="phone">
-      </div>
-
-      <div class="form-row">
-        <label for="message">Message</label>
-        <textarea name="message" id="message"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Send</button>
-      <p class="form-note">This goes straight to Julia's inbox.</p>
-    </form>
-  </div>
-</section>
-
-<!-- ============ FOOTER / SIGN-OFF ============ -->
-<footer>
-  <div class="container">
-    <p class="sign-off">Julia Zonshine | House of Zonshine</p>
-    <p>Compass | DRE 02246696 | @houseofzonshine</p>
-    <p>@rsrrealestate</p>
-    <p class="quote">I've Got You</p>
-    <p class="hashtags">#thezonshineedit</p>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
-<script src="js/content.js"></script>
 </body>
 </html>
