@@ -29,8 +29,8 @@ renderList('data/sales.json', 'stories', function (s) {
     );
   }
   return (
-    '<div class="story">' +
-      '<img src="images/' + s.image + '" alt="' + s.title + '">' +
+    '<div class="story' + (s.image ? '' : ' no-image') + '">' +
+      (s.image ? '<img src="images/' + s.image + '" alt="' + s.title + '">' : '') +
       '<div class="story-body">' +
         '<span class="story-type">' + s.type + '</span>' +
         '<h3>' + s.title + '</h3>' +
