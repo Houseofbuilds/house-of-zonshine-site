@@ -42,6 +42,7 @@
 
   var about = document.getElementById("about");
   var newsletter = document.getElementById("newsletter");
+  var depthPanels = document.querySelectorAll(".depth-panel");
   var motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ticking = false;
 
@@ -68,6 +69,13 @@
       newsletter.style.setProperty("--newsletter-shift", (newsletterProgress * 22).toFixed(1) + "px");
     }
 
+    depthPanels.forEach(function (panel) {
+      var panelRect = panel.getBoundingClientRect();
+      var panelDistance = panelRect.top + panelRect.height / 2 - viewportCenter;
+      var panelProgress = Math.max(-1, Math.min(1, panelDistance / window.innerHeight));
+      panel.style.setProperty("--panel-shift", (panelProgress * -20).toFixed(1) + "px");
+    });
+
     ticking = false;
   }
 
@@ -78,7 +86,7 @@
     }
   }
 
-  if ((about || newsletter) && motionAllowed) {
+  if ((about || newsletter || depthPanels.length) && motionAllowed) {
     window.addEventListener("scroll", requestDepthUpdate, { passive: true });
     window.addEventListener("resize", requestDepthUpdate);
     requestDepthUpdate();
