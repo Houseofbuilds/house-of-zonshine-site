@@ -1,44 +1,88 @@
-// Intro sequence: name on screen ~2s, then fades out to reveal the hero video.
-// Plays once per visit session; skipped for reduced-motion users (handled in CSS).
 (function () {
-  var intro = document.getElementById('intro');
-  if (!intro) return;
+  var header = document.getElementById("site-header");
+  var menuButton = document.getElementById("menu-button");
+  var nav = document.getElementById("site-nav");
 
-  var seen = sessionStorage.getItem('hoz-intro-seen');
-  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (seen || reducedMotion) {
-    intro.classList.add('intro-skip');
-    return;
+  function updateHeader() {
+    header.classList.toggle("scrolled", window.scrollY > 32);
   }
 
-  document.body.style.overflow = 'hidden';
-  setTimeout(function () {
-    intro.classList.add('intro-out');
-    document.body.style.overflow = '';
-    sessionStorage.setItem('hoz-intro-seen', '1');
-    setTimeout(function () { intro.classList.add('intro-skip'); }, 1000);
-  }, 2600);
-})();
+  function closeMenu() {
+    nav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  }
 
-// Mobile nav toggle
-(function () {
-  var toggle = document.getElementById('nav-toggle');
-  var links = document.getElementById('nav-links');
-  if (!toggle || !links) return;
-
-  toggle.addEventListener('click', function () {
-    var open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuButton.addEventListener("click", function () {
+    var open = !nav.classList.contains("open");
+    nav.classList.toggle("open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("menu-open", open);
   });
 
-  links.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        observer.unobserve(entry.target);
+      }
     });
-  });
-})();
+  }, { threshold: 0.08 });
 
-// TODO: once the Compass newsletter signup link is confirmed, set it here
-// document.getElementById('newsletter-link').href = 'https://...';
+  document.querySelectorAll(".reveal").forEach(function (section) {
+    observer.observe(section);
+  });
+
+  var about = document.getElementById("about");
+  var newsletter = document.getElementById("newsletter");
+  var motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ticking = false;
+
+  function updateDepth() {
+    if (!motionAllowed) {
+      ticking = false;
+      return;
+    }
+
+    var viewportCenter = window.innerHeight / 2;
+
+    if (about) {
+      var aboutRect = about.getBoundingClientRect();
+      var aboutDistance = aboutRect.top + aboutRect.height / 2 - viewportCenter;
+      var aboutProgress = Math.max(-1, Math.min(1, aboutDistance / window.innerHeight));
+      about.style.setProperty("--portrait-shift", (aboutProgress * 18).toFixed(1) + "px");
+      about.style.setProperty("--about-shift", (aboutProgress * -32).toFixed(1) + "px");
+    }
+
+    if (newsletter) {
+      var newsletterRect = newsletter.getBoundingClientRect();
+      var newsletterDistance = newsletterRect.top + newsletterRect.height / 2 - viewportCenter;
+      var newsletterProgress = Math.max(-1, Math.min(1, newsletterDistance / window.innerHeight));
+      newsletter.style.setProperty("--newsletter-shift", (newsletterProgress * 22).toFixed(1) + "px");
+    }
+
+    ticking = false;
+  }
+
+  function requestDepthUpdate() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateDepth);
+      ticking = true;
+    }
+  }
+
+  if ((about || newsletter) && motionAllowed) {
+    window.addEventListener("scroll", requestDepthUpdate, { passive: true });
+    window.addEventListener("resize", requestDepthUpdate);
+    requestDepthUpdate();
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
