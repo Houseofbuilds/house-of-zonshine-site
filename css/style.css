@@ -368,6 +368,13 @@ section.sand { background: var(--sand); }
   padding: 2.5rem;
 }
 
+.story.no-image {
+  grid-template-columns: 1fr;
+  background: var(--sand);
+}
+
+.story.no-image .story-body { padding: 2.5rem; }
+
 .story img {
   height: 100%;
   min-height: 260px;
