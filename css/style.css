@@ -1,22 +1,22 @@
-/* House of Zonshine — locked type system, 2026-07-23
-   Raleway leads everywhere (name, nav, headlines, body).
-   Zodiak is an accent ONLY — pull-quotes and "I've Got You" sign-offs.
-   Never headlines, never body — same rule the old brand bible used for italic Lora. */
+/* House of Zonshine — Brand Bible v2, 2026-07-15
+   Lora leads headlines (upright, Semibold). Karla carries body/UI/data.
+   Lora italic is reserved for quotes and sign-offs only — never headlines or body. */
 :root {
   --paper: #FBF8F3;
   --plaster: #F5F0E8;
-  --linen: #EFE9DE;
   --sand: #E8DDD0;
   --espresso: #2B1F1A;
   --ink: #4A3D35;
-  --mid-gray: #8A8078;
+  --mid-gray: #7A7370;
+  --clay: #B27A63;
+  --sage: #5C6653;
   --bronze: #A9895A;
   --bronze-deep: #8f7047;
 
-  --font-headline: 'Raleway', sans-serif;
-  --font-body: 'Raleway', sans-serif;
-  --font-ui: 'Montserrat', system-ui, sans-serif;
-  --font-accent: 'Zodiak', Georgia, serif;
+  --font-headline: 'Lora', Georgia, serif;
+  --font-body: 'Karla', sans-serif;
+  --font-ui: 'Karla', sans-serif;
+  --font-accent: 'Lora', Georgia, serif;
 
   --nav-height: 68px;
 }
@@ -239,7 +239,7 @@ a { color: inherit; }
 section { padding: 6rem 0; }
 
 section.warm { background: var(--plaster); }
-section.sand { background: var(--linen); }
+section.sand { background: var(--sand); }
 
 .section-eyebrow {
   position: relative;
@@ -292,10 +292,11 @@ section.sand { background: var(--linen); }
   margin-top: 0.9rem;
 }
 
-/* Zodiak accent — pull-quotes and "I've Got You" sign-offs ONLY */
+/* Lora italic accent — pull-quotes and "I've Got You" sign-offs ONLY */
 .quote {
   font-family: var(--font-accent);
-  font-weight: 400;
+  font-style: italic;
+  font-weight: 500;
   color: var(--bronze);
   margin-top: 1rem;
   font-size: 1.15rem;
@@ -303,7 +304,8 @@ section.sand { background: var(--linen); }
 
 .pull-quote {
   font-family: var(--font-accent);
-  font-weight: 400;
+  font-style: italic;
+  font-weight: 500;
   color: var(--bronze-deep);
   font-size: 1.2rem;
   line-height: 1.45;
@@ -312,23 +314,39 @@ section.sand { background: var(--linen); }
   border-left: 2px solid var(--bronze);
 }
 
-/* ---------- About ---------- */
-.about-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 2.5rem;
-  align-items: center;
+/* ---------- About / trust moment ---------- */
+/* Full-bleed photo + short bio, Shelton Wilder-style: one large warm
+   photo of Julia does the trust-building, not a small paired headshot. */
+.trust-photo-wrap {
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(43,31,26,0.16);
 }
 
-.about-headshot {
-  border-radius: 4px;
+.trust-photo-wrap img {
+  width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  background: var(--sand);
-  box-shadow: 0 18px 48px rgba(43,31,26,0.12);
+  object-position: top center;
 }
 
-.about-grid p + p { margin-top: 0.8rem; }
+.about-bio {
+  max-width: 60ch;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.about-bio p + p { margin-top: 0.9rem; }
+
+.about-bio .quote {
+  display: block;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+}
 
 /* ---------- The Houses (journal) ---------- */
 .stories { display: grid; gap: 2.5rem; }
@@ -539,9 +557,7 @@ footer .hashtags { font-family: var(--font-ui); color: var(--mid-gray); }
     background: var(--plaster);
   }
 
-  .about-grid { grid-template-columns: 1fr; }
-
-  .about-headshot { max-width: 280px; }
+  .trust-photo-wrap { max-width: 320px; }
 
   .story { grid-template-columns: 1fr; }
 
