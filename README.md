@@ -1,17 +1,22 @@
 # House of Zonshine — Website
 
-Simple static site: no framework, plain HTML/CSS/JS. Hosted on Netlify, deployed from GitHub, domain via GoDaddy.
+Editorial real estate site for Julia Zonshine. Simple static build: no framework, plain HTML/CSS/JS. Hosted on Netlify and deployed from GitHub.
 
 ## What's here
 
-- `index.html` — the whole one-page site (intro, nav, hero, about, sale stories, listings, walkthrough, freebies, newsletter, contact)
-- `css/style.css` — brand colors (Clay/Sage/Bronze) + fonts (Lora/Karla), per Brand Bible v2
-- `js/script.js` — intro sequence (first visit only) + mobile nav
-- `js/content.js` — renders sale stories, listings, and freebies from their JSON files
+- `index.html` — the full homepage concept (hero, audience paths, about, stories, neighborhoods, resources, newsletter and contact)
+- `newsletter/index.html` — dedicated monthly newsletter landing page and subscriber form
+- `guides/index.html` — guide library showing built, in-review and planned resources
+- `privacy/index.html` — California-oriented website privacy policy
+- `legal/index.html` — licensing, fair housing, accuracy, terms and accessibility disclosures
+- `thanks/` — custom Netlify success pages for contact and newsletter submissions
+- `css/style.css` — responsive visual system using Raleway and the Brand Bible v2 palette
+- `js/script.js` — sticky navigation, mobile menu and subtle scroll reveals
+- `js/content.js` — retained content renderer for future JSON-powered story and freebie archive pages
 - `data/sales.json` — The Houses (Story of a Sale) entries; images go in `images/`
 - `data/listings.json` — Upcoming Listings entries; images go in `images/`
-- `videos/` — drop `hero.mp4` (short looping LA→Sycamore zoom), `ambient-la.mp4` (mid-page LA skyline loop), and `sycamore-walkthrough.mp4` (full walkthrough) here
-- `images/` — `headshot.jpg`, sale/listing photos, video poster frames
+- `videos/` — homepage hero video
+- `images/` — hero poster and, later, original portrait/neighborhood/story photography
 - `freebies/` — drop each freebie PDF + thumbnail here, add one line to `freebies.json`
 
 ## Adding a new freebie (manual workflow)
@@ -23,33 +28,16 @@ Simple static site: no framework, plain HTML/CSS/JS. Hosted on Netlify, deployed
    ```
 3. Commit and push — Netlify redeploys automatically, it's live in ~1 minute.
 
-## First-time setup (once Xcode Command Line Tools finish installing)
+## Before public launch
 
-Run from this folder:
-
-```bash
-git init
-git add .
-git commit -m "First build of House of Zonshine site"
-```
-
-Then create an **empty** repo on github.com (no README, no .gitignore — this folder already has them), named e.g. `house-of-zonshine-site`, and run the two commands GitHub shows you on the "…or push an existing repository" screen — they'll look like:
-
-```bash
-git remote add origin https://github.com/<your-username>/house-of-zonshine-site.git
-git branch -M main
-git push -u origin main
-```
-
-## Then: Netlify
-
-1. netlify.com → "Add new site" → "Import an existing project" → connect GitHub → pick this repo
-2. Build settings: leave blank (no build command needed, publish directory `.`)
-3. Deploy — you'll get a live `*.netlify.app` URL immediately
-
-## Then: point the domain (GoDaddy)
-
-In Netlify: Site settings → Domain management → Add custom domain → `juliazonshine.com`. Netlify will show DNS records to add. In GoDaddy: DNS settings for `juliazonshine.com` → add those records. Propagation + free SSL usually finish within an hour.
+- Confirm the final excerpts selected from approved client material.
+- Add original neighborhood, transaction and portrait photography.
+- Approve the guide drafts, add their final downloads and connect newsletter delivery.
+- Confirm House of Zonshine naming/branding with Compass compliance.
+- Configure Netlify form detection and email notifications, then test both forms live.
+- Add the valid postal address and unsubscribe mechanism to every commercial newsletter email.
+- Replace the temporary Netlify canonical/OG URL when the custom domain is live.
+- Build dedicated neighborhood, story and resource pages for the long-term SEO strategy.
 
 ## Netlify Forms
 
