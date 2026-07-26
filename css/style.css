@@ -330,7 +330,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 @media (max-width: 900px) {
   :root { --page: min(calc(100vw - 40px), 680px); --hero-title-size: clamp(4.35rem, 16vw, 7.25rem); }
   .site-header { min-height: 70px; padding: 0 20px; }
-  .menu-button { display: flex; width: 35px; height: 35px; flex-direction: column; justify-content: center; gap: 7px; border: 0; background: transparent; cursor: pointer; }
+  .menu-button { position: relative; z-index: 2; display: flex; flex: 0 0 35px; width: 35px; height: 35px; margin-left: auto; flex-direction: column; justify-content: center; gap: 7px; border: 0; background: transparent; cursor: pointer; }
   .menu-button span:not(.sr-only) { display: block; width: 24px; height: 1px; background: white; transition: transform .25s; }
   .menu-button[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
   .menu-button[aria-expanded="true"] span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
@@ -377,7 +377,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 }
 
 @media (max-width: 560px) {
-  :root { --hero-title-size: clamp(4.1rem, 20.7vw, 5.75rem); }
+  :root { --hero-title-size: clamp(3.5rem, 16.5vw, 4.8rem); }
   .brand span { font-size: 1rem; }
   .hero-copy { justify-content: center; padding-bottom: 4rem; }
   .hero h1 { font-size: var(--hero-title-size); }
