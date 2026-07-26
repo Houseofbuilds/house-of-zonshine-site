@@ -273,6 +273,132 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .signup-panel { display: grid; grid-template-columns: 1fr .9fr; gap: 6rem; align-items: end; padding: 6rem; background: var(--sage); color: white; }
 .signup-panel-copy p { max-width: 570px; color: rgba(255,255,255,.72); }
 .signup-panel .newsletter-form { max-width: 520px; }
+.newsletter-landing {
+  min-height: 100svh;
+  padding: 84px 0 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(420px, .96fr);
+  background: var(--espresso);
+  color: white;
+}
+.newsletter-landing-copy {
+  width: min(680px, calc(100% - 8vw));
+  margin: auto;
+  padding: clamp(3rem, 7vh, 6rem) 0;
+}
+.newsletter-landing .page-kicker {
+  margin: 0 0 1.2rem;
+  color: var(--bronze);
+  font-size: .62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+}
+.newsletter-landing h1 {
+  max-width: 700px;
+  margin: 0;
+  font-size: clamp(3rem, 5.35vw, 5.8rem);
+  font-weight: 300;
+  letter-spacing: -.055em;
+  line-height: .94;
+}
+.newsletter-lead {
+  max-width: 600px;
+  margin: 1.5rem 0 0;
+  color: rgba(255,255,255,.7);
+  font-size: clamp(.9rem, 1.15vw, 1.03rem);
+}
+.newsletter-topics {
+  margin: 1.25rem 0 0;
+  color: var(--bronze);
+  font-size: .58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+.newsletter-signup {
+  max-width: 590px;
+  margin-top: clamp(2rem, 5vh, 3.5rem);
+  padding-top: clamp(1.8rem, 3.5vh, 2.5rem);
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+.newsletter-signup h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.7rem);
+  letter-spacing: -.035em;
+}
+.newsletter-signup > p {
+  max-width: 570px;
+  margin: .8rem 0 1.5rem;
+  color: rgba(255,255,255,.62);
+  font-size: .86rem;
+}
+.newsletter-signup .newsletter-form small a { color: inherit; }
+.newsletter-landing-portrait {
+  position: relative;
+  min-height: calc(100svh - 84px);
+  margin: 0;
+  overflow: hidden;
+  background: #6f594c;
+}
+.newsletter-landing-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(35,23,18,.72));
+  pointer-events: none;
+}
+.newsletter-landing-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+}
+.newsletter-landing-portrait figcaption {
+  position: absolute;
+  z-index: 2;
+  right: 2rem;
+  bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: white;
+  line-height: 1.2;
+}
+.newsletter-landing-portrait figcaption span { font-size: .82rem; }
+.newsletter-landing-portrait figcaption small {
+  margin-top: .35rem;
+  color: rgba(255,255,255,.6);
+  font-size: .5rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+.newsletter-photo-note {
+  position: absolute;
+  z-index: 2;
+  top: clamp(2rem, 5vw, 5rem);
+  left: 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(248,244,237,.92);
+  color: var(--espresso);
+  transform: translateX(0);
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.newsletter-landing-portrait:hover .newsletter-photo-note { transform: translateX(8px); }
+.newsletter-photo-note span {
+  display: block;
+  color: var(--bronze);
+  font-size: .5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+.newsletter-photo-note strong {
+  display: block;
+  margin-top: .4rem;
+  font-size: 1.35rem;
+  font-weight: 300;
+  line-height: 1.05;
+}
 .library-heading { display: flex; justify-content: space-between; align-items: end; gap: 3rem; margin-bottom: 3rem; }
 .library-heading h2 { max-width: 740px; font-size: clamp(2.5rem, 4.5vw, 4.8rem); }
 .library-heading p { max-width: 390px; color: var(--muted); }
@@ -372,6 +498,14 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .page-section, .page-section.alt { padding-top: 5rem; padding-bottom: 5rem; }
   .page-intro, .signup-panel { grid-template-columns: 1fr; gap: 3rem; }
   .signup-panel { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
+  .newsletter-landing { grid-template-columns: 1fr; padding-top: 70px; }
+  .newsletter-landing-copy {
+    width: min(680px, calc(100% - 40px));
+    padding: 4.5rem 0;
+  }
+  .newsletter-landing h1 { max-width: 640px; font-size: clamp(3rem, 10vw, 5.2rem); }
+  .newsletter-landing-portrait { min-height: min(760px, 92svh); }
+  .newsletter-photo-note { transform: none; }
   .issue-grid, .guide-library-grid { grid-template-columns: 1fr; }
   .library-heading { align-items: flex-start; flex-direction: column; }
 }
@@ -393,6 +527,16 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .area-row small { display: none; }
   .area-row b { font-size: .48rem; }
   .field-pair { grid-template-columns: 1fr; }
+  .newsletter-landing-copy { padding: 3.5rem 0; }
+  .newsletter-landing h1 { font-size: clamp(2.8rem, 13vw, 4.15rem); }
+  .newsletter-lead { font-size: .9rem; }
+  .newsletter-topics { line-height: 1.8; }
+  .newsletter-signup { margin-top: 2rem; padding-top: 1.75rem; }
+  .email-field { align-items: flex-end; }
+  .email-field input { font-size: .95rem; }
+  .email-field button { flex: 0 0 auto; padding: 1rem 0 .95rem 1rem; }
+  .newsletter-landing-portrait { min-height: 70svh; }
+  .newsletter-photo-note { top: 1.5rem; padding: 1rem 1.2rem; }
   footer { grid-template-columns: 1fr; }
   .footer-links { justify-content: flex-start; }
   .footer-meta { flex-direction: column; }

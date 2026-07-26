@@ -64,7 +64,7 @@
   }
   </script>
 </head>
-<body class="inner-page">
+<body class="inner-page newsletter-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header inner-header" id="site-header">
     <a class="brand" href="../" aria-label="House of Zonshine home">
@@ -84,68 +84,46 @@
   </header>
 
   <main id="main">
-    <section class="page-hero">
-      <p class="page-kicker">Once a month · From Julia</p>
-      <h1>Stories about houses, people, and Los Angeles.</h1>
-      <p>This is a different kind of real estate email. Sometimes it begins inside a remarkable house, and sometimes it begins with a person who makes one little stretch of Los Angeles feel like a small town.</p>
-    </section>
+    <section class="newsletter-landing" aria-labelledby="newsletter-title">
+      <div class="newsletter-landing-copy">
+        <p class="page-kicker">Once a month, from Julia</p>
+        <h1 id="newsletter-title">Stories about houses, people, and Los Angeles.</h1>
+        <p class="newsletter-lead">A monthly note about the homes I get to step inside, the people who make Los Angeles feel like a collection of small towns, and the real estate things worth knowing.</p>
+        <p class="newsletter-topics">Homes · Neighborhoods · Design · Real estate</p>
 
-    <section class="page-section page-intro">
-      <div>
-        <p class="eyebrow">What to Expect</p>
-        <h2>Personal first, useful always.</h2>
-      </div>
-      <div class="page-intro-copy">
-        <p>One of the greatest gifts of this business is getting a front-row seat to people’s stories, and the newsletter is where I get to slow down enough to tell some of them properly.</p>
-        <p>You’ll also find market perspective, a few genuinely interesting things happening around Los Angeles, neighborhood discoveries, design and architecture, and the kind of useful real estate information I would send to a friend. It arrives monthly, usually within the first week, after the first-of-the-month rush has cleared out a little.</p>
-        <p>Joining the newsletter simply means you want to read it. It is completely separate from requesting a real estate consultation.</p>
-      </div>
-    </section>
-
-    <section class="page-section alt">
-      <p class="eyebrow">A Preview of the Archive</p>
-      <h2>Three issues, three different ways in.</h2>
-      <div class="issue-grid">
-        <article class="issue-card">
-          <time datetime="2026-02">February 2026</time>
-          <h3>Love Where You Live, Not Just the Listing</h3>
-          <p>Market notes, things happening around Los Angeles, and featured homes in the original Compass newsletter format.</p>
-        </article>
-        <article class="issue-card">
-          <time datetime="2026-06">June 2026</time>
-          <h3>I Sold Christopher Lloyd’s House, and Lost My Mind a Little</h3>
-          <p>The Sycamore House, an actual mould of Christopher Lloyd’s face, and a moment Little Julia never could have imagined.</p>
-        </article>
-        <article class="issue-card">
-          <time datetime="2026-07">July 2026</time>
-          <h3>Coming in Hot!</h3>
-          <p>A conversation with Jen about Salon Hestia, Crèma next door, and the part of Ventura Boulevard that feels like its own small town.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="signup-panel">
-      <div class="signup-panel-copy">
-        <p class="eyebrow light">Join the List</p>
-        <h2>Come read along.</h2>
-        <p>One thoughtful email a month, with stories, local discoveries, and useful real estate perspective. No constant sales emails and no assumption that you are ready to move.</p>
-      </div>
-      <form class="newsletter-form" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="newsletter">
-        <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
-        <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
-        <label for="newsletter-email">Email address</label>
-        <div class="email-field">
-          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-          <button type="submit" aria-label="Join the newsletter">Join the list ↗</button>
+        <div class="newsletter-signup">
+          <h2>Come read along.</h2>
+          <p>Joining simply means you want the newsletter. It is separate from requesting a real estate consultation, and I won’t treat it like one.</p>
+          <form class="newsletter-form" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="newsletter">
+            <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
+            <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+            <label for="newsletter-email">Email address</label>
+            <div class="email-field">
+              <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              <button type="submit">Sign me up ↗</button>
+            </div>
+            <small>One email a month. Unsubscribe anytime. See the <a href="../privacy/">Privacy Policy</a>.</small>
+          </form>
         </div>
-        <small>By subscribing, you agree to receive the monthly newsletter and acknowledge the <a href="../privacy/">Privacy Policy</a>. Unsubscribe anytime.</small>
-      </form>
+      </div>
+
+      <figure class="newsletter-landing-portrait">
+        <img src="../images/julia-trust-photo.jpg" alt="Julia Zonshine">
+        <figcaption>
+          <span>Julia Zonshine</span>
+          <small>House of Zonshine</small>
+        </figcaption>
+        <div class="newsletter-photo-note" aria-hidden="true">
+          <span>A little note</span>
+          <strong>from me<br>to you.</strong>
+        </div>
+      </figure>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand"><strong>House of Zonshine</strong><span>Curating Belonging</span></div>
+    <div class="footer-brand"><strong>House of Zonshine</strong><span>By Julia Zonshine</span></div>
     <div class="footer-links">
       <a href="../">Home</a><a href="../guides/">Guides</a><a href="../#contact">Contact</a>
       <a href="https://www.instagram.com/houseofzonshine/" rel="noopener">Instagram</a>
