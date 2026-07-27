@@ -332,6 +332,47 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   color: rgba(255,255,255,.62);
   font-size: .86rem;
 }
+.newsletter-fields {
+  display: grid;
+  grid-template-columns: minmax(105px, .65fr) minmax(210px, 1.35fr) auto;
+  gap: 1.4rem;
+  align-items: end;
+}
+.newsletter-form .newsletter-field {
+  min-width: 0;
+  margin: 0;
+}
+.newsletter-field span {
+  display: block;
+  margin-bottom: .55rem;
+}
+.newsletter-field input {
+  width: 100%;
+  min-width: 0;
+  padding: .75rem 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.45);
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: white;
+  font-size: .95rem;
+}
+.newsletter-field input::placeholder { color: rgba(255,255,255,.35); }
+.newsletter-field input:focus { border-color: var(--bronze); }
+.newsletter-fields button {
+  min-height: 43px;
+  padding: 0 0 .6rem;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.45);
+  background: transparent;
+  color: var(--bronze);
+  font-size: .64rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
 .newsletter-signup .newsletter-form small a { color: inherit; }
 .newsletter-landing-portrait {
   position: relative;
@@ -532,9 +573,8 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .newsletter-lead { font-size: .9rem; }
   .newsletter-topics { line-height: 1.8; }
   .newsletter-signup { margin-top: 2rem; padding-top: 1.75rem; }
-  .email-field { align-items: flex-end; }
-  .email-field input { font-size: .95rem; }
-  .email-field button { flex: 0 0 auto; padding: 1rem 0 .95rem 1rem; }
+  .newsletter-fields { grid-template-columns: minmax(95px, .7fr) minmax(170px, 1.3fr); gap: 1rem; }
+  .newsletter-fields button { grid-column: 1 / -1; justify-self: end; min-height: 35px; margin-top: .25rem; padding-left: 1.2rem; }
   .newsletter-landing-portrait { min-height: 70svh; }
   .newsletter-photo-note { top: 1.5rem; padding: 1rem 1.2rem; }
   footer { grid-template-columns: 1fr; }

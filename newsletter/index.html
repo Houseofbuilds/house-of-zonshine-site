@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Newsletter | House of Zonshine</title>
-  <meta name="description" content="Join Julia Zonshine's monthly House of Zonshine newsletter for personal real estate stories, Los Angeles neighborhood discoveries and useful market perspective.">
+  <meta name="description" content="Join Julia Zonshine's monthly House of Zonshine newsletter for house stories, Los Angeles discoveries, new restaurants and delightfully random things worth knowing.">
   <meta name="theme-color" content="#2b1f1a">
   <meta property="og:title" content="House of Zonshine Newsletter | Julia Zonshine">
-  <meta property="og:description" content="Monthly real estate stories, Los Angeles neighborhood discoveries and useful market perspective from Julia Zonshine.">
+  <meta property="og:description" content="House stories, new restaurants, Los Angeles discoveries and delightfully random things worth knowing, once a month from Julia Zonshine.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://juliazonshine.com/newsletter/">
   <meta property="og:site_name" content="House of Zonshine">
@@ -15,7 +15,7 @@
   <meta property="og:image:alt" content="Julia Zonshine, creator of the House of Zonshine newsletter">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="House of Zonshine Newsletter | Julia Zonshine">
-  <meta name="twitter:description" content="Monthly real estate stories, Los Angeles neighborhood discoveries and useful market perspective from Julia Zonshine.">
+  <meta name="twitter:description" content="House stories, new restaurants, Los Angeles discoveries and delightfully random things worth knowing, once a month from Julia Zonshine.">
   <meta name="twitter:image" content="https://juliazonshine.com/images/julia-trust-photo.jpg">
   <link rel="canonical" href="https://juliazonshine.com/newsletter/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
         "@id": "https://juliazonshine.com/newsletter/#page",
         "url": "https://juliazonshine.com/newsletter/",
         "name": "House of Zonshine Newsletter",
-        "description": "Monthly real estate stories, Los Angeles neighborhood discoveries and market perspective from Julia Zonshine.",
+        "description": "A monthly collection of house stories, new restaurants, Los Angeles discoveries and delightfully random things worth knowing from Julia Zonshine.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://juliazonshine.com/#website",
@@ -88,22 +88,28 @@
       <div class="newsletter-landing-copy">
         <p class="page-kicker">Once a month, from Julia</p>
         <h1 id="newsletter-title">Stories about houses, people, and Los Angeles.</h1>
-        <p class="newsletter-lead">A monthly note about the homes I get to step inside, the people who make Los Angeles feel like a collection of small towns, and the real estate things worth knowing.</p>
-        <p class="newsletter-topics">Homes · Neighborhoods · Design · Real estate</p>
+        <p class="newsletter-lead">A monthly collection of house stories, strange little facts, new restaurants, local things worth knowing, and whatever else I couldn’t stop talking about that month.</p>
+        <p class="newsletter-topics">Houses · People · New places · Did you know?</p>
 
         <div class="newsletter-signup">
           <h2>Come read along.</h2>
-          <p>Joining simply means you want the newsletter. It is separate from requesting a real estate consultation, and I won’t treat it like one.</p>
+          <p>Sometimes useful, sometimes random, and never a market update in disguise. Any listings know to wait politely at the end.</p>
           <form class="newsletter-form" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="newsletter">
             <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
             <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
-            <label for="newsletter-email">Email address</label>
-            <div class="email-field">
-              <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <div class="newsletter-fields">
+              <label class="newsletter-field" for="newsletter-first-name">
+                <span>First name</span>
+                <input id="newsletter-first-name" name="first-name" type="text" autocomplete="given-name" placeholder="Julia" required>
+              </label>
+              <label class="newsletter-field" for="newsletter-email">
+                <span>Email address</span>
+                <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              </label>
               <button type="submit">Sign me up ↗</button>
             </div>
-            <small>One email a month. Unsubscribe anytime. See the <a href="../privacy/">Privacy Policy</a>.</small>
+            <small>One email a month. This is the newsletter, not a consultation request. Unsubscribe anytime. See the <a href="../privacy/">Privacy Policy</a>.</small>
           </form>
         </div>
       </div>
