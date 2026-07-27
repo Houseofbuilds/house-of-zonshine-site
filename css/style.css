@@ -287,6 +287,21 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   font-size: 1.35rem;
 }
 .available-guide-grid .guide-library-card p { font-size: .8rem; }
+.upcoming-guide-grid .guide-library-card {
+  min-height: 260px;
+  padding: 1.6rem;
+}
+.upcoming-guide-grid .guide-type { margin-top: 0; }
+.upcoming-guide-grid .guide-library-card h3 {
+  margin: 2rem 0 .75rem;
+  font-size: 1.35rem;
+}
+.upcoming-guide-grid .guide-library-card p { font-size: .8rem; }
+.upcoming-guide-grid .guide-note {
+  padding-top: 1.35rem;
+  color: var(--bronze);
+  font-size: .58rem;
+}
 .freebie-actions {
   margin-top: auto;
   padding-top: 1.35rem;
@@ -482,8 +497,6 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .guide-library-card.planned { border-color: var(--mid-gray); }
 .guide-library-card .guide-type { margin-top: 1rem; color: var(--muted); font-size: .65rem; text-transform: uppercase; letter-spacing: .12em; }
 .guide-library-card .guide-note { margin-top: auto; padding-top: 2rem; color: var(--espresso); font-size: .68rem; font-weight: 600; text-transform: uppercase; letter-spacing: .09em; }
-.library-explainer { max-width: 760px; }
-.library-explainer p { color: var(--ink); }
 .legal-copy { max-width: 850px; }
 .legal-copy h2 { margin: 4rem 0 1rem; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.025em; }
 .legal-copy h2:first-of-type { margin-top: 0; }
@@ -582,6 +595,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .newsletter-photo-note { transform: none; }
   .issue-grid, .guide-library-grid { grid-template-columns: 1fr; }
   .available-guide-grid .guide-library-card { width: min(100%, 520px); margin: auto; }
+  .upcoming-guide-grid .guide-library-card { width: min(100%, 520px); margin: auto; }
   .library-heading { align-items: flex-start; flex-direction: column; }
 }
 
