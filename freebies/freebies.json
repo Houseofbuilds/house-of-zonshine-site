@@ -1,8 +1,20 @@
 [
   {
-    "title": "Example Freebie — Replace Me",
-    "description": "Swap this entry out for your first real freebie PDF.",
-    "file": "example.pdf",
-    "thumbnail": "example-thumb.jpg"
+    "title": "The 3-Pass Neighborhood Check",
+    "description": "What to notice on a block in the morning, afternoon and evening before deciding it feels like home.",
+    "file": "/freebies/pdfs/three-pass-neighborhood-check.pdf",
+    "thumbnail": "/images/freebies/three-pass-neighborhood-check.png"
+  },
+  {
+    "title": "Good Bones vs. Expensive Problems",
+    "description": "A practical look at the fixer issues that should change an offer and the cosmetic ones that should not scare buyers away.",
+    "file": "/freebies/pdfs/good-bones-vs-expensive-problems.pdf",
+    "thumbnail": "/images/freebies/good-bones-vs-expensive-problems.png"
+  },
+  {
+    "title": "What Actually Moves a Seller From Close to Yes",
+    "description": "The offer details that can matter beyond price, including contingencies, timing and how prepared the buyer appears.",
+    "file": "/freebies/pdfs/seller-from-close-to-yes.pdf",
+    "thumbnail": "/images/freebies/seller-from-close-to-yes.png"
   }
 ]
