@@ -180,9 +180,34 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-copy > p:not(.location) { color: var(--muted); font-size: .9rem; }
 .story-copy a { display: inline-block; margin-top: 1rem; font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .12em; }
 .story-status { display: inline-block; margin-top: 1rem; color: var(--bronze); font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
-.quote-card { display: flex; flex-direction: column; justify-content: center; min-height: 340px; padding: 3rem; background: var(--clay); color: white; }
-.quote-card blockquote { margin: 0; font-size: clamp(1.5rem, 2.4vw, 2.2rem); font-weight: 300; line-height: 1.35; }
-.quote-note { margin-top: 2rem; font-size: .75rem; color: rgba(255,255,255,.7); }
+.quote-card { display: flex; flex-direction: column; min-height: 340px; padding: 2.5rem 3rem; background: var(--clay); color: white; }
+.testimonial-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+.testimonial-head .eyebrow { margin-bottom: 0; }
+.testimonial-count { margin: 0; color: rgba(255,255,255,.5); font-size: .56rem; font-weight: 600; letter-spacing: .15em; }
+.testimonial-count span { color: white; }
+.testimonial-slides { flex: 1; display: flex; align-items: center; }
+.testimonial-slide { width: 100%; margin: 1.5rem 0 1rem; }
+.testimonial-slide.is-active { animation: testimonial-in .46s cubic-bezier(.2,.7,.2,1) both; }
+.testimonial-slide blockquote { margin: 0; font-size: clamp(1.25rem, 1.85vw, 1.8rem); font-weight: 300; line-height: 1.36; }
+.testimonial-slide figcaption { margin-top: 1.25rem; color: rgba(255,255,255,.72); font-size: .68rem; }
+.testimonial-controls { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; }
+.testimonial-controls span { height: 1px; background: rgba(255,255,255,.35); }
+.testimonial-controls button {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .2s;
+}
+.testimonial-controls button:hover { background: white; color: var(--clay); transform: translateY(-2px); }
+@keyframes testimonial-in {
+  from { opacity: 0; transform: translateX(14px); }
+  to { opacity: 1; transform: none; }
+}
 
 .neighborhoods { display: grid; grid-template-columns: .82fr 1.18fr; background: var(--sage); color: white; }
 .neighborhood-intro { padding: clamp(5rem, 9vw, 9rem) clamp(3rem, 7vw, 8rem); background: rgba(43,31,26,.15); }
@@ -534,6 +559,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   html { scroll-behavior: auto; }
   .site-intro { display: none; }
   .hero video { animation: none; }
+  .testimonial-slide.is-active { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .depth-panel { translate: none !important; }
   .resource-card, .pathway, .site-header, .about-image { transition: none; }
