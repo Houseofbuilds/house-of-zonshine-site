@@ -151,7 +151,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .pathway:hover p { color: rgba(255,255,255,.68); }
 .pathway .arrow { position: absolute; left: 2.2rem; bottom: 2rem; font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
 
-.about { position: relative; isolation: isolate; min-height: 680px; padding: clamp(5rem, 7vw, 7.5rem) max(4vw, calc((100vw - 1400px)/2)); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); column-gap: clamp(3rem, 6vw, 7rem); row-gap: clamp(3.5rem, 6vw, 6rem); align-items: start; overflow: hidden; background: var(--espresso); color: white; }
+.about { position: relative; isolation: isolate; min-height: 680px; padding: clamp(5rem, 7vw, 7.5rem) max(4vw, calc((100vw - 1400px)/2)); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); column-gap: clamp(3rem, 6vw, 7rem); row-gap: clamp(1.5rem, 2vw, 2.5rem); align-items: start; overflow: hidden; background: var(--espresso); color: white; }
 .about::before { content: "JULIA"; position: absolute; z-index: -1; right: -1vw; top: 50%; color: rgba(255,255,255,.035); font-size: clamp(8rem, 22vw, 21rem); font-weight: 600; letter-spacing: -.09em; line-height: .7; transform: translateY(calc(-50% + var(--about-shift, 0px))); pointer-events: none; }
 .about-image-wrap { position: relative; z-index: 2; align-self: start; width: 100%; height: min(560px, 72vh); margin: 0; }
 .about-image-wrap::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid rgba(198,154,116,.45); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
@@ -164,7 +164,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about-copy { max-width: 630px; padding: 0; align-self: start; }
 .about-copy h2 { font-size: clamp(2.4rem, 4.2vw, 4.6rem); }
 .about-copy .lead { margin-top: 2rem; color: #eadfce; font-size: 1.08rem; }
-.about-lower-copy { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(3rem, 6vw, 7rem); padding-top: clamp(2.5rem, 4vw, 4rem); border-top: 1px solid rgba(255,255,255,.16); }
+.about-lower-copy { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(3rem, 6vw, 7rem); padding-top: clamp(.5rem, 1vw, 1rem); }
 .about-lower-copy p { margin: 0; color: rgba(255,255,255,.68); }
 .about-lower-closing > p + p { margin-top: 1.6rem; }
 .about blockquote { margin: 2.8rem 0; padding: 1.5rem 0 1.5rem 1.5rem; border-left: 1px solid var(--bronze); color: #eadfce; font-size: 1.2rem; font-weight: 300; line-height: 1.55; }
@@ -611,10 +611,10 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .pathway-grid { grid-template-columns: 1fr; margin-top: 4rem; }
   .pathway { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--line); }
   .pathway h3 { margin-top: 2.7rem; }
-  .about { padding: 5rem max(20px, calc((100vw - 680px)/2)); grid-template-columns: 1fr; row-gap: 4rem; }
+  .about { padding: 5rem max(20px, calc((100vw - 680px)/2)); grid-template-columns: 1fr; row-gap: 2.25rem; }
   .about-image-wrap { height: 58svh; margin: 0; }
   .about-copy { max-width: none; padding: 0; }
-  .about-lower-copy { grid-column: 1; grid-template-columns: 1fr; gap: 2rem; padding-top: 3rem; }
+  .about-lower-copy { grid-column: 1; grid-template-columns: 1fr; gap: 2rem; padding-top: .5rem; }
   .section-heading { align-items: flex-start; flex-direction: column; }
   .story-grid { grid-template-columns: 1fr; }
   .story-feature { grid-row: auto; }
