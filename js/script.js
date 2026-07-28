@@ -44,10 +44,31 @@
   var newsletter = document.getElementById("newsletter");
   var depthPanels = document.querySelectorAll(".depth-panel");
   var motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var desktopDepth = window.matchMedia("(min-width: 901px)");
+  var depthActive = motionAllowed && desktopDepth.matches;
   var ticking = false;
 
+  function isNearViewport(rect) {
+    return rect.bottom > -window.innerHeight && rect.top < window.innerHeight * 2;
+  }
+
+  function resetDepth() {
+    if (about) {
+      about.style.removeProperty("--portrait-shift");
+      about.style.removeProperty("--about-shift");
+    }
+
+    if (newsletter) {
+      newsletter.style.removeProperty("--newsletter-shift");
+    }
+
+    depthPanels.forEach(function (panel) {
+      panel.style.removeProperty("--panel-shift");
+    });
+  }
+
   function updateDepth() {
-    if (!motionAllowed) {
+    if (!depthActive) {
       ticking = false;
       return;
     }
@@ -56,31 +77,37 @@
 
     if (about) {
       var aboutRect = about.getBoundingClientRect();
-      var aboutDistance = aboutRect.top + aboutRect.height / 2 - viewportCenter;
-      var aboutProgress = Math.max(-1, Math.min(1, aboutDistance / window.innerHeight));
-      about.style.setProperty("--portrait-shift", (aboutProgress * 18).toFixed(1) + "px");
-      about.style.setProperty("--about-shift", (aboutProgress * -32).toFixed(1) + "px");
+      if (isNearViewport(aboutRect)) {
+        var aboutDistance = aboutRect.top + aboutRect.height / 2 - viewportCenter;
+        var aboutProgress = Math.max(-1, Math.min(1, aboutDistance / window.innerHeight));
+        about.style.setProperty("--portrait-shift", Math.round(aboutProgress * 18) + "px");
+        about.style.setProperty("--about-shift", Math.round(aboutProgress * -32) + "px");
+      }
     }
 
     if (newsletter) {
       var newsletterRect = newsletter.getBoundingClientRect();
-      var newsletterDistance = newsletterRect.top + newsletterRect.height / 2 - viewportCenter;
-      var newsletterProgress = Math.max(-1, Math.min(1, newsletterDistance / window.innerHeight));
-      newsletter.style.setProperty("--newsletter-shift", (newsletterProgress * 22).toFixed(1) + "px");
+      if (isNearViewport(newsletterRect)) {
+        var newsletterDistance = newsletterRect.top + newsletterRect.height / 2 - viewportCenter;
+        var newsletterProgress = Math.max(-1, Math.min(1, newsletterDistance / window.innerHeight));
+        newsletter.style.setProperty("--newsletter-shift", Math.round(newsletterProgress * 22) + "px");
+      }
     }
 
     depthPanels.forEach(function (panel) {
       var panelRect = panel.getBoundingClientRect();
-      var panelDistance = panelRect.top + panelRect.height / 2 - viewportCenter;
-      var panelProgress = Math.max(-1, Math.min(1, panelDistance / window.innerHeight));
-      panel.style.setProperty("--panel-shift", (panelProgress * -20).toFixed(1) + "px");
+      if (isNearViewport(panelRect)) {
+        var panelDistance = panelRect.top + panelRect.height / 2 - viewportCenter;
+        var panelProgress = Math.max(-1, Math.min(1, panelDistance / window.innerHeight));
+        panel.style.setProperty("--panel-shift", Math.round(panelProgress * -20) + "px");
+      }
     });
 
     ticking = false;
   }
 
   function requestDepthUpdate() {
-    if (!ticking) {
+    if (depthActive && !ticking) {
       window.requestAnimationFrame(updateDepth);
       ticking = true;
     }
@@ -89,6 +116,16 @@
   if ((about || newsletter || depthPanels.length) && motionAllowed) {
     window.addEventListener("scroll", requestDepthUpdate, { passive: true });
     window.addEventListener("resize", requestDepthUpdate);
+
+    desktopDepth.addEventListener("change", function (event) {
+      depthActive = event.matches;
+      if (depthActive) {
+        requestDepthUpdate();
+      } else {
+        resetDepth();
+      }
+    });
+
     requestDepthUpdate();
   }
 

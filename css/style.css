@@ -9,6 +9,7 @@
   --sage: #5c6653;
   --bronze: #a9895a;
   --line: rgba(43, 31, 26, .18);
+  --layer-shadow: 0 38px 72px -28px rgba(20, 13, 10, .62), 0 14px 30px -22px rgba(20, 13, 10, .7);
   --page: min(1240px, calc(100vw - 96px));
   --hero-title-size: clamp(4.15rem, 7.35vw, 7.8rem);
 }
@@ -114,8 +115,9 @@ button, input, select, textarea { font: inherit; }
 
 section { position: relative; }
 .hero, .about, .neighborhoods, .newsletter, .contact, footer { z-index: 1; }
-.depth-stage { position: relative; z-index: 1; isolation: isolate; padding: clamp(7rem, 10vw, 11rem) 0; overflow: clip; background: linear-gradient(110deg, rgba(178,122,99,.12), transparent 38%, rgba(92,102,83,.14)); }
-.depth-stage .depth-panel { position: relative; z-index: 1; width: min(1360px, calc(100vw - 64px)); margin: 0 auto clamp(7rem, 10vw, 11rem); padding-right: clamp(2rem, 4.5vw, 4rem); padding-left: clamp(2rem, 4.5vw, 4rem); border: 1px solid rgba(255,255,255,.34); background: rgba(248,244,237,.95); box-shadow: 0 42px 100px rgba(20,13,10,.34); translate: 0 var(--panel-shift, 0px); backdrop-filter: blur(5px); }
+.hero, .about, .neighborhoods, .newsletter, .contact { box-shadow: var(--layer-shadow); }
+.depth-stage { position: relative; z-index: 1; isolation: isolate; padding: clamp(8.75rem, 12.5vw, 13.75rem) 0; overflow: clip; background: linear-gradient(110deg, rgba(178,122,99,.12), transparent 38%, rgba(92,102,83,.14)); }
+.depth-stage .depth-panel { position: relative; z-index: 1; width: min(1360px, calc(100vw - 64px)); margin: 0 auto clamp(8.75rem, 12.5vw, 13.75rem); padding-right: clamp(2rem, 4.5vw, 4rem); padding-left: clamp(2rem, 4.5vw, 4rem); border: 1px solid rgba(255,255,255,.34); background: rgba(248,244,237,.97); box-shadow: 0 52px 105px -34px rgba(20,13,10,.68), 0 18px 38px -24px rgba(20,13,10,.78); translate: 0 var(--panel-shift, 0px); will-change: translate; }
 .depth-stage .manifesto { padding-top: clamp(6rem, 9vw, 9rem); padding-bottom: clamp(6rem, 9vw, 9rem); }
 .depth-stage .stories { margin-left: max(24px, calc((100vw - 1360px)/2 - 1.5vw)); }
 .depth-stage .resources { margin-right: max(24px, calc((100vw - 1360px)/2 - 1.5vw)); margin-bottom: 0; }
@@ -584,8 +586,8 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .hero-intro { max-width: 480px; }
   .scroll-cue { display: none; }
   .manifesto, .stories, .resources, .contact { padding: 6rem 0; }
-  .depth-stage { padding: 4rem 0; background-attachment: scroll; }
-  .depth-stage .depth-panel { width: calc(100vw - 28px); margin: 0 auto 4rem; padding-right: max(20px, calc((100vw - 680px)/2)); padding-left: max(20px, calc((100vw - 680px)/2)); }
+  .depth-stage { padding: 5rem 0; background-attachment: scroll; }
+  .depth-stage .depth-panel { width: calc(100vw - 28px); margin: 0 auto 5rem; padding-right: max(20px, calc((100vw - 680px)/2)); padding-left: max(20px, calc((100vw - 680px)/2)); translate: none; will-change: auto; }
   .depth-stage .resources { margin-right: auto; margin-bottom: 0; }
   .depth-stage .stories { margin-left: auto; }
   .section-number { top: 6rem; }
