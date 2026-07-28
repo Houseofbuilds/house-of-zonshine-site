@@ -110,7 +110,7 @@ button, input, select, textarea { font: inherit; }
 .text-link span { margin-left: .45rem; }
 .scroll-cue { position: absolute; z-index: 3; right: 4vw; bottom: 2.5rem; color: white; text-decoration: none; text-transform: uppercase; font-size: .52rem; letter-spacing: .2em; writing-mode: vertical-rl; }
 .scroll-cue span { display: inline-block; width: 1px; height: 45px; margin-bottom: .8rem; background: rgba(255,255,255,.7); }
-.hero-break { position: relative; z-index: 1; height: clamp(50px, 6vw, 90px); background: transparent; }
+.hero-break { position: relative; z-index: 1; height: clamp(220px, 24vw, 380px); background: transparent; }
 
 section { position: relative; }
 .hero, .about, .neighborhoods, .newsletter, .contact, footer { z-index: 1; }
@@ -250,7 +250,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .newsletter:not(.in-view) .newsletter-copy { opacity: 0; transform: translateX(-42px); }
 .newsletter:not(.in-view) .newsletter-portrait { opacity: 0; transform: translateY(48px); }
 .newsletter.in-view .newsletter-portrait { transition-delay: .16s; }
-.section-breath { position: relative; z-index: 1; height: clamp(70px, 9vw, 135px); background: transparent; }
+.section-breath { position: relative; z-index: 1; height: clamp(220px, 24vw, 380px); background: transparent; }
 
 .contact { display: grid; grid-template-columns: .85fr 1fr; gap: clamp(4rem, 9vw, 9rem); background: var(--paper); box-shadow: 0 34px 80px rgba(43,31,26,.12); }
 .contact-intro h2 { font-size: clamp(2.7rem, 4.5vw, 4.7rem); }
@@ -568,6 +568,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 
 @media (max-width: 900px) {
   :root { --page: min(calc(100vw - 40px), 680px); --hero-title-size: clamp(4.35rem, 16vw, 7.25rem); }
+  .hero-break, .section-breath { height: clamp(170px, 44vw, 260px); }
   .site-header { min-height: 70px; padding: 0 20px; }
   .menu-button { position: relative; z-index: 2; display: flex; flex: 0 0 35px; width: 35px; height: 35px; margin-left: auto; flex-direction: column; justify-content: center; gap: 7px; border: 0; background: transparent; cursor: pointer; }
   .menu-button span:not(.sr-only) { display: block; width: 24px; height: 1px; background: white; transition: transform .25s; }
