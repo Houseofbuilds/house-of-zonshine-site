@@ -129,35 +129,5 @@
     requestDepthUpdate();
   }
 
-  var testimonialCarousel = document.querySelector(".testimonial-carousel");
-
-  if (testimonialCarousel) {
-    var testimonialSlides = Array.from(testimonialCarousel.querySelectorAll(".testimonial-slide"));
-    var testimonialCurrent = testimonialCarousel.querySelector(".testimonial-count span");
-    var testimonialPrevious = testimonialCarousel.querySelector(".testimonial-previous");
-    var testimonialNext = testimonialCarousel.querySelector(".testimonial-next");
-    var testimonialIndex = 0;
-
-    function showTestimonial(nextIndex) {
-      testimonialIndex = (nextIndex + testimonialSlides.length) % testimonialSlides.length;
-
-      testimonialSlides.forEach(function (slide, index) {
-        var active = index === testimonialIndex;
-        slide.hidden = !active;
-        slide.classList.toggle("is-active", active);
-      });
-
-      testimonialCurrent.textContent = String(testimonialIndex + 1).padStart(2, "0");
-    }
-
-    testimonialPrevious.addEventListener("click", function () {
-      showTestimonial(testimonialIndex - 1);
-    });
-
-    testimonialNext.addEventListener("click", function () {
-      showTestimonial(testimonialIndex + 1);
-    });
-  }
-
   document.getElementById("year").textContent = new Date().getFullYear();
 })();

@@ -151,9 +151,10 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .pathway:hover p { color: rgba(255,255,255,.68); }
 .pathway .arrow { position: absolute; left: 2.2rem; bottom: 2rem; font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
 
-.about { position: relative; isolation: isolate; min-height: 680px; padding: clamp(5rem, 7vw, 7.5rem) max(4vw, calc((100vw - 1400px)/2)); overflow: hidden; background: var(--espresso); color: white; }
+.about { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: start; gap: clamp(3rem, 6vw, 7rem); min-height: 680px; padding: clamp(5rem, 7vw, 7.5rem) max(4vw, calc((100vw - 1400px)/2)); overflow: hidden; background: var(--espresso); color: white; }
 .about::before { content: "JULIA"; position: absolute; z-index: -1; right: -1vw; top: 50%; color: rgba(255,255,255,.035); font-size: clamp(8rem, 22vw, 21rem); font-weight: 600; letter-spacing: -.09em; line-height: .7; transform: translateY(calc(-50% + var(--about-shift, 0px))); pointer-events: none; }
-.about-image-wrap { position: relative; z-index: 2; float: left; width: min(54%, 730px); height: min(560px, 72vh); margin: 0 clamp(3rem, 6vw, 7rem) 2rem 0; }
+.about-visual-column { min-width: 0; }
+.about-image-wrap { position: relative; z-index: 2; width: 100%; height: min(560px, 72vh); margin: 0 0 3rem; }
 .about-image-wrap::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid rgba(198,154,116,.45); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
 .about-image { position: absolute; inset: 0; background: url("../images/hero-poster.jpg") center calc(50% + var(--portrait-shift, 0px)) / cover no-repeat; box-shadow: 0 28px 80px rgba(0,0,0,.28); clip-path: inset(0 0 100% 0); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .8s ease; }
 .about.in-view .about-image { animation: portrait-reveal 1.15s cubic-bezier(.76,0,.24,1) .12s forwards; }
@@ -164,11 +165,25 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about-copy { max-width: none; padding: 0; }
 .about-copy h2 { font-size: clamp(2.4rem, 4.2vw, 4.6rem); }
 .about-copy .lead { margin: 2rem 0 1.6rem; color: #eadfce; font-size: 1.08rem; }
-.about-lower-copy { padding: 0; }
-.about-lower-copy p { margin: 0; color: rgba(255,255,255,.68); }
-.about-lower-copy > div:first-child { margin-bottom: 1.6rem; }
+.about-visual-column > p,
+.about-lower-closing p { margin: 0; color: rgba(255,255,255,.68); }
 .about-lower-closing > p + p { margin-top: 1.6rem; }
 .about blockquote { margin: 2.8rem 0; padding: 1.5rem 0 1.5rem 1.5rem; border-left: 1px solid var(--bronze); color: #eadfce; font-size: 1.2rem; font-weight: 300; line-height: 1.55; }
+
+.testimonials-marquee { position: relative; z-index: 2; overflow: hidden; padding: clamp(4rem, 7vw, 7rem) 0; background: var(--clay); color: white; box-shadow: var(--layer-shadow); }
+.testimonials-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; width: var(--page); margin: 0 auto clamp(3rem, 5vw, 5rem); }
+.testimonials-intro .eyebrow { margin: 0 0 .75rem; }
+.testimonials-intro h2 { max-width: 780px; font-size: clamp(2.5rem, 4.5vw, 5rem); }
+.testimonial-viewport { width: 100%; overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent); }
+.testimonial-track { display: flex; width: max-content; animation: testimonial-scroll 58s linear infinite; }
+.testimonial-viewport:hover .testimonial-track { animation-play-state: paused; }
+.testimonial-set { display: flex; gap: clamp(1rem, 2vw, 2rem); padding-right: clamp(1rem, 2vw, 2rem); }
+.testimonial-card { display: flex; flex-direction: column; justify-content: space-between; width: clamp(320px, 38vw, 560px); min-height: 370px; margin: 0; padding: clamp(2rem, 3.5vw, 3.5rem); border: 1px solid rgba(255,255,255,.3); background: rgba(43,31,26,.13); }
+.testimonial-card:nth-child(even) { background: rgba(43,31,26,.25); }
+.testimonial-stars { color: #eadfce; font-size: .68rem; letter-spacing: .26em; }
+.testimonial-card blockquote { margin: 2.5rem 0; color: white; font-size: clamp(1.25rem, 1.8vw, 1.8rem); font-weight: 300; line-height: 1.45; }
+.testimonial-card figcaption { color: rgba(255,255,255,.7); font-size: .62rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+@keyframes testimonial-scroll { to { transform: translateX(-50%); } }
 
 .stories, .resources, .contact { width: var(--page); margin: auto; padding: 9rem 0; }
 .stories, .resources { z-index: 2; }
@@ -193,35 +208,6 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-copy > p:not(.location) { color: var(--muted); font-size: .9rem; }
 .story-copy a { display: inline-block; margin-top: 1rem; font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .12em; }
 .story-status { display: inline-block; margin-top: 1rem; color: var(--bronze); font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
-.quote-card { display: flex; flex-direction: column; min-height: 340px; padding: 2.5rem 3rem; background: var(--clay); color: white; }
-.testimonial-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
-.testimonial-head .eyebrow { margin-bottom: 0; }
-.testimonial-count { margin: 0; color: rgba(255,255,255,.5); font-size: .56rem; font-weight: 600; letter-spacing: .15em; }
-.testimonial-count span { color: white; }
-.testimonial-slides { flex: 1; display: flex; align-items: center; }
-.testimonial-slide { width: 100%; margin: 1.5rem 0 1rem; }
-.testimonial-slide.is-active { animation: testimonial-in .46s cubic-bezier(.2,.7,.2,1) both; }
-.testimonial-slide blockquote { margin: 0; font-size: clamp(1.25rem, 1.85vw, 1.8rem); font-weight: 300; line-height: 1.36; }
-.testimonial-slide figcaption { margin-top: 1.25rem; color: rgba(255,255,255,.72); font-size: .68rem; }
-.testimonial-controls { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; }
-.testimonial-controls span { height: 1px; background: rgba(255,255,255,.35); }
-.testimonial-controls button {
-  width: 34px;
-  height: 34px;
-  padding: 0;
-  border: 1px solid rgba(255,255,255,.5);
-  border-radius: 50%;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  transition: background .2s, color .2s, transform .2s;
-}
-.testimonial-controls button:hover { background: white; color: var(--clay); transform: translateY(-2px); }
-@keyframes testimonial-in {
-  from { opacity: 0; transform: translateX(14px); }
-  to { opacity: 1; transform: none; }
-}
-
 .neighborhoods { display: grid; grid-template-columns: .82fr 1.18fr; background: var(--sage); color: white; }
 .neighborhood-intro { padding: clamp(5rem, 9vw, 9rem) clamp(3rem, 7vw, 8rem); background: rgba(43,31,26,.15); }
 .neighborhood-intro h2 { font-size: clamp(3rem, 5.2vw, 5.5rem); }
@@ -573,7 +559,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   html { scroll-behavior: auto; }
   .site-intro { display: none; }
   .hero video { animation: none; }
-  .testimonial-slide.is-active { animation: none; }
+  .testimonial-track { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .depth-panel { translate: none !important; }
   .resource-card, .pathway, .site-header, .about-image { transition: none; }
@@ -612,10 +598,12 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .pathway-grid { grid-template-columns: 1fr; margin-top: 4rem; }
   .pathway { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--line); }
   .pathway h3 { margin-top: 2.7rem; }
-  .about { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
-  .about-image-wrap { float: none; width: 100%; height: 58svh; margin: 0 0 2.25rem; }
+  .about { display: block; padding: 5rem max(20px, calc((100vw - 680px)/2)); }
+  .about-image-wrap { width: 100%; height: 58svh; margin: 0 0 2.25rem; }
+  .about-visual-column > p { margin-bottom: 3rem; }
   .about-copy { max-width: none; padding: 0; }
-  .about-lower-copy { padding: 0; }
+  .testimonials-intro { align-items: flex-start; flex-direction: column; }
+  .testimonial-card { width: min(82vw, 480px); min-height: 340px; }
   .section-heading { align-items: flex-start; flex-direction: column; }
   .story-grid { grid-template-columns: 1fr; }
   .story-feature { grid-row: auto; }
