@@ -151,9 +151,9 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .pathway:hover p { color: rgba(255,255,255,.68); }
 .pathway .arrow { position: absolute; left: 2.2rem; bottom: 2rem; font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
 
-.about { position: relative; isolation: isolate; min-height: 680px; display: grid; grid-template-columns: 1.12fr .88fr; overflow: hidden; background: var(--espresso); color: white; }
+.about { position: relative; isolation: isolate; min-height: 680px; padding: clamp(5rem, 7vw, 7.5rem) max(4vw, calc((100vw - 1400px)/2)); display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); column-gap: clamp(3rem, 6vw, 7rem); row-gap: clamp(3.5rem, 6vw, 6rem); align-items: start; overflow: hidden; background: var(--espresso); color: white; }
 .about::before { content: "JULIA"; position: absolute; z-index: -1; right: -1vw; top: 50%; color: rgba(255,255,255,.035); font-size: clamp(8rem, 22vw, 21rem); font-weight: 600; letter-spacing: -.09em; line-height: .7; transform: translateY(calc(-50% + var(--about-shift, 0px))); pointer-events: none; }
-.about-image-wrap { position: relative; z-index: 2; align-self: center; height: min(600px, 78vh); margin: 3.5rem 0 3.5rem clamp(2rem, 5vw, 6rem); }
+.about-image-wrap { position: relative; z-index: 2; align-self: start; width: 100%; height: min(560px, 72vh); margin: 0; }
 .about-image-wrap::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid rgba(198,154,116,.45); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
 .about-image { position: absolute; inset: 0; background: url("../images/hero-poster.jpg") center calc(50% + var(--portrait-shift, 0px)) / cover no-repeat; box-shadow: 0 28px 80px rgba(0,0,0,.28); clip-path: inset(0 0 100% 0); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .8s ease; }
 .about.in-view .about-image { animation: portrait-reveal 1.15s cubic-bezier(.76,0,.24,1) .12s forwards; }
@@ -161,10 +161,12 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about-image-wrap:hover::before { transform: translate(7px, 7px); }
 .about-image-caption { position: absolute; z-index: 3; left: -1.2rem; bottom: 1.4rem; padding: .65rem .9rem; background: var(--paper); color: var(--espresso); font-size: .52rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; transform: rotate(-90deg) translateY(-100%); transform-origin: left bottom; }
 @keyframes portrait-reveal { to { clip-path: inset(0 0 0 0); } }
-.about-copy { max-width: 630px; padding: clamp(4rem, 6.5vw, 7rem) clamp(2.5rem, 5.5vw, 6rem); align-self: center; }
+.about-copy { max-width: 630px; padding: 0; align-self: start; }
 .about-copy h2 { font-size: clamp(2.4rem, 4.2vw, 4.6rem); }
 .about-copy .lead { margin-top: 2rem; color: #eadfce; font-size: 1.08rem; }
-.about-copy > p:not(.eyebrow):not(.lead) { color: rgba(255,255,255,.68); }
+.about-lower-copy { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: clamp(3rem, 6vw, 7rem); padding-top: clamp(2.5rem, 4vw, 4rem); border-top: 1px solid rgba(255,255,255,.16); }
+.about-lower-copy p { margin: 0; color: rgba(255,255,255,.68); }
+.about-lower-closing > p + p { margin-top: 1.6rem; }
 .about blockquote { margin: 2.8rem 0; padding: 1.5rem 0 1.5rem 1.5rem; border-left: 1px solid var(--bronze); color: #eadfce; font-size: 1.2rem; font-weight: 300; line-height: 1.55; }
 
 .stories, .resources, .contact { width: var(--page); margin: auto; padding: 9rem 0; }
@@ -609,9 +611,10 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .pathway-grid { grid-template-columns: 1fr; margin-top: 4rem; }
   .pathway { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--line); }
   .pathway h3 { margin-top: 2.7rem; }
-  .about { grid-template-columns: 1fr; }
-  .about-image-wrap { height: 58svh; margin: 3.5rem 20px 1rem; }
-  .about-copy { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
+  .about { padding: 5rem max(20px, calc((100vw - 680px)/2)); grid-template-columns: 1fr; row-gap: 4rem; }
+  .about-image-wrap { height: 58svh; margin: 0; }
+  .about-copy { max-width: none; padding: 0; }
+  .about-lower-copy { grid-column: 1; grid-template-columns: 1fr; gap: 2rem; padding-top: 3rem; }
   .section-heading { align-items: flex-start; flex-direction: column; }
   .story-grid { grid-template-columns: 1fr; }
   .story-feature { grid-row: auto; }
@@ -657,7 +660,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   h2 { font-size: 2.7rem; }
   .pathway { padding: 1.7rem; }
   .pathway .arrow { left: 1.7rem; }
-  .about-image-wrap { height: 50svh; margin-right: 28px; }
+  .about-image-wrap { height: 50svh; margin-right: 0; }
   .about-image { background-position: 55% center; }
   .area-row { grid-template-columns: 30px 1fr 80px; min-height: 88px; }
   .area-row small { display: none; }
