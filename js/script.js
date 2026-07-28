@@ -129,5 +129,47 @@
     requestDepthUpdate();
   }
 
+  var testimonialCarousel = document.querySelector(".testimonials-carousel");
+
+  if (testimonialCarousel) {
+    var testimonialCards = Array.from(testimonialCarousel.querySelectorAll(".testimonial-card"));
+    var testimonialPrevious = testimonialCarousel.querySelector(".testimonial-previous");
+    var testimonialNext = testimonialCarousel.querySelector(".testimonial-next");
+    var testimonialCurrent = testimonialCarousel.querySelector(".testimonial-current");
+    var testimonialIndex = 0;
+
+    function showTestimonial(nextIndex) {
+      testimonialIndex = (nextIndex + testimonialCards.length) % testimonialCards.length;
+
+      testimonialCards.forEach(function (card, index) {
+        var offset = (index - testimonialIndex + testimonialCards.length) % testimonialCards.length;
+        card.classList.toggle("is-active", offset === 0);
+        card.classList.toggle("is-next", offset === 1);
+        card.classList.toggle("is-prev", offset === testimonialCards.length - 1);
+        card.setAttribute("aria-hidden", String(offset !== 0));
+      });
+
+      testimonialCurrent.textContent = String(testimonialIndex + 1).padStart(2, "0");
+    }
+
+    testimonialPrevious.addEventListener("click", function () {
+      showTestimonial(testimonialIndex - 1);
+    });
+
+    testimonialNext.addEventListener("click", function () {
+      showTestimonial(testimonialIndex + 1);
+    });
+
+    testimonialCarousel.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        showTestimonial(testimonialIndex - 1);
+      } else if (event.key === "ArrowRight") {
+        showTestimonial(testimonialIndex + 1);
+      }
+    });
+
+    showTestimonial(0);
+  }
+
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
