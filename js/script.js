@@ -136,7 +136,10 @@
     var testimonialPrevious = testimonialCarousel.querySelector(".testimonial-previous");
     var testimonialNext = testimonialCarousel.querySelector(".testimonial-next");
     var testimonialCurrent = testimonialCarousel.querySelector(".testimonial-current");
+    var testimonialTotal = testimonialCarousel.querySelector(".testimonial-total");
     var testimonialIndex = 0;
+
+    testimonialTotal.textContent = String(testimonialCards.length).padStart(2, "0");
 
     function showTestimonial(nextIndex) {
       testimonialIndex = (nextIndex + testimonialCards.length) % testimonialCards.length;
