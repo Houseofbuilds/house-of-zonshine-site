@@ -157,7 +157,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about::before { content: "JULIA"; position: absolute; z-index: -1; right: -1vw; bottom: -3vw; color: rgba(43,31,26,.035); font-size: clamp(8rem, 22vw, 21rem); font-weight: 600; letter-spacing: -.09em; line-height: .7; transform: translateY(var(--about-shift, 0px)); pointer-events: none; }
 .about-image-wrap { position: relative; z-index: 2; width: min(100%, 650px); height: clamp(620px, 68vw, 780px); margin: 0 auto calc(-1 * var(--portrait-lift)); transform: translateY(calc(-1 * var(--portrait-lift))); }
 .about-image-wrap::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid rgba(198,154,116,.55); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
-.about-image { position: absolute; inset: 0; background: url("../images/julia-trust-photo.jpg") center calc(18% + var(--portrait-shift, 0px)) / cover no-repeat; box-shadow: 0 18px 26px -14px rgba(43,31,26,.34), 0 44px 76px -36px rgba(43,31,26,.28); clip-path: inset(0 0 100% 0); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .8s ease; }
+.about-image { position: absolute; inset: 0; background: url("../images/julia-looking-away.jpg") center calc(18% + var(--portrait-shift, 0px)) / cover no-repeat; box-shadow: 0 18px 26px -14px rgba(43,31,26,.34), 0 44px 76px -36px rgba(43,31,26,.28); clip-path: inset(0 0 100% 0); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .8s ease; }
 .about.in-view .about-image { animation: portrait-reveal 1.15s cubic-bezier(.76,0,.24,1) .12s forwards; }
 .about-image-wrap:hover .about-image { transform: translate(-7px, -7px); box-shadow: 0 22px 30px -15px rgba(43,31,26,.38), 0 54px 86px -38px rgba(43,31,26,.32); }
 .about-image-wrap:hover::before { transform: translate(7px, 7px); }
@@ -199,9 +199,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-visual::before { content: ""; position: absolute; z-index: -1; inset: -3%; background: linear-gradient(rgba(43,31,26,.08),rgba(43,31,26,.42)), url("../images/hero-poster.jpg") 62% center / cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
 .story-card:hover .story-visual::before { transform: scale(1.06); filter: saturate(1.08); }
 .visual-glendale { min-height: 500px; }
-.visual-valley::before { background: radial-gradient(circle at 72% 25%, rgba(245,240,232,.42) 0 9%, transparent 10%), linear-gradient(135deg, #b27a63 0%, #6f4739 52%, #2b1f1a 100%); }
-.visual-valley::after { content: "$2M"; position: absolute; right: 1.5rem; bottom: 1rem; color: rgba(255,255,255,.12); font-size: clamp(4rem, 8vw, 7.5rem); font-weight: 300; letter-spacing: -.08em; line-height: 1; transition: transform .5s ease, color .5s ease; }
-.story-card:hover .visual-valley::after { transform: translateX(-8px); color: rgba(255,255,255,.2); }
+.visual-valley::before { background: linear-gradient(rgba(43,31,26,.04), rgba(43,31,26,.2)), url("../images/east-glenoaks-house.jpg") center 48% / cover; }
 .story-visual span { position: absolute; left: 1.5rem; top: 1.5rem; padding: .45rem .7rem; background: rgba(43,31,26,.82); color: white; font-size: .55rem; text-transform: uppercase; letter-spacing: .15em; }
 .story-copy { padding: 2rem; }
 .story-copy .location { margin: 0 0 .8rem; color: var(--bronze); font-size: .58rem; font-weight: 600; text-transform: uppercase; letter-spacing: .17em; }
@@ -242,7 +240,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .email-field input::placeholder { color: rgba(255,255,255,.4); }
 .email-field button { border: 0; background: transparent; color: var(--bronze); font-size: .64rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; cursor: pointer; }
 .newsletter-form small { display: block; margin-top: 1rem; color: rgba(255,255,255,.38); font-size: .65rem; }
-.newsletter-portrait { position: relative; min-height: 430px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(0deg, rgba(43,31,26,.9) 0%, rgba(43,31,26,.05) 65%), url("../images/hero-poster.jpg") 58% calc(50% + var(--newsletter-shift, 0px)) / cover; }
+.newsletter-portrait { position: relative; min-height: 430px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(0deg, rgba(43,31,26,.92) 0%, rgba(43,31,26,.03) 62%), url("../images/julia-doorway.jpg") center calc(18% + var(--newsletter-shift, 0px)) / cover; }
 .newsletter-route { position: relative; z-index: 1; max-width: 480px; padding: 2rem; }
 .newsletter-route p { margin: 0 0 1.6rem; color: rgba(255,255,255,.8); }
 .newsletter-copy, .newsletter-portrait { transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
