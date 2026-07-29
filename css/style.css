@@ -166,7 +166,10 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about-copy { max-width: 640px; padding: clamp(4rem, 8vw, 8rem) 0 0; }
 .about-copy .eyebrow { color: var(--bronze); }
 .about-copy h2 { font-size: clamp(2.7rem, 4.5vw, 5rem); }
-.about-copy .lead { margin: 2.2rem 0 2rem; color: var(--muted); font-size: 1.05rem; }
+.about-bio { max-width: 66ch; margin: 2.2rem 0 2.3rem; }
+.about-bio p { margin: 0; color: var(--ink); font-size: 1.03rem; line-height: 1.72; }
+.about-bio p + p { margin-top: 1.35rem; }
+.about-bio .about-signoff { max-width: 540px; color: var(--espresso); font-size: 1.08rem; font-weight: 500; }
 
 .testimonials-carousel { position: relative; z-index: 2; min-height: 780px; overflow: hidden; padding: clamp(4rem, 7vw, 6rem) 0 clamp(3rem, 5vw, 4.5rem); background: url("../images/sale-1.jpg") center / cover no-repeat; color: white; box-shadow: var(--layer-shadow); }
 .testimonials-shade { position: absolute; inset: 0; background: rgba(62,76,62,.38); backdrop-filter: saturate(.78); }
