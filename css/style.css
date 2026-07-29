@@ -10,6 +10,7 @@
   --bronze: #a9895a;
   --line: rgba(43, 31, 26, .18);
   --major-break: clamp(220px, 24vw, 380px);
+  --hero-break: clamp(143px, 15.6vw, 247px);
   --newsletter-break: clamp(165px, 18vw, 285px);
   --chapter-gap: clamp(10.95rem, 15.625vw, 17.2rem);
   --layer-shadow: 0 52px 82px -30px rgba(20, 13, 10, .78), 0 18px 36px -22px rgba(20, 13, 10, .84);
@@ -119,7 +120,7 @@ button, input, select, textarea { font: inherit; }
 .text-link span { margin-left: .45rem; }
 .scroll-cue { position: absolute; z-index: 3; right: 4vw; bottom: 2.5rem; color: white; text-decoration: none; text-transform: uppercase; font-size: .52rem; letter-spacing: .2em; writing-mode: vertical-rl; }
 .scroll-cue span { display: inline-block; width: 1px; height: 45px; margin-bottom: .8rem; background: rgba(255,255,255,.7); }
-.hero-break { position: relative; z-index: 1; height: var(--major-break); background: transparent; }
+.hero-break { position: relative; z-index: 1; height: var(--hero-break); background: transparent; }
 
 section { position: relative; }
 .hero, .about, .neighborhoods, .newsletter, .contact, footer { z-index: 1; }
@@ -151,7 +152,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .pathway:hover p { color: rgba(255,255,255,.68); }
 .pathway .arrow { position: absolute; left: 2.2rem; bottom: 2rem; font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
 
-.about { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(420px, .95fr) minmax(420px, 1.05fr); align-items: center; gap: clamp(3rem, 6vw, 7rem); min-height: 780px; padding: clamp(4rem, 6vw, 6rem) max(5vw, calc((100vw - 1400px)/2)); overflow: hidden; background: linear-gradient(to bottom, var(--espresso) 0 29%, var(--paper) 29% 100%); color: var(--espresso); }
+.about { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(420px, .95fr) minmax(420px, 1.05fr); align-items: center; gap: clamp(3rem, 6vw, 7rem); min-height: 780px; padding: 0 max(5vw, calc((100vw - 1400px)/2)) clamp(4rem, 6vw, 6rem); overflow: hidden; background: var(--paper); color: var(--espresso); }
 .about::before { content: "JULIA"; position: absolute; z-index: -1; right: -1vw; bottom: -3vw; color: rgba(43,31,26,.035); font-size: clamp(8rem, 22vw, 21rem); font-weight: 600; letter-spacing: -.09em; line-height: .7; transform: translateY(var(--about-shift, 0px)); pointer-events: none; }
 .about-image-wrap { position: relative; z-index: 2; width: min(100%, 650px); height: clamp(620px, 68vw, 780px); margin: 0 auto; }
 .about-image-wrap::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid rgba(198,154,116,.55); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
@@ -570,6 +571,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
     --page: min(calc(100vw - 40px), 680px);
     --hero-title-size: clamp(4.35rem, 16vw, 7.25rem);
     --major-break: clamp(170px, 44vw, 260px);
+    --hero-break: clamp(111px, 28.6vw, 169px);
     --newsletter-break: clamp(128px, 33vw, 195px);
     --chapter-gap: clamp(6.25rem, 26vw, 8.125rem);
   }
@@ -597,7 +599,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .pathway-grid { grid-template-columns: 1fr; margin-top: 4rem; }
   .pathway { min-height: 250px; border-right: 0; border-bottom: 1px solid var(--line); }
   .pathway h3 { margin-top: 2.7rem; }
-  .about { display: block; padding: 4rem max(20px, calc((100vw - 680px)/2)) 5rem; background: linear-gradient(to bottom, var(--espresso) 0 18%, var(--paper) 18% 100%); }
+  .about { display: block; padding: 0 max(20px, calc((100vw - 680px)/2)) 5rem; background: var(--paper); }
   .about-image-wrap { width: 100%; height: 62svh; margin: 0 0 2.5rem; }
   .about-copy { max-width: none; padding: 1.5rem 0 0; }
   .testimonials-carousel { min-height: 730px; }
