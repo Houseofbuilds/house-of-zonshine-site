@@ -157,7 +157,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about::before { content: "JULIA"; position: absolute; z-index: -1; right: -1vw; bottom: -3vw; color: rgba(43,31,26,.035); font-size: clamp(8rem, 22vw, 21rem); font-weight: 600; letter-spacing: -.09em; line-height: .7; transform: translateY(var(--about-shift, 0px)); pointer-events: none; }
 .about-image-wrap { position: relative; z-index: 2; width: min(100%, 650px); height: clamp(620px, 68vw, 780px); margin: 0 auto calc(-1 * var(--portrait-lift)); transform: translateY(calc(-1 * var(--portrait-lift))); }
 .about-image-wrap::before { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid rgba(198,154,116,.55); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
-.about-image { position: absolute; inset: 0; background: url("../images/julia-doorway.jpg") center calc(7% + var(--portrait-shift, 0px)) / 170% auto no-repeat; box-shadow: 0 18px 26px -14px rgba(43,31,26,.34), 0 44px 76px -36px rgba(43,31,26,.28); clip-path: inset(0 0 100% 0); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .8s ease; }
+.about-image { position: absolute; inset: 0; background: url("../images/julia-meet-profile.jpg") center calc(7% + var(--portrait-shift, 0px)) / 125% auto no-repeat; box-shadow: 0 18px 26px -14px rgba(43,31,26,.34), 0 44px 76px -36px rgba(43,31,26,.28); clip-path: inset(0 0 100% 0); transition: transform .8s cubic-bezier(.2,.7,.2,1), box-shadow .8s ease; }
 .about.in-view .about-image { animation: portrait-reveal 1.15s cubic-bezier(.76,0,.24,1) .12s forwards; }
 .about-image-wrap:hover .about-image { transform: translate(-7px, -7px); box-shadow: 0 22px 30px -15px rgba(43,31,26,.38), 0 54px 86px -38px rgba(43,31,26,.32); }
 .about-image-wrap:hover::before { transform: translate(7px, 7px); }
@@ -202,6 +202,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-visual::before { content: ""; position: absolute; z-index: -1; inset: -3%; background: linear-gradient(rgba(43,31,26,.08),rgba(43,31,26,.42)), url("../images/hero-poster.jpg") 62% center / cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
 .story-card:hover .story-visual::before { transform: scale(1.06); filter: saturate(1.08); }
 .visual-glendale { min-height: 500px; }
+.visual-glendale::before { background: linear-gradient(rgba(43,31,26,.02), rgba(43,31,26,.18)), url("../images/sycamore-living-room.jpg") center / cover; }
 .visual-valley::before { background: linear-gradient(rgba(43,31,26,.04), rgba(43,31,26,.2)), url("../images/east-glenoaks-house.jpg") center 48% / cover; }
 .story-visual span { position: absolute; left: 1.5rem; top: 1.5rem; padding: .45rem .7rem; background: rgba(43,31,26,.82); color: white; font-size: .55rem; text-transform: uppercase; letter-spacing: .15em; }
 .story-copy { padding: 2rem; }
