@@ -12,7 +12,7 @@
   --major-break: clamp(220px, 24vw, 380px);
   --hero-break: clamp(143px, 15.6vw, 247px);
   --portrait-lift: clamp(72px, 7vw, 112px);
-  --newsletter-break: clamp(165px, 18vw, 285px);
+  --newsletter-break: clamp(56px, 6vw, 96px);
   --chapter-gap: clamp(10.95rem, 15.625vw, 17.2rem);
   --layer-shadow: 0 52px 82px -30px rgba(20, 13, 10, .78), 0 18px 36px -22px rgba(20, 13, 10, .84);
   --page: min(1240px, calc(100vw - 96px));
@@ -126,7 +126,7 @@ button, input, select, textarea { font: inherit; }
 section { position: relative; }
 .hero, .about, .newsletter, .contact, footer { z-index: 1; }
 .hero, .about, .newsletter, .contact { box-shadow: var(--layer-shadow); }
-.depth-stage { position: relative; z-index: 1; isolation: isolate; padding: var(--chapter-gap) 0; overflow: clip; background: linear-gradient(110deg, rgba(178,122,99,.12), transparent 38%, rgba(92,102,83,.14)); }
+.depth-stage { position: relative; z-index: 1; isolation: isolate; padding: var(--chapter-gap) 0 clamp(5.5rem, 8vw, 8rem); overflow: clip; background: linear-gradient(110deg, rgba(178,122,99,.12), transparent 38%, rgba(92,102,83,.14)); }
 .depth-stage .depth-panel { position: relative; z-index: 1; width: min(1360px, calc(100vw - 64px)); margin: 0 auto var(--chapter-gap); padding-right: clamp(2rem, 4.5vw, 4rem); padding-left: clamp(2rem, 4.5vw, 4rem); border: 1px solid rgba(255,255,255,.34); background: rgba(248,244,237,.97); box-shadow: 0 64px 110px -38px rgba(20,13,10,.82), 0 20px 42px -24px rgba(20,13,10,.88); translate: 0 var(--panel-shift, 0px); will-change: translate; }
 .depth-stage .manifesto { padding-top: clamp(6rem, 9vw, 9rem); padding-bottom: clamp(6rem, 9vw, 9rem); }
 .depth-stage .stories { margin-left: max(24px, calc((100vw - 1360px)/2 - 1.5vw)); }
@@ -170,6 +170,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .about-bio p { margin: 0; color: var(--ink); font-size: 1.03rem; line-height: 1.72; }
 .about-bio p + p { margin-top: 1.35rem; }
 .about-bio .about-signoff { max-width: 540px; color: var(--espresso); font-size: 1.08rem; font-weight: 500; }
+.keep-together { white-space: nowrap; }
 
 .testimonials-carousel { position: relative; z-index: 2; min-height: 780px; overflow: hidden; padding: clamp(4rem, 7vw, 6rem) 0 clamp(3rem, 5vw, 4.5rem); background: url("../images/sale-1.jpg") center / cover no-repeat; color: white; box-shadow: var(--layer-shadow); }
 .testimonials-shade { position: absolute; inset: 0; background: rgba(62,76,62,.38); backdrop-filter: saturate(.78); }
@@ -211,7 +212,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-copy > p:not(.location) { color: var(--muted); font-size: .9rem; }
 .story-copy a { display: inline-block; margin-top: 1rem; font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .12em; }
 .story-status { display: inline-block; margin-top: 1rem; color: var(--bronze); font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
-.depth-stage .guides-gateway { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); min-height: 570px; padding: 0; overflow: hidden; border-color: rgba(255,255,255,.16); background: var(--sage); color: white; }
+.depth-stage .guides-gateway { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); min-height: 570px; padding: 0; overflow: hidden; border-color: rgba(255,255,255,.16); background: var(--sage); box-shadow: 0 26px 56px -34px rgba(20,13,10,.44); color: white; }
 .guides-gateway::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: clamp(10px, 1.1vw, 18px); background: var(--clay); pointer-events: none; }
 .guide-gateway-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(3.5rem, 6vw, 6rem); }
 .guide-gateway-copy h2 { max-width: 680px; font-size: clamp(3rem, 5.2vw, 5.4rem); }
@@ -244,7 +245,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .email-field input::placeholder { color: rgba(255,255,255,.4); }
 .email-field button { border: 0; background: transparent; color: var(--bronze); font-size: .64rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; cursor: pointer; }
 .newsletter-form small { display: block; margin-top: 1rem; color: rgba(255,255,255,.38); font-size: .65rem; }
-.newsletter-portrait { position: relative; min-height: 430px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(0deg, rgba(43,31,26,.92) 0%, rgba(43,31,26,.03) 62%), url("../images/julia-looking-away.jpg") center calc(18% + var(--newsletter-shift, 0px)) / cover; }
+.newsletter-portrait { position: relative; min-height: 430px; display: flex; align-items: flex-end; overflow: hidden; background: linear-gradient(0deg, rgba(43,31,26,.9) 0%, rgba(43,31,26,.02) 62%), url("../images/julia-newsletter-red-dress.jpg") center / cover no-repeat; }
 .newsletter-route { position: relative; z-index: 1; max-width: 480px; padding: 2rem; }
 .newsletter-route p { margin: 0 0 1.6rem; color: rgba(255,255,255,.8); }
 .newsletter-copy, .newsletter-portrait { transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
@@ -565,7 +566,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
     --major-break: clamp(170px, 44vw, 260px);
     --hero-break: clamp(111px, 28.6vw, 169px);
     --portrait-lift: clamp(48px, 12vw, 72px);
-    --newsletter-break: clamp(128px, 33vw, 195px);
+    --newsletter-break: clamp(48px, 16vw, 72px);
     --chapter-gap: clamp(6.25rem, 26vw, 8.125rem);
   }
   .site-header { min-height: 70px; padding: 0 20px; }
@@ -583,7 +584,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .hero-intro { max-width: 480px; }
   .scroll-cue { display: none; }
   .manifesto, .stories, .resources { padding: 6rem 0; }
-  .depth-stage { padding: var(--chapter-gap) 0; background-attachment: scroll; }
+  .depth-stage { padding: var(--chapter-gap) 0 clamp(4rem, 18vw, 6rem); background-attachment: scroll; }
   .depth-stage .depth-panel { width: calc(100vw - 28px); margin: 0 auto var(--chapter-gap); padding-right: max(20px, calc((100vw - 680px)/2)); padding-left: max(20px, calc((100vw - 680px)/2)); translate: none; will-change: auto; }
   .depth-stage .resources { margin-right: auto; margin-left: auto; margin-bottom: 0; }
   .depth-stage .stories { margin-left: auto; }
