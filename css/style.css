@@ -124,8 +124,8 @@ button, input, select, textarea { font: inherit; }
 .hero-break { position: relative; z-index: 1; height: var(--hero-break); background: transparent; }
 
 section { position: relative; }
-.hero, .about, .neighborhoods, .newsletter, .contact, footer { z-index: 1; }
-.hero, .about, .neighborhoods, .newsletter, .contact { box-shadow: var(--layer-shadow); }
+.hero, .about, .newsletter, .contact, footer { z-index: 1; }
+.hero, .about, .newsletter, .contact { box-shadow: var(--layer-shadow); }
 .depth-stage { position: relative; z-index: 1; isolation: isolate; padding: var(--chapter-gap) 0; overflow: clip; background: linear-gradient(110deg, rgba(178,122,99,.12), transparent 38%, rgba(92,102,83,.14)); }
 .depth-stage .depth-panel { position: relative; z-index: 1; width: min(1360px, calc(100vw - 64px)); margin: 0 auto var(--chapter-gap); padding-right: clamp(2rem, 4.5vw, 4rem); padding-left: clamp(2rem, 4.5vw, 4rem); border: 1px solid rgba(255,255,255,.34); background: rgba(248,244,237,.97); box-shadow: 0 64px 110px -38px rgba(20,13,10,.82), 0 20px 42px -24px rgba(20,13,10,.88); translate: 0 var(--panel-shift, 0px); will-change: translate; }
 .depth-stage .manifesto { padding-top: clamp(6rem, 9vw, 9rem); padding-bottom: clamp(6rem, 9vw, 9rem); }
@@ -209,30 +209,14 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-copy > p:not(.location) { color: var(--muted); font-size: .9rem; }
 .story-copy a { display: inline-block; margin-top: 1rem; font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .12em; }
 .story-status { display: inline-block; margin-top: 1rem; color: var(--bronze); font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
-.neighborhoods { display: grid; grid-template-columns: .82fr 1.18fr; background: var(--sage); color: white; }
-.neighborhood-intro { padding: clamp(5rem, 9vw, 9rem) clamp(3rem, 7vw, 8rem); background: rgba(43,31,26,.15); }
-.neighborhood-intro h2 { font-size: clamp(3rem, 5.2vw, 5.5rem); }
-.neighborhood-intro > p:last-child { max-width: 480px; margin-top: 2rem; color: rgba(255,255,255,.72); }
-.area-list { display: flex; flex-direction: column; justify-content: center; padding: 4rem clamp(2rem, 5vw, 6rem); }
-.area-row { display: grid; grid-template-columns: 45px 1fr 110px 95px; align-items: center; gap: 1rem; min-height: 100px; padding: 0 .8rem; border-bottom: 1px solid rgba(255,255,255,.22); transition: padding .3s ease, background .3s ease; }
-.area-row:hover { padding-left: 1.5rem; background: rgba(255,255,255,.06); }
-.area-row span, .area-row small { font-size: .58rem; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.5); }
-.area-row strong { font-size: 1.05rem; font-weight: 400; }
-.area-row b { text-align: right; font-size: .54rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--bronze); }
-
-.resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.resource-card { position: relative; min-height: 470px; padding: 2.2rem; display: flex; flex-direction: column; overflow: hidden; color: white; box-shadow: 0 12px 28px rgba(43,31,26,.05); transition: translate .55s cubic-bezier(.2,.7,.2,1), box-shadow .55s ease; }
-.resource-card:hover { translate: 0 -14px; box-shadow: 0 30px 65px rgba(43,31,26,.2); }
-.resource-card > * { position: relative; z-index: 1; }
-.resource-card .resource-number { position: absolute; z-index: 1; top: 1.7rem; right: 1.8rem; min-height: 0; font-size: 2.8rem; font-weight: 300; line-height: 1; opacity: .24; }
-.resource-card.clay { background: var(--clay); }
-.resource-card.sage { background: var(--sage); }
-.resource-card.sand-card { background: var(--sand); color: var(--espresso); }
-.resource-card > p { margin: 0; font-size: .58rem; font-weight: 600; text-transform: uppercase; letter-spacing: .15em; }
-.resource-card h3 { margin: auto 0 1.4rem; max-width: 320px; font-size: clamp(1.8rem, 2.8vw, 2.8rem); font-weight: 300; line-height: 1.08; }
-.resource-card span { min-height: 65px; font-size: .85rem; opacity: .72; }
-.resource-card a { align-self: flex-start; margin-top: 2rem; padding-bottom: .25rem; border-bottom: 1px solid currentColor; text-decoration: none; font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
-.library-link { display: inline-block; margin-top: 2.5rem; padding-bottom: .3rem; border-bottom: 1px solid var(--bronze); text-decoration: none; font-size: .66rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+.guides-gateway { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .65fr); align-items: end; gap: clamp(3rem, 8vw, 8rem); }
+.guide-gateway-copy h2 { max-width: 780px; font-size: clamp(3rem, 5.2vw, 5.4rem); }
+.guide-gateway-copy p { max-width: 720px; margin: 2rem 0 0; color: var(--muted); font-size: 1rem; }
+.guide-gateway-route { padding-top: 2rem; border-top: 1px solid var(--line); }
+.guide-audiences { display: flex; flex-wrap: wrap; gap: .65rem 1.4rem; margin: 0 0 2.3rem; padding: 0; list-style: none; }
+.guide-audiences li { color: var(--bronze); font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; }
+.guide-gateway-route .button { padding: 1rem 1.35rem; }
+.guide-gateway-route .button span { margin-left: .55rem; }
 
 .newsletter { padding: clamp(5rem, 8vw, 8rem) max(6vw, calc((100vw - 1240px)/2)); display: grid; grid-template-columns: 1fr .8fr; gap: 6rem; align-items: end; background: var(--espresso); color: white; }
 .newsletter-copy h2 { font-size: clamp(2.8rem, 5.3vw, 5.6rem); }
@@ -543,19 +527,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .stories.in-view .story-card { animation: story-in .75s ease forwards; }
 .stories.in-view .story-card:nth-child(2) { animation-delay: .14s; }
 .stories.in-view .story-card:nth-child(3) { animation-delay: .28s; }
-.area-row { opacity: 0; transform: translateX(24px); }
-.neighborhoods.in-view .area-row { animation: area-in .55s ease forwards; }
-.neighborhoods.in-view .area-row:nth-child(2) { animation-delay: .08s; }
-.neighborhoods.in-view .area-row:nth-child(3) { animation-delay: .16s; }
-.neighborhoods.in-view .area-row:nth-child(4) { animation-delay: .24s; }
-.neighborhoods.in-view .area-row:nth-child(5) { animation-delay: .32s; }
 @keyframes story-in { to { opacity: 1; transform: none; } }
-@keyframes area-in { to { opacity: 1; transform: none; } }
-.resource-card { opacity: 0; transform: translateY(42px); }
-.resources.in-view .resource-card { animation: resource-in .75s cubic-bezier(.2,.7,.2,1) forwards; }
-.resources.in-view .resource-card:nth-child(2) { animation-delay: .12s; }
-.resources.in-view .resource-card:nth-child(3) { animation-delay: .24s; }
-@keyframes resource-in { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .site-intro { display: none; }
@@ -563,8 +535,8 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .testimonial-card { transition: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .depth-panel { translate: none !important; }
-  .resource-card, .pathway, .site-header, .about-image { transition: none; }
-  .story-card, .area-row, .resource-card, .about-image { opacity: 1; transform: none; animation: none !important; clip-path: none; }
+  .pathway, .site-header, .about-image { transition: none; }
+  .story-card, .about-image { opacity: 1; transform: none; animation: none !important; clip-path: none; }
 }
 
 @media (max-width: 900px) {
@@ -613,11 +585,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .story-grid { grid-template-columns: 1fr; }
   .story-feature { grid-row: auto; }
   .visual-glendale { min-height: 420px; }
-  .neighborhoods { grid-template-columns: 1fr; }
-  .neighborhood-intro { padding: 6rem max(20px, calc((100vw - 680px)/2)); }
-  .area-list { padding: 3rem max(20px, calc((100vw - 680px)/2)) 5rem; }
-  .resource-grid { grid-template-columns: 1fr; }
-  .resource-card { min-height: 390px; }
+  .guides-gateway { grid-template-columns: 1fr; align-items: start; gap: 3rem; }
   .newsletter { grid-template-columns: 1fr; gap: 3rem; padding: 6rem max(20px, calc((100vw - 680px)/2)); }
   .newsletter-portrait { min-height: 480px; }
   .contact { grid-template-columns: 1fr; width: calc(100vw - 28px); margin: 0 auto; padding: 6rem max(20px, calc((100vw - 680px)/2)); }
@@ -657,9 +625,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .about-image-wrap { height: 50svh; margin-right: 0; }
   .about-image { background-position: center 18%; }
   .testimonial-controls { margin-top: .5rem; }
-  .area-row { grid-template-columns: 30px 1fr 80px; min-height: 88px; }
-  .area-row small { display: none; }
-  .area-row b { font-size: .48rem; }
+  .guide-audiences { gap: .55rem 1rem; margin-bottom: 2rem; }
   .field-pair { grid-template-columns: 1fr; }
   .newsletter-landing-copy { padding: 3.5rem 0; }
   .newsletter-landing h1 { font-size: clamp(2.8rem, 13vw, 4.15rem); }
