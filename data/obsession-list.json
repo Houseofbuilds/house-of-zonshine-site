@@ -20,5 +20,28 @@
     "listingAgentCredit": "Listed by Molly Kelley & Daria Greenbaum, Compass",
     "externalListingUrl": "https://oconnorestates.com/properties/2414-4th-ave/?id=1178123336",
     "dateAdded": "2026-07-29"
+  },
+  {
+    "slug": "1395-inverness-dr",
+    "status": "active",
+    "address": "1395 Inverness Dr",
+    "neighborhood": "Linda Vista",
+    "city": "Pasadena",
+    "price": 4100000,
+    "beds": 3,
+    "baths": 4,
+    "sqft": 3708,
+    "lotSqft": 30400,
+    "photos": [
+      "obsession-list/1395-inverness-dr-1.jpg",
+      "obsession-list/1395-inverness-dr-2.jpg",
+      "obsession-list/1395-inverness-dr-3.jpg",
+      "obsession-list/1395-inverness-dr-4.jpg"
+    ],
+    "hook": "The firewood is stacked into its own wall by the front door, which tells you everything about how seriously this house takes being lived in.",
+    "story": "This one made the list because of the firewood, stacked floor to ceiling in its own little alcove right by the front door, like whoever built this place assumed you'd actually be here through a real winter and wanted you covered before you even got your coat off. Paul R. Williams designed it in 1924, the same architect behind half of the houses in this city people still stop their cars for, and it's known as The Flint House, one of the real Pasadena landmarks instead of just another big Spanish number in the hills. Hand-troweled stucco, a terracotta barrel tile roof, Saltillo tile underfoot, wrought iron everywhere it should be and nowhere it shouldn't. There's a study with built-in shelving that runs floor to ceiling and its own rolling ladder, which is the kind of detail you can't fake with a renovation, and three ensuite bedrooms that each step out onto their own private balcony over the canyon. It sits on seven-tenths of an acre with a pool, an outdoor kitchen, and a view that stretches well past the Rose Bowl on a clear day. If Paul Williams and a wall of firewood sound like your kind of house, let's talk.",
+    "listingAgentCredit": "Listed by Teresa Fuller, Compass",
+    "externalListingUrl": "https://www.compass.com/listing/2155283052462497505/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-07-29"
   }
 ]

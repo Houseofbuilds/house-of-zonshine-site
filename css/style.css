@@ -335,9 +335,17 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .favorites-framework-notes h3 { margin: 0; color: var(--sage); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
 .favorites-framework-notes p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }
 .favorites-board-intro { align-items: center; }
+.favorites-board { width: var(--page); margin: auto; padding: clamp(6rem, 10vw, 10rem) 0; }
+.favorites-board-heading { max-width: 780px; margin-bottom: clamp(3.5rem, 7vw, 6.5rem); }
+.favorites-board-heading h2 { margin: 0; font-size: clamp(3rem, 5.2vw, 5.6rem); }
+.favorites-board-heading p { max-width: 48ch; margin: 1.7rem 0 0; color: var(--ink); font-size: 1rem; }
+.obsession-board-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.obsession-board-grid .obsession-card:nth-child(even) { margin-top: clamp(3rem, 7vw, 7rem); }
 .obsession-card { min-width: 0; }
 .obsession-card-image { position: relative; display: block; aspect-ratio: 1.08 / 1; overflow: hidden; background: var(--espresso); }
 .obsession-card-image img { width: 100%; height: 100%; object-fit: cover; transition: opacity .24s ease, transform .65s cubic-bezier(.23,1,.32,1); }
+.obsession-card-image img.image-focus-firewood-card { object-position: 30% center; }
+.obsession-card-image img.image-focus-left, .obsession-detail-image img.image-focus-left, .obsession-visual img.image-focus-left { object-position: left center; }
 .obsession-card-image img.is-changing { opacity: .28; transform: scale(1.015); }
 .obsession-card-number { position: absolute; top: 1.2rem; left: 1.2rem; padding: .48rem .7rem; background: rgba(248,244,237,.92); color: var(--espresso); font-size: .58rem; font-weight: 600; letter-spacing: .16em; }
 .obsession-card-copy { padding-top: 1.8rem; }
@@ -352,10 +360,12 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .obsession-detail-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(33,23,19,.28), transparent 38%); pointer-events: none; }
 .obsession-detail-image img { width: 100%; height: 100%; object-fit: cover; }
 .obsession-detail-image > span { position: absolute; z-index: 2; left: 2rem; bottom: 1.8rem; font-size: .6rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.obsession-detail-image.has-corner-watermark > span { right: 2rem; left: auto; }
 .obsession-detail-heading { display: flex; flex-direction: column; justify-content: center; padding: clamp(4rem, 6vw, 7rem); }
 .obsession-back { align-self: flex-start; margin-bottom: auto; color: rgba(255,255,255,.68); font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .14em; }
 .obsession-detail-heading .eyebrow { margin-top: auto; }
 .obsession-detail-heading h1 { margin: 0; font-size: clamp(4.5rem, 7.5vw, 8.5rem); font-weight: 300; letter-spacing: -.06em; line-height: .78; }
+.obsession-detail-heading h1.long-address { font-size: clamp(3.2rem, 5vw, 5.6rem); line-height: .88; }
 .obsession-detail-hook { max-width: 43ch; margin: 2.5rem 0 0; color: rgba(255,255,255,.82); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.7; }
 .obsession-property-bar { width: 100%; display: grid; grid-template-columns: 1.45fr repeat(4, 1fr); background: var(--sand); border-bottom: 1px solid var(--line); }
 .obsession-property-bar p { margin: 0; padding: 2rem clamp(1rem, 3vw, 3rem); border-right: 1px solid var(--line); }
@@ -713,6 +723,8 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .favorites-landing-image, .favorites-landing-image img { min-height: min(72svh, 680px); }
   .favorites-landing-copy { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
   .favorites-framework { grid-template-columns: 1fr; gap: 4rem; }
+  .obsession-board-grid { grid-template-columns: 1fr; }
+  .obsession-board-grid .obsession-card:nth-child(even) { margin-top: 1rem; }
   .obsession-card { max-width: 680px; }
   .obsession-detail-hero { grid-template-columns: 1fr; padding-top: 70px; }
   .obsession-detail-image { min-height: 68svh; }
@@ -770,6 +782,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .obsession-card-image { aspect-ratio: .88 / 1; }
   .obsession-detail-heading { min-height: 540px; padding: 3.5rem 24px 4.5rem; }
   .obsession-detail-heading h1 { font-size: clamp(4.25rem, 21vw, 6.25rem); }
+  .obsession-detail-heading h1.long-address { font-size: clamp(3.1rem, 14vw, 4.5rem); }
   .obsession-property-bar p { padding: 1.5rem; }
   .obsession-story { padding-top: 6rem; padding-bottom: 6rem; }
   .obsession-gallery { padding-right: 16px; padding-left: 16px; }
