@@ -334,8 +334,50 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .favorites-framework-notes article { display: grid; grid-template-columns: minmax(140px, .62fr) 1.38fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--line); }
 .favorites-framework-notes h3 { margin: 0; color: var(--sage); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
 .favorites-framework-notes p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.favorites-board-intro { align-items: center; }
+.obsession-card { min-width: 0; }
+.obsession-card-image { position: relative; display: block; aspect-ratio: 1.08 / 1; overflow: hidden; background: var(--espresso); }
+.obsession-card-image img { width: 100%; height: 100%; object-fit: cover; transition: opacity .24s ease, transform .65s cubic-bezier(.23,1,.32,1); }
+.obsession-card-image img.is-changing { opacity: .28; transform: scale(1.015); }
+.obsession-card-number { position: absolute; top: 1.2rem; left: 1.2rem; padding: .48rem .7rem; background: rgba(248,244,237,.92); color: var(--espresso); font-size: .58rem; font-weight: 600; letter-spacing: .16em; }
+.obsession-card-copy { padding-top: 1.8rem; }
+.obsession-card-place { margin: 0; color: var(--clay); font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; }
+.obsession-card-copy h3 { margin: .55rem 0 .75rem; font-size: clamp(2.3rem, 3.5vw, 4rem); font-weight: 300; letter-spacing: -.045em; line-height: 1; }
+.obsession-card-copy h3 a { text-decoration: none; }
+.obsession-card-facts { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin: 0; color: var(--ink); font-size: .72rem; font-weight: 500; }
+.obsession-card-hook { max-width: 46ch; margin: 1.6rem 0 0; color: var(--ink); font-size: 1rem; line-height: 1.72; }
+
+.obsession-detail-hero { min-height: 100svh; padding-top: 84px; display: grid; grid-template-columns: 1.12fr .88fr; background: var(--espresso); color: white; }
+.obsession-detail-image { position: relative; min-height: calc(100svh - 84px); overflow: hidden; }
+.obsession-detail-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(33,23,19,.28), transparent 38%); pointer-events: none; }
+.obsession-detail-image img { width: 100%; height: 100%; object-fit: cover; }
+.obsession-detail-image > span { position: absolute; z-index: 2; left: 2rem; bottom: 1.8rem; font-size: .6rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
+.obsession-detail-heading { display: flex; flex-direction: column; justify-content: center; padding: clamp(4rem, 6vw, 7rem); }
+.obsession-back { align-self: flex-start; margin-bottom: auto; color: rgba(255,255,255,.68); font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .14em; }
+.obsession-detail-heading .eyebrow { margin-top: auto; }
+.obsession-detail-heading h1 { margin: 0; font-size: clamp(4.5rem, 7.5vw, 8.5rem); font-weight: 300; letter-spacing: -.06em; line-height: .78; }
+.obsession-detail-hook { max-width: 43ch; margin: 2.5rem 0 0; color: rgba(255,255,255,.82); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.7; }
+.obsession-property-bar { width: 100%; display: grid; grid-template-columns: 1.45fr repeat(4, 1fr); background: var(--sand); border-bottom: 1px solid var(--line); }
+.obsession-property-bar p { margin: 0; padding: 2rem clamp(1rem, 3vw, 3rem); border-right: 1px solid var(--line); }
+.obsession-property-bar strong, .obsession-property-bar span { display: block; }
+.obsession-property-bar strong { color: var(--espresso); font-size: clamp(1.25rem, 2vw, 2rem); font-weight: 400; }
+.obsession-property-bar span { margin-top: .25rem; color: var(--muted); font-size: .57rem; font-weight: 600; text-transform: uppercase; letter-spacing: .13em; }
+.obsession-story { width: var(--page); margin: auto; padding: clamp(7rem, 12vw, 12rem) 0; display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(4rem, 10vw, 10rem); }
+.obsession-story-label { position: sticky; top: 130px; align-self: start; }
+.obsession-pullquote { max-width: 14ch; margin: 2.5rem 0 0; color: var(--clay); font-size: clamp(2.2rem, 3.8vw, 4.1rem); font-weight: 300; letter-spacing: -.045em; line-height: 1.08; }
+.obsession-story-copy p { margin: 0 0 1.8rem; color: var(--ink); font-size: clamp(1.05rem, 1.4vw, 1.25rem); line-height: 1.9; }
+.obsession-story-copy p:first-child::first-letter { float: left; margin: .08em .12em 0 0; color: var(--clay); font-size: 4.5em; font-weight: 300; line-height: .72; }
+.obsession-gallery { padding: 0 max(24px, 4vw) clamp(7rem, 11vw, 11rem); display: grid; grid-template-columns: .7fr 1.3fr; gap: max(16px, 2vw); background: var(--paper); }
+.obsession-gallery figure { min-height: 580px; margin: 0; overflow: hidden; background: var(--sand); }
+.obsession-gallery .obsession-gallery-wide { grid-column: 1 / -1; min-height: 75svh; }
+.obsession-gallery figure img { width: 100%; height: 100%; object-fit: cover; }
+.obsession-cta { padding: clamp(5rem, 9vw, 9rem) max(24px, calc((100vw - 1240px)/2)); display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: end; background: var(--espresso); color: white; }
+.obsession-cta h2 { margin: 0; font-size: clamp(3rem, 5.8vw, 6.5rem); font-weight: 300; letter-spacing: -.05em; line-height: .95; }
+.obsession-cta-actions { display: flex; flex-direction: column; align-items: flex-start; }
+.obsession-credit { grid-column: 1 / -1; max-width: 95ch; margin: 2rem 0 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.18); color: rgba(255,255,255,.55); font-size: .62rem; line-height: 1.7; }
 @media (hover: hover) and (pointer: fine) {
   .favorites-landing:hover .favorites-landing-image img { transform: scale(1.02); filter: saturate(1.05); }
+  .obsession-card:hover .obsession-card-image img { transform: scale(1.025); }
 }
 .page-intro { display: grid; grid-template-columns: .8fr 1.2fr; gap: 5rem; align-items: start; }
 .page-intro h2, .signup-panel h2 { font-size: clamp(2.5rem, 4.5vw, 4.6rem); }
@@ -671,6 +713,19 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .favorites-landing-image, .favorites-landing-image img { min-height: min(72svh, 680px); }
   .favorites-landing-copy { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
   .favorites-framework { grid-template-columns: 1fr; gap: 4rem; }
+  .obsession-card { max-width: 680px; }
+  .obsession-detail-hero { grid-template-columns: 1fr; padding-top: 70px; }
+  .obsession-detail-image { min-height: 68svh; }
+  .obsession-detail-heading { min-height: 640px; }
+  .obsession-property-bar { grid-template-columns: repeat(2, 1fr); }
+  .obsession-property-bar p:first-child { grid-column: 1 / -1; }
+  .obsession-story { grid-template-columns: 1fr; gap: 3.5rem; }
+  .obsession-story-label { position: static; }
+  .obsession-gallery { grid-template-columns: 1fr; }
+  .obsession-gallery .obsession-gallery-wide { grid-column: auto; min-height: 62svh; }
+  .obsession-gallery figure { min-height: 60svh; }
+  .obsession-cta { grid-template-columns: 1fr; align-items: start; }
+  .obsession-credit { grid-column: auto; }
   .signup-panel { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
   .newsletter-landing { grid-template-columns: 1fr; padding-top: 70px; }
   .newsletter-landing-copy {
@@ -712,6 +767,14 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .favorites-landing-copy { padding-top: 4rem; padding-bottom: 4.5rem; }
   .favorites-landing-copy h1 { font-size: clamp(3rem, 12.5vw, 4rem); }
   .favorites-framework-notes article { grid-template-columns: 1fr; gap: .5rem; }
+  .obsession-card-image { aspect-ratio: .88 / 1; }
+  .obsession-detail-heading { min-height: 540px; padding: 3.5rem 24px 4.5rem; }
+  .obsession-detail-heading h1 { font-size: clamp(4.25rem, 21vw, 6.25rem); }
+  .obsession-property-bar p { padding: 1.5rem; }
+  .obsession-story { padding-top: 6rem; padding-bottom: 6rem; }
+  .obsession-gallery { padding-right: 16px; padding-left: 16px; }
+  .obsession-gallery figure, .obsession-gallery .obsession-gallery-wide { min-height: 52svh; }
+  .obsession-cta h2 br { display: none; }
   .guide-gateway-copy { padding-top: 3.75rem; padding-bottom: 3.75rem; }
   .guide-path { min-height: 104px; gap: 1rem; }
   .guide-path strong { font-size: 1.55rem; }
