@@ -1,28 +1,7 @@
 [
   {
-    "slug": "2414-4th-ave",
-    "status": "active",
-    "address": "2414 4th Ave",
-    "neighborhood": "West Adams Terrace",
-    "city": "Los Angeles",
-    "price": 1849500,
-    "beds": 4,
-    "baths": 3,
-    "sqft": 2560,
-    "lotSqft": 9387,
-    "photos": [
-      "obsession-list/2414-4th-ave-1.jpeg",
-      "obsession-list/2414-4th-ave-2.jpeg",
-      "obsession-list/2414-4th-ave-3.jpeg"
-    ],
-    "hook": "The courtyard cactus is taller than the roofline, and that's not even the best reason this one's on the list.",
-    "story": "This one made the list because of the cactus, which sounds like an odd reason to fall for a house until you actually see it, guarding the courtyard gate, grown taller than the roofline because somebody decided decades ago it got to keep going instead of getting cut back to a tidy size, and that tells you everything about how this place has actually been cared for. It went up in 1922, built of adobe and designed by architect Harwood Hewitt, and it is both Los Angeles Historic-Cultural Monument No. 621 and part of the West Adams Terrace HPOZ—which is a fancy way of saying nobody gets to erase what makes it what it is. Walk in and the original tile is still doing its job at the base of the stairs, the ceilings are wood-beamed, the hardwood floors have a hundred years of actual life in them, and the kitchen's been brought current without stripping any of that out. If a house with real history instead of six months of staging is what you're after, tell me and let's go see it.",
-    "listingAgentCredit": "Listed by Molly Kelley & Daria Greenbaum, Compass",
-    "externalListingUrl": "https://oconnorestates.com/properties/2414-4th-ave/?id=1178123336",
-    "dateAdded": "2026-07-29"
-  },
-  {
     "slug": "1395-inverness-dr",
+    "obsessionNumber": 2,
     "status": "active",
     "address": "1395 Inverness Dr",
     "neighborhood": "Linda Vista",
@@ -42,6 +21,29 @@
     "story": "This one made the list because of the firewood, stacked floor to ceiling in its own little alcove right by the front door, like whoever built this place assumed you'd actually be here through a real winter and wanted you covered before you even got your coat off. Paul R. Williams designed it in 1924, the same architect behind half of the houses in this city people still stop their cars for, and it's known as The Flint House, one of the real Pasadena landmarks instead of just another big Spanish number in the hills. Hand-troweled stucco, a terracotta barrel tile roof, Saltillo tile underfoot, wrought iron everywhere it should be and nowhere it shouldn't. There's a study with built-in shelving that runs floor to ceiling and its own rolling ladder, which is the kind of detail you can't fake with a renovation, and three ensuite bedrooms that each step out onto their own private balcony over the canyon. It sits on seven-tenths of an acre with a pool, an outdoor kitchen, and a view that stretches well past the Rose Bowl on a clear day. If Paul Williams and a wall of firewood sound like your kind of house, let's talk.",
     "listingAgentCredit": "Listed by Teresa Fuller, Compass",
     "externalListingUrl": "https://www.compass.com/listing/2155283052462497505/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-07-29"
+  },
+  {
+    "slug": "2414-4th-ave",
+    "obsessionNumber": 1,
+    "status": "active",
+    "address": "2414 4th Ave",
+    "neighborhood": "West Adams Terrace",
+    "city": "Los Angeles",
+    "price": 1849500,
+    "beds": 4,
+    "baths": 3,
+    "sqft": 2560,
+    "lotSqft": 9387,
+    "photos": [
+      "obsession-list/2414-4th-ave-1.jpeg",
+      "obsession-list/2414-4th-ave-2.jpeg",
+      "obsession-list/2414-4th-ave-3.jpeg"
+    ],
+    "hook": "The courtyard cactus is taller than the roofline, and that's not even the best reason this one's on the list.",
+    "story": "This one made the list because of the cactus, which sounds like an odd reason to fall for a house until you actually see it, guarding the courtyard gate, grown taller than the roofline because somebody decided decades ago it got to keep going instead of getting cut back to a tidy size, and that tells you everything about how this place has actually been cared for. It went up in 1922, built of adobe and designed by architect Harwood Hewitt, and it is both Los Angeles Historic-Cultural Monument No. 621 and part of the West Adams Terrace HPOZ—which is a fancy way of saying nobody gets to erase what makes it what it is. Walk in and the original tile is still doing its job at the base of the stairs, the ceilings are wood-beamed, the hardwood floors have a hundred years of actual life in them, and the kitchen's been brought current without stripping any of that out. If a house with real history instead of six months of staging is what you're after, tell me and let's go see it.",
+    "listingAgentCredit": "Listed by Molly Kelley & Daria Greenbaum, Compass",
+    "externalListingUrl": "https://oconnorestates.com/properties/2414-4th-ave/?id=1178123336",
     "dateAdded": "2026-07-29"
   }
 ]
