@@ -27,6 +27,16 @@
   window.addEventListener("scroll", updateHeader, { passive: true });
   updateHeader();
 
+  window.addEventListener("load", function () {
+    if (!window.location.hash) return;
+    var hashTarget = document.getElementById(window.location.hash.slice(1));
+    if (hashTarget) {
+      window.requestAnimationFrame(function () {
+        hashTarget.scrollIntoView({ block: "start" });
+      });
+    }
+  });
+
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
