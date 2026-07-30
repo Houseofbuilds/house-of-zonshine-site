@@ -200,7 +200,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-card { display: grid; background: var(--plaster); box-shadow: 0 10px 30px rgba(43,31,26,.04); transition: translate .4s ease, box-shadow .4s ease; }
 .story-card:hover { translate: 0 -8px; box-shadow: 0 24px 55px rgba(43,31,26,.14); }
 .story-feature { grid-row: span 2; }
-.story-origin { grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr); margin-top: 1.5rem; }
+.story-origin { grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); margin-top: 1.5rem; }
 .story-origin .story-visual { min-height: 100%; }
 .story-visual { position: relative; z-index: 0; min-height: 330px; overflow: hidden; }
 .story-visual::before { content: ""; position: absolute; z-index: -1; inset: -3%; background: linear-gradient(rgba(43,31,26,.08),rgba(43,31,26,.42)), url("../images/hero-poster-3.jpg") 62% center / cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
@@ -209,9 +209,8 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .visual-glendale::before { background: linear-gradient(rgba(43,31,26,.02), rgba(43,31,26,.18)), url("../images/sycamore-living-room.jpg") center / cover; }
 .visual-valley::before { background: linear-gradient(rgba(43,31,26,.04), rgba(43,31,26,.2)), url("../images/east-glenoaks-house.jpg") center 48% / cover; }
 .visual-glassell { min-height: 250px; background: var(--sage); }
-.visual-glassell::before { background: radial-gradient(circle at 78% 20%, rgba(255,255,255,.12), transparent 34%), linear-gradient(145deg, rgba(43,31,26,.08), rgba(43,31,26,.56)), var(--sage); }
+.visual-glassell::before { background: linear-gradient(rgba(43,31,26,.02), rgba(43,31,26,.18)), url("../images/glassell-park-craftsman.jpg") center / cover; }
 .story-visual span { position: absolute; left: 1.5rem; top: 1.5rem; padding: .45rem .7rem; background: rgba(43,31,26,.82); color: white; font-size: .55rem; text-transform: uppercase; letter-spacing: .15em; }
-.story-photo-pending { position: absolute; right: 1.5rem; bottom: 1.35rem; margin: 0; color: rgba(255,255,255,.7); font-size: .54rem; font-weight: 600; text-transform: uppercase; letter-spacing: .15em; }
 .story-copy { padding: 2rem; }
 .story-copy .location { margin: 0 0 .8rem; color: var(--bronze); font-size: .58rem; font-weight: 600; text-transform: uppercase; letter-spacing: .17em; }
 .story-copy h3 { margin: 0 0 1rem; font-size: 1.65rem; font-weight: 400; line-height: 1.2; }
