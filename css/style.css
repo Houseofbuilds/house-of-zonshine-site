@@ -32,7 +32,7 @@ body {
 }
 body.home-page { overflow-x: clip; }
 body.menu-open { overflow: hidden; }
-.page-backdrop { position: fixed; z-index: 0; inset: 0; background: linear-gradient(rgba(43,31,26,.68), rgba(43,31,26,.78)), url("../images/hero-poster.jpg") 58% center / cover no-repeat; pointer-events: none; }
+.page-backdrop { position: fixed; z-index: 0; inset: 0; background: linear-gradient(rgba(43,31,26,.68), rgba(43,31,26,.78)), url("../images/hero-poster-3.jpg") 58% center / cover no-repeat; pointer-events: none; }
 img, video { display: block; max-width: 100%; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; }
@@ -201,7 +201,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-card:hover { translate: 0 -8px; box-shadow: 0 24px 55px rgba(43,31,26,.14); }
 .story-feature { grid-row: span 2; }
 .story-visual { position: relative; z-index: 0; min-height: 330px; overflow: hidden; }
-.story-visual::before { content: ""; position: absolute; z-index: -1; inset: -3%; background: linear-gradient(rgba(43,31,26,.08),rgba(43,31,26,.42)), url("../images/hero-poster.jpg") 62% center / cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
+.story-visual::before { content: ""; position: absolute; z-index: -1; inset: -3%; background: linear-gradient(rgba(43,31,26,.08),rgba(43,31,26,.42)), url("../images/hero-poster-3.jpg") 62% center / cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
 .story-card:hover .story-visual::before { transform: scale(1.06); filter: saturate(1.08); }
 .visual-glendale { min-height: 500px; }
 .visual-glendale::before { background: linear-gradient(rgba(43,31,26,.02), rgba(43,31,26,.18)), url("../images/sycamore-living-room.jpg") center / cover; }
