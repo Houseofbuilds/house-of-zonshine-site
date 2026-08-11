@@ -483,7 +483,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .visual-guide-cover { padding: 1.5rem; background: #d9cec0; }
 .visual-guide-cover img { object-fit: contain; object-position: center top; filter: drop-shadow(0 12px 16px rgba(43,31,26,.16)); }
 .visual-guide-copy { padding: 1.5rem .1rem 0; }
-.visual-guide-copy > span, .relocation-feature-copy > span, .neighborhood-check-row > div:last-child > span { color: var(--clay); font-size: .58rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.visual-guide-copy > span, .relocation-feature-copy > span { color: var(--clay); font-size: .58rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .visual-guide-copy h3 { margin: .7rem 0 .8rem; font-size: clamp(1.5rem, 2.2vw, 2.25rem); font-weight: 400; line-height: 1.12; }
 .visual-guide-copy > p { max-width: 46ch; margin: 0; color: var(--muted); font-size: .82rem; }
 .visual-guide-copy .freebie-actions { margin-top: 0; }
@@ -516,12 +516,6 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .edit-connection > p:not(.eyebrow) { margin: 0; color: rgba(255,255,255,.72); font-size: .82rem; }
 .edit-connection > a { align-self: flex-start; margin-top: 2rem; padding-bottom: .35rem; border-bottom: 1px solid rgba(255,255,255,.55); font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
 @media (hover: hover) and (pointer: fine) { .local-guide-image:hover img { transform: scale(1.025); } }
-.neighborhood-check-row { width: min(760px, 100%); margin: clamp(4rem, 8vw, 8rem) 0 0 auto; display: grid; grid-template-columns: 190px 1fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.neighborhood-check-cover { padding: 1rem; background: var(--sand); }
-.neighborhood-check-cover img { width: 100%; box-shadow: 0 18px 28px -18px rgba(43,31,26,.4); }
-.neighborhood-check-row h3 { margin: .6rem 0 .8rem; font-size: clamp(2rem, 3.4vw, 3.6rem); font-weight: 300; line-height: 1; }
-.neighborhood-check-row p { margin: 0; color: var(--muted); font-size: .88rem; }
-.neighborhood-check-row .freebie-actions { margin-top: 0; }
 .signup-panel { display: grid; grid-template-columns: 1fr .9fr; gap: 6rem; align-items: end; padding: 6rem; background: var(--sage); color: white; }
 .signup-panel-copy p { max-width: 570px; color: rgba(255,255,255,.72); }
 .signup-panel .newsletter-form { max-width: 520px; }
@@ -908,7 +902,6 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .local-guide-image { min-height: 390px; }
   .local-guide-copy { min-height: 360px; }
   .edit-connection { grid-column: auto; }
-  .neighborhood-check-row { grid-template-columns: 120px 1fr; gap: 1.5rem; }
   .field-pair { grid-template-columns: 1fr; }
   .newsletter-landing-copy { padding: 3.5rem 0; }
   .newsletter-landing h1 { font-size: clamp(2.8rem, 13vw, 4.15rem); }
