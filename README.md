@@ -28,6 +28,12 @@ Editorial real estate site for Julia Zonshine. Simple static build: no framework
    ```
 3. Commit and push — Netlify redeploys automatically, it's live in ~1 minute.
 
+## Guide-library organization
+
+- Keep the three primary routes consistent: Buy or Sell, Relocating, and Local Guides.
+- Add every published neighborhood guide to Local Guides and connect it to the matching homes in The Zonshine Edit.
+- Place a guide in the clearest primary route instead of duplicating it across categories.
+
 ## Before public launch
 
 - Confirm the final excerpts selected from approved client material.
