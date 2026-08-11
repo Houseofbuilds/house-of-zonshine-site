@@ -25,7 +25,7 @@
 
     var card = image.closest("[data-obsession-card]");
     card.addEventListener("mouseenter", function () {
-      timer = window.setInterval(cycle, 1120);
+      timer = window.setInterval(cycle, 1400);
     });
     card.addEventListener("mouseleave", function () {
       window.clearInterval(timer);
