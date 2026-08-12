@@ -474,7 +474,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .guide-category-heading .eyebrow { margin-bottom: 1.25rem; }
 .guide-category-heading h2 { max-width: 840px; font-size: clamp(3rem, 5vw, 5.6rem); text-wrap: balance; }
 .guide-category-heading > p { max-width: 38ch; margin: 0 0 .45rem; color: var(--muted); font-size: .92rem; }
-.guide-feature-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: clamp(1.25rem, 2vw, 2rem); align-items: start; }
+.guide-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 2vw, 2rem); align-items: start; }
 .visual-guide-card { min-width: 0; }
 .visual-guide-card-wide { grid-row: span 1; }
 .visual-guide-image { height: 360px; overflow: hidden; background: #ded4c7; }
