@@ -184,5 +184,15 @@
     showTestimonial(0);
   }
 
+  document.querySelectorAll(".story-more-button").forEach(function (button) {
+    button.closest(".story-copy").classList.add("is-collapsible");
+
+    button.addEventListener("click", function () {
+      var isExpanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isExpanded));
+      button.querySelector(".story-more-label").textContent = isExpanded ? "Read the full story" : "Show less";
+    });
+  });
+
   document.getElementById("year").textContent = new Date().getFullYear();
 })();
