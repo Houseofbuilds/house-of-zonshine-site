@@ -50,6 +50,11 @@
   background: var(--sand);
 }
 
+.los-feliz-guide-page .simple-guide-hero figure {
+  height: 390px;
+  min-height: 0;
+}
+
 .simple-guide-hero img {
   width: 100%;
   height: 100%;
@@ -78,6 +83,11 @@
   transform: translateY(-50%);
 }
 
+.simple-guide-hero h1.simple-hero-word {
+  font-size: clamp(2.65rem, 4.2vw, 4.35rem);
+  white-space: nowrap;
+}
+
 .simple-guide-hero figcaption {
   position: absolute;
   right: .65rem;
@@ -99,7 +109,7 @@
 
 .simple-facts dl div {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1rem;
   padding: .9rem 0;
   border-bottom: 1px solid var(--espresso);
@@ -113,7 +123,10 @@
   text-transform: uppercase;
 }
 
-.simple-facts dd { text-align: right; }
+.simple-facts dd {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
 
 .simple-facts > p {
   margin: 1rem 0 0;
@@ -332,6 +345,8 @@
 
 .no-break { white-space: nowrap; }
 
+.heading-keep { white-space: nowrap; }
+
 .simple-place-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -464,6 +479,39 @@
 
 .simple-park-grid article:last-child { border-right: 0; }
 
+.simple-nearby-feature {
+  display: grid;
+  grid-template-columns: minmax(260px, .9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--paper);
+}
+
+.simple-nearby-feature img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.simple-nearby-feature h3 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.75rem, 2.8vw, 2.8rem);
+  line-height: 1.08;
+}
+
+.simple-nearby-feature p { max-width: 52ch; }
+
+.simple-nearby-feature a {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
 .simple-park-grid h3 {
   margin-bottom: 1.25rem;
   font-size: clamp(1.35rem, 2vw, 2rem);
@@ -479,7 +527,7 @@
 .simple-park-image { margin-inline: -1.5rem; }
 
 .simple-neighborhood-homes {
-  padding: clamp(7rem, 11vw, 11rem) .75rem;
+  padding: clamp(7rem, 11vw, 11rem) .75rem clamp(3.5rem, 5vw, 5rem);
 }
 
 .simple-home-grid {
@@ -497,6 +545,13 @@
 }
 
 .simple-home-grid article:last-child { border-right: 0; }
+
+.simple-home-grid--single {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+
+.simple-home-grid--single article { border-right: 0; }
 
 .simple-home-image {
   display: block;
@@ -561,7 +616,7 @@
 }
 
 .simple-guide-close {
-  padding: clamp(7rem, 11vw, 10rem) .75rem;
+  padding: clamp(2.5rem, 4vw, 4rem) .75rem clamp(6rem, 9vw, 8rem);
   text-align: center;
 }
 
@@ -581,6 +636,7 @@
   .simple-neighborhood-guide { width: min(680px, calc(100% - 40px)); }
   .simple-guide-hero { grid-template-columns: .82fr 1.18fr; }
   .simple-guide-hero figure { min-height: 380px; }
+  .los-feliz-guide-page .simple-guide-hero figure { height: 330px; }
   .simple-guide-intro,
   .simple-tuesday,
   .simple-location,
@@ -601,6 +657,7 @@
   .simple-park-grid article { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .simple-park-grid article:last-child { border-bottom: 0; }
   .simple-park-grid h3 { margin-bottom: 2rem; }
+  .simple-nearby-feature { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
@@ -614,8 +671,28 @@
     gap: 8px;
   }
   .simple-guide-hero figure { min-height: 330px; }
+  .los-feliz-guide-page .simple-guide-hero figure { height: 285px; }
   .simple-hero-place { display: none; }
   .simple-guide-hero h1 { font-size: 3.25rem; }
+  .simple-guide-hero h1.simple-hero-word { font-size: 2.75rem; }
+  .simple-facts {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .simple-facts dl div {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    align-items: flex-start;
+  }
+  .simple-facts dt,
+  .simple-facts dd {
+    width: 100%;
+    min-width: 0;
+    font-size: .78rem;
+  }
+  .simple-facts dd { text-align: left; }
   .simple-guide-intro,
   .simple-tuesday,
   .simple-location,

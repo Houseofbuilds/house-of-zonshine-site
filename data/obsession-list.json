@@ -1,5 +1,43 @@
 [
   {
+    "slug": "2666-aberdeen-ave",
+    "obsessionNumber": 6,
+    "status": "active",
+    "address": "2666 Aberdeen Ave",
+    "neighborhood": "Los Feliz",
+    "city": "Los Angeles",
+    "price": 7495000,
+    "beds": 4,
+    "baths": 4,
+    "sqft": 4026,
+    "lotSqft": 63168,
+    "photos": ["obsession-list/2666-aberdeen-ave-1.jpg", "obsession-list/2666-aberdeen-ave-2.jpg", "obsession-list/2666-aberdeen-ave-3.jpg", "obsession-list/2666-aberdeen-ave-4.jpg"],
+    "hook": "I have walked this house with clients, alone, and trailing a whole pack of other agents, and it gets me every single time.",
+    "story": "I have walked this property more times than I can count, with clients, completely alone just to sit with it, and more than once trailing a pack of other agents on caravan, and every single time it does something to me. 2666 Aberdeen sits on nearly an acre and a half in the Los Feliz hills, a 1922 Spanish Colonial Revival designed by Stiles O. Clements that made its Architectural Digest debut two years after it was finished. Hand-painted beams, stained glass windows, terraced grounds with a pool, spa, and koi pond, and yes, an actual passageway to a speakeasy behind a vault door. One of my favorite versions of this house was staged by Franchesca Grace. I did not think it could get more beautiful or more mystical than it already was, and then I walked in and it had. If you want to see it for yourself, I'd love to show you.",
+    "listingAgentCredit": "Listed by Ben Belack, Serhant California, Inc",
+    "externalListingUrl": "https://www.compass.com/homedetails/2666-Aberdeen-Ave-Los-Angeles-CA-90027/1IBOZT_pid/",
+    "dateAdded": "2026-08-10"
+  },
+  {
+    "slug": "485-madeline-dr",
+    "obsessionNumber": 5,
+    "status": "active",
+    "address": "485 Madeline Dr",
+    "neighborhood": "Lower Arroyo",
+    "city": "Pasadena",
+    "price": 1595000,
+    "beds": 2,
+    "baths": 2,
+    "sqft": 912,
+    "lotSqft": 16660,
+    "photos": ["obsession-list/485-madeline-dr-1.jpg", "obsession-list/485-madeline-dr-2.jpg", "obsession-list/485-madeline-dr-3.jpg", "obsession-list/485-madeline-dr-4.jpg"],
+    "hook": "If you want to be a Disney princess in real life, this is the house you buy.",
+    "story": "This one made the list the second I stepped past the ivy and found a water wheel still turning against the side of the house. 485 Madeline Drive was built in 1910 as the tea house for Busch Gardens, the 32-acre botanical wonderland that once sat on some of Pasadena's most coveted land before it closed in 1937, and this storybook English cottage is the last trace of it still standing. Leaded stained glass, hand-carved millwork, a two-story lofted basement, gardens that wind past stone steps and a little bridge under the trees. It is the kind of house that makes you stop mid-sentence the moment you walk in, and that is exactly the feeling I want for whoever ends up living there. If it's speaking to you the way it spoke to me, I'd love to talk it through.",
+    "listingAgentCredit": "Listed by Bryony Atkinson & Abigail Dotson, MAISONRE",
+    "externalListingUrl": "https://www.compass.com/listing/485-madeline-drive-pasadena-ca-91105/1338590334771707505/",
+    "dateAdded": "2026-08-10"
+  },
+  {
     "slug": "5114-cedros-ave",
     "obsessionNumber": 4,
     "status": "active",
@@ -16,8 +54,8 @@
       "obsession-list/5114-cedros-ave-2.jpg",
       "obsession-list/5114-cedros-ave-3.jpg"
     ],
-    "hook": "Two olive trees old enough to have gnarled trunks flank the front door of a house that's otherwise built completely new, and somebody clearly fought to keep them.",
-    "story": "This one made the list because of the olive trees at the front door, two of them, trunks so gnarled and twisted they have to be decades older than the house itself, standing guard on either side of an entry that is otherwise built completely new. Somebody made the call to build around them instead of clearing the lot flat, which tells you more about this house than the spec sheet does. Inside, the kitchen is anchored by Viola Calacatta Monet marble, dramatic enough that it does most of the talking on its own, and the primary suite carries the same marble through with handcrafted Zia tile adding texture that photos never quite capture. The backyard is a proper California retreat, a stone-wrapped pool and spa, a custom cabana, and an outdoor kitchen built for actually using, all custom wood siding and quiet architectural detail on the outside instead of anything loud. It sits on a quiet, tree-lined street walkable to Kester Magnet School, minutes from Ventura Boulevard, the kind of block that still feels like a neighborhood even this close to everything. If two ancient olive trees and a slab of Viola marble sound like your kind of house, tell me and let's go see it.",
+    "hook": "The kitchen is anchored by a slab of Viola Calacatta Monet marble so dramatic the custom cabinetry around it just reads as backup.",
+    "story": "This one made the list for the kitchen, or really for the slab of Viola Calacatta Monet marble anchoring it, veined and dramatic enough that everything else in the room feels like it was chosen to frame it rather than compete with it. The primary suite picks the same thread back up, more of that Viola marble alongside handcrafted Zia tile that adds real texture, the kind that never quite comes through in photos. It's a fully new build, but somebody clearly cared about restraint on the outside as much as drama on the inside, custom wood siding, quiet architectural lines, and two genuinely old olive trees left standing right at the entry instead of cleared out for a cleaner build. Out back it's a proper retreat, a stone-wrapped pool and spa, a custom cabana, and an outdoor kitchen built for actual use, not just photos. It sits on a quiet, tree-lined street walkable to Kester Magnet School, minutes from Ventura Boulevard, the kind of block that still feels like an actual neighborhood this close to everything. If a marble kitchen like that is the kind of detail that gets you, tell me and let's go see it.",
     "listingAgentCredit": "Listed by George Ouzounian, Compass",
     "externalListingUrl": "https://www.compass.com/listing/2168542624712638753/view?agent_id=671ba9d44d2fd40001057d9d",
     "dateAdded": "2026-08-09"
@@ -39,8 +77,8 @@
       "obsession-list/3627-cody-rd-2.jpg",
       "obsession-list/3627-cody-rd-3.jpg"
     ],
-    "hook": "There's a citrus tree in a terracotta pot at the front door so loaded with fruit it looks fake, and that's before you even get to the baby blue range in the kitchen.",
-    "story": "This one made the list because of the citrus tree by the front door, planted in an oversized terracotta pot in the private atrium entry, so heavy with fruit it looks almost staged, except nothing here was staged, it was restored. Richard Dorman designed it in 1956 for the Modern Trend Construction Company, one of the architects who defined Southern California post-and-beam design, and you feel it the second you walk through that gated atrium into vaulted wood ceilings and walls of glass that open the whole place up to a canyon view that just keeps going. It sits on nearly an acre north of Mulholland, on the cusp of Bel Air and Sherman Oaks, and it's been reimagined down to the studs, new roof, new electrical, all new plumbing, owned Tesla solar, while keeping the bones exactly as intentional as they were in 1956. The kitchen is anchored by a baby blue LaCanche range that I would build an entire dinner party around, terrazzo tile inspired by the original terrazzo they uncovered during the restoration, and the primary suite steps out to its own private balcony over the canyon like that's just a normal thing to have. Outside, it's basically a private resort, pool, fire pit, a covered outdoor kitchen, fruit trees, raised garden beds, and a powder room wallpapered in Gucci that I think about more than I'd like to admit. If a 1956 post-and-beam with a citrus tree at the door and a Gucci powder room sounds like your kind of house, let's talk.",
+    "hook": "Every room here seems to be arguing over which view is better, the canyon from the living room or the sunset from the primary suite's own balcony.",
+    "story": "This one made the list for the view, which is not a small claim for a 1956 post-and-beam that already has real architectural pedigree behind it. Richard Dorman designed it for the Modern Trend Construction Company, and the walls of glass in the living room open the whole space to canyon and hillside that just keeps unfolding, while the primary suite steps straight out to its own private balcony over that same view, no detour required. It sits on nearly an acre north of Mulholland, on the cusp of Bel Air and Sherman Oaks, gated and quiet, and it's been restored down to the studs, new roof, new electrical, all new plumbing, owned Tesla solar, while the bones stay exactly as intentional as they were in 1956. The kitchen is where I'd actually want to cook, anchored by a baby blue LaCanche range I would build a dinner party around, terrazzo tile pulled straight from the original terrazzo they uncovered during the restoration. Outside it keeps going too, pool, fire pit, a covered outdoor kitchen, fruit trees, and a powder room wallpapered in Gucci I still think about. If a view like that and a range that color sound like your kind of house, let's talk.",
     "listingAgentCredit": "Listed by Sherri Rogers, Compass",
     "externalListingUrl": "https://www.compass.com/listing/2145831621943373345/view?agent_id=671ba9d44d2fd40001057d9d",
     "dateAdded": "2026-08-09"
