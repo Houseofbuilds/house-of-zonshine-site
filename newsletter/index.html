@@ -104,6 +104,9 @@
           <form class="newsletter-form" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="newsletter">
             <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
+            <input type="hidden" name="consent-version" value="newsletter-2026-08-14">
+            <input type="hidden" name="privacy-notice-version" value="2026-08-14">
+            <input type="hidden" name="collection-source" value="newsletter-signup-page">
             <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
             <div class="newsletter-fields">
               <label class="newsletter-field" for="newsletter-full-name">
@@ -116,7 +119,11 @@
               </label>
               <button type="submit">Sign me up ↗</button>
             </div>
-            <small>One email a month. This is the newsletter, not a consultation request. By subscribing, you request the newsletter and acknowledge the <a href="../privacy/">Privacy Policy</a>. Unsubscribe anytime.</small>
+            <label class="newsletter-consent" for="newsletter-consent">
+              <input id="newsletter-consent" name="email-consent" type="checkbox" value="express-consent" required>
+              <span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time.</span>
+            </label>
+            <small><strong>Privacy notice:</strong> We collect your name, email, consent record, and basic submission data to manage and send the newsletter, maintain unsubscribe records, secure the form, and comply with law. We may use Netlify, an email provider, Compass, and Julia’s real estate team for those purposes. This is not a consultation request. See the <a href="../privacy/">Privacy Policy</a>.</small>
           </form>
         </div>
       </div>
@@ -143,7 +150,7 @@
       <a href="https://youtube.com/@houseofzonshine" rel="noopener">YouTube</a>
     </div>
     <div class="footer-meta">
-      <p>House of Zonshine by Julia Zonshine, Real Estate Agent<br>Compass | DRE 02246696 | Equal Housing Opportunity</p>
+      <p>Julia Zonshine, California Real Estate Salesperson · DRE #02246696<br>Compass, responsible broker · DRE #01991628 · Equal Housing Opportunity</p>
       <p>© <span id="year">2026</span> House of Zonshine<br><a href="../privacy/">Privacy</a> · <a href="../legal/">Terms, Legal &amp; Accessibility</a></p>
     </div>
   </footer>

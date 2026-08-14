@@ -9,6 +9,7 @@ Editorial real estate site for Julia Zonshine. Simple static build: no framework
 - `guides/index.html` — guide library showing built, in-review and planned resources
 - `privacy/index.html` — California-oriented website privacy policy
 - `legal/index.html` — licensing, fair housing, accuracy, terms and accessibility disclosures
+- `LEGAL-COMPLIANCE.md` — the current data map, launch checks, email rules and annual legal/compliance review record
 - `thanks/` — custom Netlify success pages for contact and newsletter submissions
 - `css/style.css` — responsive visual system using Raleway and the Brand Bible v2 palette
 - `js/script.js` — sticky navigation, mobile menu and subtle scroll reveals

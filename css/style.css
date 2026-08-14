@@ -311,12 +311,12 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .footer-brand span { margin-top: .5rem; color: var(--bronze); font-size: .62rem; text-transform: uppercase; letter-spacing: .18em; }
 .footer-links { display: flex; justify-content: flex-end; gap: 1.6rem; flex-wrap: wrap; }
 .footer-links a { font-size: .6rem; text-decoration: none; text-transform: uppercase; letter-spacing: .13em; }
-.footer-meta { grid-column: 1 / -1; padding-top: 2rem; display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.45); font-size: .62rem; line-height: 1.7; }
+.footer-meta { grid-column: 1 / -1; padding-top: 2rem; display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.68); font-size: .7rem; line-height: 1.7; }
 .footer-meta p:last-child { text-align: right; }
 .footer-meta a { color: inherit; }
 
 /* Inner pages */
-.inner-page { background: var(--plaster); }
+.inner-page { overflow-x: clip; background: var(--plaster); }
 .inner-header { background: rgba(43,31,26,.98); }
 .page-hero { padding: 12rem max(4vw, calc((100vw - 1240px)/2)) 7rem; background: var(--espresso); color: white; }
 .page-hero .page-kicker { margin: 0 0 1.5rem; color: var(--bronze); font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .22em; }
@@ -628,6 +628,41 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   cursor: pointer;
 }
 .newsletter-signup .newsletter-form small a { color: inherit; }
+.newsletter-signup .newsletter-consent {
+  display: grid;
+  grid-template-columns: 1rem 1fr;
+  gap: .7rem;
+  align-items: start;
+  margin: 1.15rem 0 0;
+  color: rgba(255,255,255,.82);
+  font-size: .7rem;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.newsletter-signup .newsletter-consent span,
+.newsletter-signup .newsletter-form small { min-width: 0; overflow-wrap: anywhere; }
+.newsletter-signup .newsletter-consent input {
+  width: 1rem;
+  height: 1rem;
+  margin: .12rem 0 0;
+  accent-color: var(--bronze);
+}
+.newsletter-signup .newsletter-form small { color: rgba(255,255,255,.64); font-size: .68rem; line-height: 1.6; }
+.thanks-legal {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 4vw;
+  background: rgba(33,23,19,.96);
+  color: rgba(255,255,255,.72);
+  font-size: .68rem;
+  line-height: 1.55;
+  text-align: center;
+}
+.thanks-legal a { color: white; }
 .newsletter-landing-portrait {
   position: relative;
   min-height: calc(100svh - 84px);
@@ -836,9 +871,11 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .obsession-cta { grid-template-columns: 1fr; align-items: start; }
   .obsession-credit { grid-column: auto; }
   .signup-panel { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
-  .newsletter-landing { grid-template-columns: 1fr; padding-top: 70px; }
+  .newsletter-landing { grid-template-columns: minmax(0, 1fr); padding-top: 70px; }
   .newsletter-landing-copy {
-    width: min(680px, calc(100% - 40px));
+    width: min(680px, calc(100vw - 40px));
+    min-width: 0;
+    max-width: 100%;
     padding: 4.5rem 0;
   }
   .newsletter-landing h1 { max-width: 640px; font-size: clamp(3rem, 10vw, 5.2rem); }
@@ -915,12 +952,12 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .local-guides-edit-connection { grid-template-columns: 1fr; gap: 1.5rem; }
   .field-pair { grid-template-columns: 1fr; }
   .newsletter-landing-copy { padding: 3.5rem 0; }
-  .newsletter-landing h1 { font-size: clamp(2.8rem, 13vw, 4.15rem); }
+  .newsletter-landing h1 { font-size: clamp(2.65rem, 11vw, 3.4rem); overflow-wrap: anywhere; }
   .newsletter-lead { font-size: .9rem; }
   .newsletter-topics { line-height: 1.8; }
   .newsletter-signup { margin-top: 2rem; padding-top: 1.75rem; }
-  .newsletter-fields { grid-template-columns: minmax(95px, .7fr) minmax(170px, 1.3fr); gap: 1rem; }
-  .newsletter-fields button { grid-column: 1 / -1; justify-self: end; min-height: 35px; margin-top: .25rem; padding-left: 1.2rem; }
+  .newsletter-fields { grid-template-columns: 1fr; gap: 1rem; }
+  .newsletter-fields button { grid-column: 1 / -1; justify-self: stretch; width: 100%; min-height: 35px; margin-top: .25rem; padding-left: 0; text-align: left; }
   .newsletter-landing-portrait { min-height: 70svh; }
   .newsletter-photo-note { top: 1.5rem; padding: 1rem 1.2rem; }
   footer { grid-template-columns: 1fr; }
