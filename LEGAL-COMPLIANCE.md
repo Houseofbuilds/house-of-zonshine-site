@@ -7,7 +7,7 @@ This is an operational compliance record, not legal advice or a substitute for r
 ## Current website data map
 
 - The contact form collects first name, last name, email address, optional real estate interest, and an optional message. Netlify processes the submission. The contact form does not subscribe a visitor to the newsletter.
-- The newsletter form collects full name, email address, an express-consent checkbox, the consent-notice version, the privacy-notice version, and the collection source. Netlify supplies the server-side submission record and timestamp.
+- The newsletter form collects full name, email address, an express-consent checkbox, the consent-notice version, the privacy-notice version, and the collection source. Netlify supplies the server-side submission record and timestamp. Compass systems manage the subscriber record and send the newsletter.
 - The site currently has no Google Analytics, Meta Pixel, session-replay tool, advertising pixel, or cross-site behavioral advertising script.
 - Google Fonts loads on public pages. Embedded Google Maps loads on neighborhood-guide pages. Both can receive ordinary technical request data such as an IP address.
 - The site does not collect payment-card information, account passwords, government identifiers, precise geolocation, or other sensitive information through its forms.
@@ -87,10 +87,13 @@ Any change to this map requires a privacy-policy and point-of-collection review 
 - [California Civil Rights Department — housing protected characteristics](https://calcivilrights.ca.gov/Housing/)
 - [HUD — Fair Housing Act and digital advertising guidance](https://www.hud.gov/sites/dfiles/FHEO/documents/FHEO_Guidance_on_Advertising_through_Digital_Platforms.pdf)
 
+## Confirmed operating facts
+
+- Compass systems manage and send the House of Zonshine newsletter, including the email-template compliance controls.
+
 ## Items requiring human confirmation
 
-- Newsletter sending platform and its signed data-processing/service-provider terms.
-- Valid physical postal address to be placed in every commercial email.
+- Before the first send and after any Compass template change, confirm that the delivered email visibly includes Compass's valid physical postal address and a functioning unsubscribe mechanism; preserve a test copy for the compliance record.
 - Compass approval and exact classification of the House of Zonshine and RSR Real Estate names/logos.
 - Current rights/permissions for each third-party listing photo, listing description, and testimonial.
 - Whether any live or planned property image is materially altered within Business and Professions Code § 10140.8.
