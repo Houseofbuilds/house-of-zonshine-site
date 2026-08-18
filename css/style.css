@@ -263,7 +263,11 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .guide-path-copy b { margin-top: 1rem; font-size: .58rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
 .guide-path-copy b span { display: inline-block; margin-left: .25rem; transition: transform .25s ease; }
 .guide-path:focus-visible { outline: 2px solid var(--clay); outline-offset: 6px; }
-.guide-gateway-all { grid-column: 2; justify-self: end; margin-top: 2rem; padding-bottom: .3rem; border-bottom: 1px solid var(--bronze); font-size: .62rem; font-weight: 600; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+.guide-gateway-links { grid-column: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; margin-top: 2rem; }
+.guide-gateway-latest { display: grid; gap: .35rem; max-width: 440px; text-decoration: none; }
+.guide-gateway-latest span { color: var(--clay); font-size: .54rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.guide-gateway-latest strong { font-size: .78rem; font-weight: 500; line-height: 1.4; }
+.guide-gateway-all { flex: 0 0 auto; padding-bottom: .3rem; border-bottom: 1px solid var(--bronze); font-size: .62rem; font-weight: 600; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
 @media (hover: hover) and (pointer: fine) {
   .guide-path:hover { transform: translateY(-5px); }
   .guide-path:hover .guide-path-image img { transform: scale(1.035); }
@@ -464,7 +468,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .guide-index-hero-images { position: relative; height: 500px; }
 .guide-index-hero-images img:first-child { position: absolute; inset: 0 18% 8% 0; width: 82%; height: 92%; object-fit: cover; object-position: center 48%; }
 .guide-index-hero-images img:last-child { position: absolute; right: 0; bottom: 0; width: 34%; height: 62%; padding: 9px; object-fit: cover; object-position: top; background: var(--paper); box-shadow: 0 24px 50px -28px rgba(43,31,26,.45); }
-.guide-category-nav { position: sticky; z-index: 10; top: 70px; display: grid; grid-template-columns: repeat(3, 1fr); padding: 0 max(4vw, calc((100vw - 1240px)/2)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(248,244,237,.94); backdrop-filter: blur(12px); }
+.guide-category-nav { position: sticky; z-index: 10; top: 70px; display: grid; grid-template-columns: repeat(4, 1fr); padding: 0 max(4vw, calc((100vw - 1240px)/2)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(248,244,237,.94); backdrop-filter: blur(12px); }
 .guide-category-nav a { padding: 1.2rem 1rem; text-align: center; text-decoration: none; font-size: .66rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; transition: background .2s ease; }
 .guide-category-nav a + a { border-left: 1px solid var(--line); }
 .guide-category-nav a:hover, .guide-category-nav a:focus-visible { background: var(--sand); }
@@ -524,6 +528,15 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .local-guides-edit-connection > p { max-width: 38ch; margin: 0; color: rgba(255,255,255,.72); font-size: .86rem; }
 .local-guides-edit-connection > a { padding-bottom: .35rem; border-bottom: 1px solid rgba(255,255,255,.55); font-size: .6rem; font-weight: 600; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
 @media (hover: hover) and (pointer: fine) { .local-guide-image:hover img { transform: scale(1.025); } }
+.guide-writing-feature { display: grid; grid-template-columns: minmax(340px, .78fr) minmax(0, 1.22fr); min-height: 580px; color: var(--espresso); text-decoration: none; background: var(--paper); }
+.guide-writing-image { min-height: 580px; overflow: hidden; }
+.guide-writing-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease; }
+.guide-writing-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(3.5rem, 7vw, 7rem); }
+.guide-writing-copy small { color: var(--clay); font-size: .62rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+.guide-writing-copy strong { margin-top: 1.35rem; font-size: clamp(2.4rem, 4.5vw, 4.8rem); font-weight: 300; letter-spacing: -.05em; line-height: 1.04; }
+.guide-writing-copy em { max-width: 590px; margin-top: 1.8rem; color: var(--muted); font-size: .93rem; font-style: normal; line-height: 1.7; }
+.guide-writing-copy b { align-self: flex-start; margin-top: 2.4rem; padding-bottom: .32rem; border-bottom: 1px solid var(--clay); font-size: .62rem; letter-spacing: .11em; text-transform: uppercase; }
+@media (hover: hover) and (pointer: fine) { .guide-writing-feature:hover .guide-writing-image img { transform: scale(1.025); filter: saturate(1.04); } }
 .signup-panel { display: grid; grid-template-columns: 1fr .9fr; gap: 6rem; align-items: end; padding: 6rem; background: var(--sage); color: white; }
 .signup-panel-copy p { max-width: 570px; color: rgba(255,255,255,.72); }
 .signup-panel .newsletter-form { max-width: 520px; }
@@ -828,7 +841,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .guide-gateway-copy { padding: 0 0 3.5rem; }
   .guide-paths { gap: 1rem; }
   .guide-path-image { height: clamp(190px, 34vw, 270px); }
-  .guide-gateway-all { grid-column: 1; }
+  .guide-gateway-links { grid-column: 1; }
   .newsletter { grid-template-columns: 1fr; gap: 3rem; padding: 6rem max(20px, calc((100vw - 680px)/2)); }
   .newsletter-portrait { min-height: 480px; }
   .contact { grid-template-columns: 1fr; width: calc(100vw - 28px); margin: 0 auto; padding: 6rem max(20px, calc((100vw - 680px)/2)); }
@@ -851,6 +864,8 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .local-guide-copy { min-height: 440px; }
   .local-guides-edit-connection { grid-template-columns: 1fr 1fr; align-items: start; }
   .local-guides-edit-connection > a { justify-self: start; }
+  .guide-writing-feature { grid-template-columns: 1fr; }
+  .guide-writing-image { min-height: min(72svh, 680px); }
   .favorites-landing { grid-template-columns: 1fr; padding-top: 70px; }
   .favorites-landing-image, .favorites-landing-image img { min-height: min(72svh, 680px); }
   .favorites-landing-copy { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
@@ -927,7 +942,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .guide-paths { grid-template-columns: 1fr; gap: 2rem; }
   .guide-path-image { height: 250px; }
   .guide-path-copy em { min-height: 0; }
-  .guide-gateway-all { justify-self: start; }
+  .guide-gateway-links { align-items: flex-start; flex-direction: column; gap: 1.5rem; }
   .guide-index-hero h1 { font-size: clamp(3.2rem, 14vw, 4.6rem); }
   .guide-index-hero-images { height: 380px; }
   .guide-index-hero-images img:first-child { right: 12%; width: 88%; }
@@ -950,6 +965,9 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .local-guide-image { min-height: 390px; }
   .local-guide-copy { min-height: 360px; }
   .local-guides-edit-connection { grid-template-columns: 1fr; gap: 1.5rem; }
+  .guide-writing-image { min-height: 58svh; }
+  .guide-writing-copy { padding: 3.5rem 24px 4rem; }
+  .guide-writing-copy strong { font-size: 2.7rem; }
   .field-pair { grid-template-columns: 1fr; }
   .newsletter-landing-copy { padding: 3.5rem 0; }
   .newsletter-landing h1 { font-size: clamp(2.65rem, 11vw, 3.4rem); overflow-wrap: anywhere; }
