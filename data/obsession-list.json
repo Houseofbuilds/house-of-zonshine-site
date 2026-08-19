@@ -1,5 +1,53 @@
 [
   {
+    "slug": "2276-moreno-dr",
+    "obsessionNumber": 8,
+    "status": "active",
+    "address": "2276 Moreno Dr",
+    "neighborhood": "Moreno Highlands",
+    "city": "Los Angeles",
+    "price": 2595000,
+    "beds": 3,
+    "baths": 4,
+    "sqft": 2784,
+    "lotSqft": 6268,
+    "photos": [
+      "obsession-list/2276-moreno-dr-1.jpg",
+      "obsession-list/2276-moreno-dr-2.jpg",
+      "obsession-list/2276-moreno-dr-3.jpg",
+      "obsession-list/2276-moreno-dr-4.jpg"
+    ],
+    "hook": "The garage door is painted hot pink, and one floor up there's a loft library looking straight out over the Silver Lake Reservoir toward downtown.",
+    "story": "Modern isn't usually the architecture that gets me. I tend to fall for old bones and the kind of character a house only picks up after decades of actually being lived in, so this one in Moreno Highlands, the hillside pocket that wraps the west side of the Silver Lake Reservoir, caught me off guard. You come up the walk past the cactus and yucca and that hot pink garage door, and inside the whole house just opens, glass walls, soaring ceilings, a loft library up top with a view straight out toward the reservoir and downtown, and there's a lightness to it that feels so specifically Californian. It's got some real work ahead of it, I won't pretend otherwise, but I think with the right person putting love into it, this house has it in it to be something special. Three bedrooms, four baths, almost 2,800 square feet, built in 1961, on a street where a view like this doesn't come around twice. If this one's on your mind, I've got you.",
+    "listingAgentCredit": "Listed by Tracy Do & Ronda Doyal, Coldwell Banker Real Estate",
+    "externalListingUrl": "https://www.compass.com/listing/2174115129074483825/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-08-18"
+  },
+  {
+    "slug": "1190-n-wilson-ave",
+    "obsessionNumber": 7,
+    "status": "active",
+    "address": "1190 N Wilson Ave",
+    "neighborhood": "Bungalow Heaven",
+    "city": "Pasadena",
+    "price": 2150000,
+    "beds": 4,
+    "baths": 2,
+    "sqft": 1834,
+    "lotSqft": 9363,
+    "photos": [
+      "obsession-list/1190-n-wilson-ave-1.jpg",
+      "obsession-list/1190-n-wilson-ave-2.jpg",
+      "obsession-list/1190-n-wilson-ave-3.jpg",
+      "obsession-list/1190-n-wilson-ave-4.jpg"
+    ],
+    "hook": "The layout of this house is almost identical to the first one I ever bought, and that's the kind of detail that gets me every time.",
+    "story": "I bought my first house about ten years ago, an old Craftsman with beams and a fireplace and a big front porch, and that's genuinely where my love of these houses started, so walking through 1190 N Wilson and clocking that the layout is basically the same one I lived in myself felt like running into an old friend. This one sits in Bungalow Heaven, a National Register historic district in Pasadena, a 1912 Craftsman designed by architect Irvin B. Speicher and just restored top to bottom by Nicole Douglas Designs, and it's the kind of restoration that makes you think about the people who actually built these things by hand, back when a house got its character from mill workers who cared about joinery nobody would ever even notice. Inside it's white oak floors, a green marble fireplace, solid maple cabinetry paired with exposed beams and antique brass hardware in the kitchen, a mahogany front door, and a clawfoot tub, the kind of detail you only get when someone actually cares about getting it right instead of checking a box. The backyard is its own whole world, avocado and lemon trees, bougainvillea taking over the fence line, a hot tub and a fire pit for whoever ends up living there. Everything about it feels like it came from the land instead of a catalog, which is exactly what got me about my first house too. If Craftsmans do the same thing to you that they do to me, I'd love to show you this one.",
+    "listingAgentCredit": "Listed by Jessica Romero, Keller Williams Realty",
+    "externalListingUrl": "https://www.compass.com/listing/2174912408476386273/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-08-18"
+  },
+  {
     "slug": "2666-aberdeen-ave",
     "obsessionNumber": 6,
     "status": "active",
@@ -11,7 +59,12 @@
     "baths": 4,
     "sqft": 4026,
     "lotSqft": 63168,
-    "photos": ["obsession-list/2666-aberdeen-ave-1.jpg", "obsession-list/2666-aberdeen-ave-2.jpg", "obsession-list/2666-aberdeen-ave-3.jpg", "obsession-list/2666-aberdeen-ave-4.jpg"],
+    "photos": [
+      "obsession-list/2666-aberdeen-ave-1.jpg",
+      "obsession-list/2666-aberdeen-ave-2.jpg",
+      "obsession-list/2666-aberdeen-ave-3.jpg",
+      "obsession-list/2666-aberdeen-ave-4.jpg"
+    ],
     "hook": "I have walked this house with clients, alone, and trailing a whole pack of other agents, and it gets me every single time.",
     "story": "I have walked this property more times than I can count, with clients, completely alone just to sit with it, and more than once trailing a pack of other agents on caravan, and every single time it does something to me. 2666 Aberdeen sits on nearly an acre and a half in the Los Feliz hills, a 1922 Spanish Colonial Revival designed by Stiles O. Clements that made its Architectural Digest debut two years after it was finished. Hand-painted beams, stained glass windows, terraced grounds with a pool, spa, and koi pond, and yes, an actual passageway to a speakeasy behind a vault door. One of my favorite versions of this house was staged by Franchesca Grace. I did not think it could get more beautiful or more mystical than it already was, and then I walked in and it had. If you want to see it for yourself, I'd love to show you.",
     "listingAgentCredit": "Listed by Ben Belack, Serhant California, Inc",
@@ -30,7 +83,12 @@
     "baths": 2,
     "sqft": 912,
     "lotSqft": 16660,
-    "photos": ["obsession-list/485-madeline-dr-1.jpg", "obsession-list/485-madeline-dr-2.jpg", "obsession-list/485-madeline-dr-3.jpg", "obsession-list/485-madeline-dr-4.jpg"],
+    "photos": [
+      "obsession-list/485-madeline-dr-1.jpg",
+      "obsession-list/485-madeline-dr-2.jpg",
+      "obsession-list/485-madeline-dr-3.jpg",
+      "obsession-list/485-madeline-dr-4.jpg"
+    ],
     "hook": "If you want to be a Disney princess in real life, this is the house you buy.",
     "story": "This one made the list the second I stepped past the ivy and found a water wheel still turning against the side of the house. 485 Madeline Drive was built in 1910 as the tea house for Busch Gardens, the 32-acre botanical wonderland that once sat on some of Pasadena's most coveted land before it closed in 1937, and this storybook English cottage is the last trace of it still standing. Leaded stained glass, hand-carved millwork, a two-story lofted basement, gardens that wind past stone steps and a little bridge under the trees. It is the kind of house that makes you stop mid-sentence the moment you walk in, and that is exactly the feeling I want for whoever ends up living there. If it's speaking to you the way it spoke to me, I'd love to talk it through.",
     "listingAgentCredit": "Listed by Bryony Atkinson & Abigail Dotson, MAISONRE",
