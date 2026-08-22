@@ -1,4 +1,4 @@
-// Shared behavior for the Field Notes index and individual articles.
+// Shared behavior for the Blog index and individual articles.
 (function () {
   var button = document.getElementById("menu-button");
   var nav = document.getElementById("site-nav");
