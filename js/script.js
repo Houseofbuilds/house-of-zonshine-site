@@ -176,7 +176,6 @@
     var testimonialTimer = null;
     var testimonialIsVisible = false;
     var testimonialIsInteracting = false;
-    var testimonialReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     testimonialTotal.textContent = String(testimonialCards.length).padStart(2, "0");
 
@@ -191,7 +190,6 @@
       if (
         !testimonialIsVisible ||
         testimonialIsInteracting ||
-        testimonialReducedMotion.matches ||
         document.hidden
       ) return;
 
@@ -235,28 +233,6 @@
       }
     });
 
-    testimonialCarousel.addEventListener("mouseenter", function () {
-      testimonialIsInteracting = true;
-      stopTestimonialAutoplay();
-    });
-
-    testimonialCarousel.addEventListener("mouseleave", function () {
-      testimonialIsInteracting = false;
-      startTestimonialAutoplay();
-    });
-
-    testimonialCarousel.addEventListener("focusin", function () {
-      testimonialIsInteracting = true;
-      stopTestimonialAutoplay();
-    });
-
-    testimonialCarousel.addEventListener("focusout", function (event) {
-      if (!testimonialCarousel.contains(event.relatedTarget)) {
-        testimonialIsInteracting = false;
-        startTestimonialAutoplay();
-      }
-    });
-
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) {
         stopTestimonialAutoplay();
@@ -264,8 +240,6 @@
         startTestimonialAutoplay();
       }
     });
-
-    testimonialReducedMotion.addEventListener("change", startTestimonialAutoplay);
 
     var testimonialObserver = new IntersectionObserver(function (entries) {
       testimonialIsVisible = entries[0].isIntersecting;
