@@ -88,7 +88,8 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
-      <video autoplay muted loop playsinline poster="images/hero-poster-3.jpg" aria-hidden="true">
+      <video muted loop playsinline preload="metadata" poster="images/hero-poster-3.jpg" aria-hidden="true">
+        <source src="videos/hero-3-mobile.mp4" type="video/mp4" media="(max-width: 900px)">
         <source src="videos/hero-3.mp4" type="video/mp4">
       </video>
       <div class="hero-shade"></div>
@@ -121,29 +122,29 @@
       </div>
     </section>
 
-    <section class="testimonials-carousel" aria-labelledby="testimonials-title">
+    <section class="testimonials-carousel" aria-labelledby="testimonials-title" aria-roledescription="carousel">
       <div class="testimonials-shade" aria-hidden="true"></div>
       <div class="testimonials-intro">
         <p class="eyebrow light">In Their Words</p>
         <h2 id="testimonials-title">My clients say it best.</h2>
       </div>
       <div class="testimonial-stage" aria-live="off">
-        <figure class="testimonial-card is-active">
+        <figure class="testimonial-card is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“My home and all of my personal property were destroyed in the Palisades fire. In the midst of my despair, I was fortunate enough to be referred to Julia… Not only did she listen with empathy to my plight, but she made the entire process seamless… She was instrumental in making my moving forward possible.”</blockquote>
           <figcaption>Susan W. · Relocation Client</figcaption>
         </figure>
-        <figure class="testimonial-card is-next" aria-hidden="true">
+        <figure class="testimonial-card is-next" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“Julia was incredible to work with. She is extremely knowledgeable and somehow made the entire experience of selling a house empowering and fun. The entire sale of my house from start to finish went smoothly. She went above and beyond to ensure the best outcome.”</blockquote>
           <figcaption>Diva Z. · Seller</figcaption>
         </figure>
-        <figure class="testimonial-card" aria-hidden="true">
+        <figure class="testimonial-card" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“This market is so stressful and intimidating. I am beyond grateful for Julia’s approach and the way she has pointed out every detail of where value can be found or lost. Finding a home felt impossible before her support.”</blockquote>
           <figcaption>Kelsey O. · Buyer</figcaption>
         </figure>
-        <figure class="testimonial-card is-prev" aria-hidden="true">
+        <figure class="testimonial-card is-prev" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“Julia was a life saver! She was the most compassionate, responsive and attentive real estate agent I’ve ever worked with… Julia went out of her way to accommodate my constantly changing personal circumstances and ever-changing work schedule… She worked around the clock to present me options for my move and found some great homes.”</blockquote>
           <figcaption>Lauren C. · Relocation Client</figcaption>
@@ -219,7 +220,7 @@
 
     <section class="obsession-edit depth-panel reveal" id="julia-edit" aria-labelledby="julia-edit-title">
       <div class="obsession-visual">
-        <img src="images/obsession-midcentury-placeholder.jpg" alt="A glass-walled Los Angeles midcentury home with a bright swimming pool overlooking the city">
+        <img src="images/obsession-midcentury-placeholder.jpg" alt="A glass-walled Los Angeles midcentury home with a bright swimming pool overlooking the city" loading="lazy" decoding="async">
         <p class="obsession-photo-credit"><a href="https://unsplash.com/photos/los-angeles-midcentury-house-XL1rvFgOrDc" target="_blank" rel="noopener">Carol M. Highsmith via Unsplash</a></p>
       </div>
       <div class="obsession-copy">

@@ -370,8 +370,6 @@
   transition: transform 450ms cubic-bezier(.16, 1, .3, 1);
 }
 
-.simple-pocket-grid article:hover .simple-pocket-image img { transform: scale(1.025); }
-
 .simple-pocket-copy {
   align-self: center;
   padding: clamp(1.5rem, 3vw, 2.75rem);
@@ -440,9 +438,7 @@
   transition: transform 450ms cubic-bezier(.16, 1, .3, 1);
 }
 
-.simple-place-image:hover img,
 .simple-place-image:focus-visible img,
-.simple-park-image:hover img,
 .simple-park-image:focus-visible img { transform: scale(1.025); }
 
 .simple-place-grid h3 {
@@ -630,8 +626,14 @@
   transition: transform 450ms cubic-bezier(.16, 1, .3, 1);
 }
 
-.simple-home-image:hover img,
 .simple-home-image:focus-visible img { transform: scale(1.025); }
+
+@media (hover: hover) and (pointer: fine) {
+  .simple-pocket-grid article:hover .simple-pocket-image img,
+  .simple-place-image:hover img,
+  .simple-park-image:hover img,
+  .simple-home-image:hover img { transform: scale(1.025); }
+}
 
 .simple-home-copy {
   display: flex;
@@ -773,12 +775,31 @@
   .simple-map,
   .simple-map iframe { min-height: 390px; height: 390px; }
   .simple-history { width: 100%; }
-  .simple-place-grid { grid-template-columns: 1fr; }
+  .simple-place-grid,
+  .simple-park-grid {
+    display: flex;
+    gap: 1px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .simple-place-grid::-webkit-scrollbar,
+  .simple-park-grid::-webkit-scrollbar { display: none; }
+  .simple-place-grid article,
+  .simple-place-grid article:nth-child(4n),
+  .simple-park-grid article,
+  .simple-park-grid article:last-child {
+    flex: 0 0 min(84vw, 360px);
+    min-height: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+    scroll-snap-align: start;
+  }
   .simple-pocket-grid article { grid-template-columns: 1fr; min-height: 0; }
   .simple-pocket-image { min-height: 0; aspect-ratio: 4 / 3; }
   .simple-home-grid { grid-template-columns: 1fr; }
-  .simple-place-grid article,
-  .simple-place-grid article:nth-child(4n) { min-height: 0; border-right: 0; }
   .simple-home-grid article { border-right: 0; border-bottom: 1px solid var(--line); }
   .simple-home-grid article:last-child { border-bottom: 0; }
   .simple-history img { min-height: 340px; }
