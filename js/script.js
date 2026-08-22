@@ -148,8 +148,34 @@
     var testimonialCurrent = testimonialCarousel.querySelector(".testimonial-current");
     var testimonialTotal = testimonialCarousel.querySelector(".testimonial-total");
     var testimonialIndex = 0;
+    var testimonialAutoplayDelay = 4000;
+    var testimonialTimer = null;
+    var testimonialIsVisible = false;
+    var testimonialIsInteracting = false;
+    var testimonialReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     testimonialTotal.textContent = String(testimonialCards.length).padStart(2, "0");
+
+    function stopTestimonialAutoplay() {
+      window.clearTimeout(testimonialTimer);
+      testimonialTimer = null;
+    }
+
+    function startTestimonialAutoplay() {
+      stopTestimonialAutoplay();
+
+      if (
+        !testimonialIsVisible ||
+        testimonialIsInteracting ||
+        testimonialReducedMotion.matches ||
+        document.hidden
+      ) return;
+
+      testimonialTimer = window.setTimeout(function () {
+        showTestimonial(testimonialIndex + 1);
+        startTestimonialAutoplay();
+      }, testimonialAutoplayDelay);
+    }
 
     function showTestimonial(nextIndex) {
       testimonialIndex = (nextIndex + testimonialCards.length) % testimonialCards.length;
@@ -167,19 +193,62 @@
 
     testimonialPrevious.addEventListener("click", function () {
       showTestimonial(testimonialIndex - 1);
+      startTestimonialAutoplay();
     });
 
     testimonialNext.addEventListener("click", function () {
       showTestimonial(testimonialIndex + 1);
+      startTestimonialAutoplay();
     });
 
     testimonialCarousel.addEventListener("keydown", function (event) {
       if (event.key === "ArrowLeft") {
         showTestimonial(testimonialIndex - 1);
+        startTestimonialAutoplay();
       } else if (event.key === "ArrowRight") {
         showTestimonial(testimonialIndex + 1);
+        startTestimonialAutoplay();
       }
     });
+
+    testimonialCarousel.addEventListener("mouseenter", function () {
+      testimonialIsInteracting = true;
+      stopTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("mouseleave", function () {
+      testimonialIsInteracting = false;
+      startTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("focusin", function () {
+      testimonialIsInteracting = true;
+      stopTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("focusout", function (event) {
+      if (!testimonialCarousel.contains(event.relatedTarget)) {
+        testimonialIsInteracting = false;
+        startTestimonialAutoplay();
+      }
+    });
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopTestimonialAutoplay();
+      } else {
+        startTestimonialAutoplay();
+      }
+    });
+
+    testimonialReducedMotion.addEventListener("change", startTestimonialAutoplay);
+
+    var testimonialObserver = new IntersectionObserver(function (entries) {
+      testimonialIsVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.35;
+      startTestimonialAutoplay();
+    }, { threshold: 0.35 });
+
+    testimonialObserver.observe(testimonialCarousel);
 
     showTestimonial(0);
   }
