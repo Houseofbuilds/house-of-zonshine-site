@@ -172,7 +172,7 @@
     var testimonialCurrent = testimonialCarousel.querySelector(".testimonial-current");
     var testimonialTotal = testimonialCarousel.querySelector(".testimonial-total");
     var testimonialIndex = 0;
-    var testimonialAutoplayDelay = 4000;
+    var testimonialAutoplayDelay = 3000;
     var testimonialTimer = null;
     var testimonialIsVisible = false;
     var testimonialIsInteracting = false;
@@ -268,9 +268,9 @@
     testimonialReducedMotion.addEventListener("change", startTestimonialAutoplay);
 
     var testimonialObserver = new IntersectionObserver(function (entries) {
-      testimonialIsVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.35;
+      testimonialIsVisible = entries[0].isIntersecting;
       startTestimonialAutoplay();
-    }, { threshold: 0.35 });
+    }, { threshold: 0.1 });
 
     testimonialObserver.observe(testimonialCarousel);
 
