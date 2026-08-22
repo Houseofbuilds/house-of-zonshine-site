@@ -274,7 +274,7 @@
 
     testimonialObserver.observe(testimonialCarousel);
 
-    var testimonialPointerId = null;
+    var testimonialTouchId = null;
     var testimonialDragCard = null;
     var testimonialStartX = 0;
     var testimonialStartY = 0;
@@ -297,7 +297,7 @@
         draggedCard.style.removeProperty("opacity");
       });
 
-      testimonialPointerId = null;
+      testimonialTouchId = null;
       testimonialDragCard = null;
       testimonialDragX = 0;
       testimonialSwipeAxis = null;
@@ -305,26 +305,42 @@
       startTestimonialAutoplay();
     }
 
-    testimonialStage.addEventListener("pointerdown", function (event) {
-      if (event.pointerType !== "touch") return;
+    function findTestimonialTouch(touchList) {
+      for (var touchIndex = 0; touchIndex < touchList.length; touchIndex += 1) {
+        if (touchList[touchIndex].identifier === testimonialTouchId) {
+          return touchList[touchIndex];
+        }
+      }
+      return null;
+    }
 
-      testimonialPointerId = event.pointerId;
+    testimonialStage.addEventListener("touchstart", function (event) {
+      if (testimonialTouchId !== null || event.touches.length !== 1) return;
+
+      var touch = event.changedTouches[0];
+      testimonialTouchId = touch.identifier;
       testimonialDragCard = testimonialCards[testimonialIndex];
-      testimonialStartX = event.clientX;
-      testimonialStartY = event.clientY;
+      testimonialStartX = touch.clientX;
+      testimonialStartY = touch.clientY;
       testimonialStartTime = event.timeStamp;
       testimonialDragX = 0;
       testimonialSwipeAxis = null;
       testimonialIsInteracting = true;
       stopTestimonialAutoplay();
-      testimonialStage.setPointerCapture(event.pointerId);
-    });
+    }, { passive: true });
 
-    testimonialStage.addEventListener("pointermove", function (event) {
-      if (event.pointerId !== testimonialPointerId || !testimonialDragCard) return;
+    testimonialStage.addEventListener("touchmove", function (event) {
+      if (testimonialTouchId === null || !testimonialDragCard) return;
+      if (event.touches.length !== 1) {
+        finishTestimonialSwipe(0);
+        return;
+      }
 
-      var deltaX = event.clientX - testimonialStartX;
-      var deltaY = event.clientY - testimonialStartY;
+      var touch = findTestimonialTouch(event.touches);
+      if (!touch) return;
+
+      var deltaX = touch.clientX - testimonialStartX;
+      var deltaY = touch.clientY - testimonialStartY;
 
       if (!testimonialSwipeAxis && Math.max(Math.abs(deltaX), Math.abs(deltaY)) >= 10) {
         testimonialSwipeAxis = Math.abs(deltaX) > Math.abs(deltaY) * 1.15 ? "x" : "y";
@@ -333,15 +349,16 @@
 
       if (testimonialSwipeAxis !== "x") return;
 
-      event.preventDefault();
+      if (event.cancelable) event.preventDefault();
       testimonialDragX = deltaX;
       var dragProgress = Math.min(Math.abs(deltaX) / testimonialStage.clientWidth, 1);
       testimonialDragCard.style.transform = "translate(calc(-50% + " + deltaX + "px), -50%) scale(" + (1 - dragProgress * 0.05) + ")";
       testimonialDragCard.style.opacity = String(1 - dragProgress * 0.35);
-    });
+    }, { passive: false });
 
-    testimonialStage.addEventListener("pointerup", function (event) {
-      if (event.pointerId !== testimonialPointerId || !testimonialDragCard) return;
+    testimonialStage.addEventListener("touchend", function (event) {
+      if (testimonialTouchId === null || !testimonialDragCard) return;
+      if (!findTestimonialTouch(event.changedTouches)) return;
 
       var elapsed = Math.max(event.timeStamp - testimonialStartTime, 1);
       var velocity = testimonialDragX / elapsed;
@@ -354,8 +371,10 @@
       finishTestimonialSwipe(direction);
     });
 
-    testimonialStage.addEventListener("pointercancel", function (event) {
-      if (event.pointerId === testimonialPointerId) finishTestimonialSwipe(0);
+    testimonialStage.addEventListener("touchcancel", function (event) {
+      if (testimonialTouchId !== null && findTestimonialTouch(event.changedTouches)) {
+        finishTestimonialSwipe(0);
+      }
     });
 
     showTestimonial(0);
