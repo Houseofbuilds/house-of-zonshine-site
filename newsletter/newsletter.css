@@ -66,10 +66,8 @@
 }
 
 .newsletter-archive-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.6rem;
-  align-items: center;
+  display: grid;
+  gap: 1.25rem;
   margin-top: 2.2rem;
 }
 
@@ -189,19 +187,6 @@
 
 .compact-signup-form a { color: inherit; }
 
-.newsletter-archive-hero .compact-signup summary {
-  border-color: var(--plaster);
-  background: var(--plaster);
-  color: var(--espresso);
-}
-
-.newsletter-archive-hero .compact-signup summary:hover,
-.newsletter-archive-hero .compact-signup summary:focus-visible {
-  border-color: var(--bronze);
-  background: var(--bronze);
-  color: var(--espresso);
-}
-
 .newsletter-archive-hero .compact-signup-field span,
 .newsletter-archive-hero .compact-signup-form > small { color: rgba(255,255,255,.64); }
 
@@ -214,7 +199,15 @@
 .newsletter-archive-hero .compact-signup-fields button { border-color: rgba(255,255,255,.5); }
 .newsletter-archive-hero .compact-signup-consent { color: rgba(255,255,255,.78); }
 
+.newsletter-inline-signup {
+  max-width: 650px;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.2);
+  scroll-margin-top: 110px;
+}
+
 .newsletter-latest-link {
+  justify-self: start;
   padding: .25rem 0 .35rem;
   border-bottom: 1px solid var(--clay);
   color: white;

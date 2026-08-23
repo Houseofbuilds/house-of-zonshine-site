@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&amp;family=Lora:ital,wght@0,500;1,500&amp;family=Raleway:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="newsletter.css?v=20260822-5">
+  <link rel="stylesheet" href="newsletter.css?v=20260822-6">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,8 +70,8 @@
     THESIS: A warm, personal home for every House of Zonshine letter, with the portrait and espresso setting restored and the copy reduced to its essentials.
     OWN-WORLD: Espresso, light literary type, one full-height portrait, a clay accent, and a single ruled reading list.
     STORY: Visitors meet Julia visually, understand the letter in one sentence, then choose to join or read.
-    FIRST VIEWPORT: Concise copy and two small actions sit beside Julia's portrait; signup details remain hidden until requested.
-    FORM: The original photo-led composition, simplified through shorter copy and progressive disclosure.
+    FIRST VIEWPORT: Concise copy and the ready-to-complete signup form sit beside Julia's portrait.
+    FORM: The original photo-led composition, simplified through shorter copy and a single-step visible signup.
     FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
   -->
   <a class="skip-link" href="#main">Skip to content</a>
@@ -93,24 +93,21 @@
         <h1 id="newsletter-title">Stories about houses, people, and Los Angeles.</h1>
         <p class="newsletter-archive-intro">One good story, a few local finds, and the occasional delightfully random fact—once a month.</p>
         <div class="newsletter-archive-actions">
-          <details class="compact-signup" id="subscribe">
-            <summary>Join the newsletter</summary>
-            <form class="compact-signup-form" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="newsletter">
-              <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
-              <input type="hidden" name="consent-version" value="newsletter-2026-08-14">
-              <input type="hidden" name="privacy-notice-version" value="2026-08-14">
-              <input type="hidden" name="collection-source" value="newsletter-archive">
-              <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
-              <div class="compact-signup-fields">
-                <label class="compact-signup-field" for="archive-full-name"><span>Full name</span><input id="archive-full-name" name="full-name" type="text" autocomplete="name" placeholder="Your full name" required></label>
-                <label class="compact-signup-field" for="archive-email"><span>Email address</span><input id="archive-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
-                <button type="submit">Sign me up</button>
-              </div>
-              <label class="compact-signup-consent" for="archive-consent"><input id="archive-consent" name="email-consent" type="checkbox" value="express-consent" required><span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time.</span></label>
-              <small>Netlify and Compass systems process the subscriber record. See the <a href="../privacy/">Privacy Policy</a>.</small>
-            </form>
-          </details>
+          <form class="compact-signup-form newsletter-inline-signup" id="subscribe" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="newsletter">
+            <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
+            <input type="hidden" name="consent-version" value="newsletter-2026-08-14">
+            <input type="hidden" name="privacy-notice-version" value="2026-08-14">
+            <input type="hidden" name="collection-source" value="newsletter-archive">
+            <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+            <div class="compact-signup-fields">
+              <label class="compact-signup-field" for="archive-full-name"><span>Full name</span><input id="archive-full-name" name="full-name" type="text" autocomplete="name" placeholder="Your full name" required></label>
+              <label class="compact-signup-field" for="archive-email"><span>Email address</span><input id="archive-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+              <button type="submit">Sign me up</button>
+            </div>
+            <label class="compact-signup-consent" for="archive-consent"><input id="archive-consent" name="email-consent" type="checkbox" value="express-consent" required><span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time.</span></label>
+            <small>Netlify and Compass systems process the subscriber record. See the <a href="../privacy/">Privacy Policy</a>.</small>
+          </form>
           <a class="newsletter-latest-link" href="a-full-house/">Read the latest issue <span aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -143,13 +140,5 @@
     <div class="footer-meta"><p>Julia Zonshine, California Real Estate Salesperson · DRE #02246696<br>Compass, responsible broker · DRE #01991628 · Equal Housing Opportunity</p><p>© <span id="year">2026</span> House of Zonshine<br><a href="../privacy/">Privacy</a> · <a href="../legal/">Terms, Legal &amp; Accessibility</a></p></div>
   </footer>
   <script src="../js/script.js"></script>
-  <script>
-    const archiveSignup = document.getElementById('subscribe');
-    const openArchiveSignup = () => {
-      if (window.location.hash === '#subscribe' && archiveSignup) archiveSignup.open = true;
-    };
-    openArchiveSignup();
-    window.addEventListener('hashchange', openArchiveSignup);
-  </script>
 </body>
 </html>
