@@ -3,102 +3,97 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Newsletter | House of Zonshine</title>
-  <meta name="description" content="Join me once a month for house stories, Los Angeles discoveries, new restaurants and delightfully random things worth knowing.">
+  <title>Newsletter Archive | House of Zonshine</title>
+  <meta name="description" content="Read past House of Zonshine newsletters from Julia Zonshine—Los Angeles house stories, neighborhood conversations, local discoveries, and useful things worth knowing.">
   <meta name="theme-color" content="#2b1f1a">
-  <meta property="og:title" content="House of Zonshine Newsletter | Julia Zonshine">
-  <meta property="og:description" content="House stories, new restaurants, Los Angeles discoveries and delightfully random things worth knowing, once a month from me.">
+  <meta property="og:title" content="House of Zonshine Newsletter Archive">
+  <meta property="og:description" content="House stories, neighborhood conversations, Los Angeles discoveries, and useful things worth knowing, from Julia Zonshine.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://juliazonshine.com/newsletter/">
   <meta property="og:site_name" content="House of Zonshine">
   <meta property="og:image" content="https://juliazonshine.com/images/julia-trust-photo.jpg">
   <meta property="og:image:alt" content="Julia Zonshine, creator of the House of Zonshine newsletter">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="House of Zonshine Newsletter | Julia Zonshine">
-  <meta name="twitter:description" content="House stories, new restaurants, Los Angeles discoveries and delightfully random things worth knowing, once a month from me.">
+  <meta name="twitter:title" content="House of Zonshine Newsletter Archive">
+  <meta name="twitter:description" content="Past letters about houses, people, and Los Angeles from Julia Zonshine.">
   <meta name="twitter:image" content="https://juliazonshine.com/images/julia-trust-photo.jpg">
   <link rel="canonical" href="https://juliazonshine.com/newsletter/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&amp;family=Lora:ital,wght@0,500;1,500&amp;family=Raleway:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="newsletter.css?v=20260822-2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
+        "@type": "CollectionPage",
         "@id": "https://juliazonshine.com/newsletter/#page",
         "url": "https://juliazonshine.com/newsletter/",
-        "name": "House of Zonshine Newsletter",
-        "description": "My monthly collection of house stories, new restaurants, Los Angeles discoveries and delightfully random things worth knowing.",
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://juliazonshine.com/#website",
-          "name": "House of Zonshine",
-          "url": "https://juliazonshine.com/"
-        },
-        "breadcrumb": {
-          "@id": "https://juliazonshine.com/newsletter/#breadcrumb"
-        }
+        "name": "House of Zonshine Newsletter Archive",
+        "description": "Past House of Zonshine newsletters from Julia Zonshine about Los Angeles houses, neighborhoods, people, and local discoveries.",
+        "isPartOf": { "@type": "WebSite", "@id": "https://juliazonshine.com/#website", "name": "House of Zonshine", "url": "https://juliazonshine.com/" },
+        "mainEntity": { "@id": "https://juliazonshine.com/newsletter/#issues" },
+        "breadcrumb": { "@id": "https://juliazonshine.com/newsletter/#breadcrumb" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://juliazonshine.com/newsletter/#issues",
+        "name": "House of Zonshine newsletter issues",
+        "numberOfItems": 6,
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://juliazonshine.com/newsletter/a-full-house/", "name": "A Full House" },
+          { "@type": "ListItem", "position": 2, "url": "https://juliazonshine.com/newsletter/coming-in-hot-salon-hestia/", "name": "Coming in Hot: A Conversation with Salon Hestia" },
+          { "@type": "ListItem", "position": 3, "url": "https://juliazonshine.com/newsletter/i-sold-christopher-lloyds-house/", "name": "I Sold Christopher Lloyd's House (and Lost My Mind a Little)" },
+          { "@type": "ListItem", "position": 4, "url": "https://juliazonshine.com/newsletter/q1-is-in-the-bag/", "name": "Q1 Is in the Bag" },
+          { "@type": "ListItem", "position": 5, "url": "https://juliazonshine.com/newsletter/a-little-march-note/", "name": "A Little March Note" },
+          { "@type": "ListItem", "position": 6, "url": "https://juliazonshine.com/newsletter/love-where-you-live/", "name": "Love Where You Live—Not Just the Listing" }
+        ]
       },
       {
         "@type": "BreadcrumbList",
         "@id": "https://juliazonshine.com/newsletter/#breadcrumb",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://juliazonshine.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Newsletter",
-            "item": "https://juliazonshine.com/newsletter/"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://juliazonshine.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Newsletter", "item": "https://juliazonshine.com/newsletter/" }
         ]
       }
     ]
   }
   </script>
 </head>
-<body class="inner-page newsletter-page">
+<body class="inner-page newsletter-page newsletter-index-page">
+  <!--
+    THESIS: A useful, permanent home for every House of Zonshine letter; it refuses the image-heavy email-promo landing page.
+    OWN-WORLD: Espresso and paper fields, Lora editorial titles, Karla structure, square controls, and a single ruled archive.
+    STORY: Visitors understand what Julia writes, scan every issue, open a permanent link, and can quietly join the next send.
+    FIRST VIEWPORT: Julia's portrait and the complete signup form are visible together; the archive follows immediately below.
+    FORM: The earlier photo-led signup composition restored above a restrained, year-organized editorial ledger.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header inner-header" id="site-header">
     <div class="brand-lockup">
-      <a class="brand" href="../" aria-label="House of Zonshine home">
-        <span>House of Zonshine</span>
-        <small>Los Angeles Real Estate</small>
-      </a>
+      <a class="brand" href="../" aria-label="House of Zonshine home"><span>House of Zonshine</span><small>Los Angeles Real Estate</small></a>
       <span class="brand-divider" aria-hidden="true"></span>
-      <a class="rsr-brand" href="https://rsrrealestate.com/agent/julia-zonshine" target="_blank" rel="noopener" aria-label="View Julia Zonshine on the RSR Real Estate website">
-        <img src="../images/rsr-logo.png" alt="RSR Real Estate">
-      </a>
+      <a class="rsr-brand" href="https://rsrrealestate.com/agent/julia-zonshine" target="_blank" rel="noopener" aria-label="View Julia Zonshine on the RSR Real Estate website"><img src="../images/rsr-logo.png" alt="RSR Real Estate"></a>
     </div>
-    <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span><span class="sr-only">Open menu</span>
-    </button>
+    <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr-only">Open menu</span></button>
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="../#about">Meet Julia</a>
-      <a href="../favorites/">The Edit</a>
-      <a href="../guides/">Guides</a>
-      <a href="../newsletter/">Newsletter</a>
-      <a href="../blog/">Blog</a>
-      <a href="../#contact" class="nav-contact">Let’s Talk</a>
+      <a href="../#about">Meet Julia</a><a href="../favorites/">The Edit</a><a href="../guides/">Guides</a><a href="../newsletter/" aria-current="page">Newsletter</a><a href="../blog/">Blog</a><a href="../#contact" class="nav-contact">Let’s Talk</a>
     </nav>
   </header>
 
   <main id="main">
     <section class="newsletter-landing" aria-labelledby="newsletter-title">
       <div class="newsletter-landing-copy">
-        <p class="page-kicker">Once a month, from me</p>
         <h1 id="newsletter-title">Stories about houses, people, and Los Angeles.</h1>
         <p class="newsletter-lead">A monthly collection of house stories, strange little facts, new restaurants, local things worth knowing, and whatever else I couldn’t stop talking about that month.</p>
         <p class="newsletter-topics">Houses · People · New places · Did you know?</p>
 
-        <div class="newsletter-signup">
+        <div class="newsletter-signup" id="subscribe">
           <h2>Come read along.</h2>
           <p>Sometimes useful, sometimes random, and never a market update in disguise. Any listings know to wait politely at the end.</p>
           <form class="newsletter-form" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -109,20 +104,11 @@
             <input type="hidden" name="collection-source" value="newsletter-signup-page">
             <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
             <div class="newsletter-fields">
-              <label class="newsletter-field" for="newsletter-full-name">
-                <span>Full name</span>
-                <input id="newsletter-full-name" name="full-name" type="text" autocomplete="name" placeholder="Your full name" required>
-              </label>
-              <label class="newsletter-field" for="newsletter-email">
-                <span>Email address</span>
-                <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-              </label>
+              <label class="newsletter-field" for="newsletter-full-name"><span>Full name</span><input id="newsletter-full-name" name="full-name" type="text" autocomplete="name" placeholder="Your full name" required></label>
+              <label class="newsletter-field" for="newsletter-email"><span>Email address</span><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
               <button type="submit">Sign me up ↗</button>
             </div>
-            <label class="newsletter-consent" for="newsletter-consent">
-              <input id="newsletter-consent" name="email-consent" type="checkbox" value="express-consent" required>
-              <span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time.</span>
-            </label>
+            <label class="newsletter-consent" for="newsletter-consent"><input id="newsletter-consent" name="email-consent" type="checkbox" value="express-consent" required><span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time.</span></label>
             <small><strong>Privacy notice:</strong> Netlify receives your name, email, consent record, and basic submission data from this form. Compass systems are used to manage the subscriber record, deliver the newsletter, maintain unsubscribe records, and support compliance. Julia and her real estate team may access the record for those purposes. This is not a consultation request. See the <a href="../privacy/">Privacy Policy</a>.</small>
           </form>
         </div>
@@ -130,29 +116,37 @@
 
       <figure class="newsletter-landing-portrait">
         <img src="../images/julia-trust-photo.jpg" alt="Julia Zonshine">
-        <figcaption>
-          <span>Julia Zonshine</span>
-          <small>House of Zonshine</small>
-        </figcaption>
-        <div class="newsletter-photo-note" aria-hidden="true">
-          <span>A little note</span>
-          <strong>from me<br>to you.</strong>
-        </div>
+        <figcaption><span>Julia Zonshine</span><small>House of Zonshine</small></figcaption>
+        <div class="newsletter-photo-note" aria-hidden="true"><span>A little note</span><strong>from me<br>to you.</strong></div>
       </figure>
+    </section>
+
+    <section class="newsletter-archive-list" aria-labelledby="archive-title">
+      <header class="newsletter-archive-heading">
+        <h2 id="archive-title">The archive</h2>
+        <p>Every issue has its own permanent page, newest first. Share, save, or link to the one you came for.</p>
+      </header>
+      <div class="newsletter-archive-years">
+        <div class="newsletter-archive-year-group">
+          <div class="newsletter-archive-year"><strong>2026</strong><span>6 letters</span></div>
+          <div class="newsletter-archive-rows">
+            <a class="newsletter-archive-row" href="a-full-house/"><time datetime="2026-08">August</time><h3>A Full House</h3><p>A busy Los Feliz open house, thirteen offers, and making room for the life you actually want.</p><span class="newsletter-archive-arrow" aria-hidden="true">↗</span></a>
+            <a class="newsletter-archive-row" href="coming-in-hot-salon-hestia/"><time datetime="2026-07">July</time><h3>Coming in Hot: Salon Hestia</h3><p>Jen of Salon Hestia on home, hearth, and the Sherman Oaks corner where neighbors really know one another.</p><span class="newsletter-archive-arrow" aria-hidden="true">↗</span></a>
+            <a class="newsletter-archive-row" href="i-sold-christopher-lloyds-house/"><time datetime="2026-06">June</time><h3>I Sold Christopher Lloyd’s House</h3><p>The Sycamore House, a mold of Doc Brown’s face, and one very surreal full-circle real estate story.</p><span class="newsletter-archive-arrow" aria-hidden="true">↗</span></a>
+            <a class="newsletter-archive-row" href="q1-is-in-the-bag/"><time datetime="2026-04">April</time><h3>Q1 Is in the Bag</h3><p>Seven offers, one useful conversation, and a 17-day close built around what the sellers really needed.</p><span class="newsletter-archive-arrow" aria-hidden="true">↗</span></a>
+            <a class="newsletter-archive-row" href="a-little-march-note/"><time datetime="2026-03">March</time><h3>A Little March Note</h3><p>The beginning of a monthly mix of LA real estate, local finds, and late-night random facts.</p><span class="newsletter-archive-arrow" aria-hidden="true">↗</span></a>
+            <a class="newsletter-archive-row" href="love-where-you-live/"><time datetime="2026-02">February</time><h3>Love Where You Live—Not Just the Listing</h3><p>Why belonging is something you build on purpose, wherever you land.</p><span class="newsletter-archive-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="newsletter-archive-note"><span>House of Zonshine · Curating Belonging</span><span>New letters are added after they’re sent.</span></div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-brand"><strong>House of Zonshine</strong><span>By Julia Zonshine</span></div>
-    <div class="footer-links">
-      <a href="../">Home</a><a href="../blog/">Blog</a><a href="../guides/">Guides</a><a href="../#contact">Contact</a>
-      <a href="https://www.instagram.com/houseofzonshine/" rel="noopener">Instagram</a>
-      <a href="https://youtube.com/@houseofzonshine" rel="noopener">YouTube</a>
-    </div>
-    <div class="footer-meta">
-      <p>Julia Zonshine, California Real Estate Salesperson · DRE #02246696<br>Compass, responsible broker · DRE #01991628 · Equal Housing Opportunity</p>
-      <p>© <span id="year">2026</span> House of Zonshine<br><a href="../privacy/">Privacy</a> · <a href="../legal/">Terms, Legal &amp; Accessibility</a></p>
-    </div>
+    <div class="footer-brand"><strong>House of Zonshine</strong><span>Curating Belonging</span></div>
+    <div class="footer-links"><a href="../">Home</a><a href="../blog/">Blog</a><a href="../guides/">Guides</a><a href="../#contact">Contact</a><a href="https://www.instagram.com/houseofzonshine/" rel="noopener">Instagram</a><a href="https://youtube.com/@houseofzonshine" rel="noopener">YouTube</a></div>
+    <div class="footer-meta"><p>Julia Zonshine, California Real Estate Salesperson · DRE #02246696<br>Compass, responsible broker · DRE #01991628 · Equal Housing Opportunity</p><p>© <span id="year">2026</span> House of Zonshine<br><a href="../privacy/">Privacy</a> · <a href="../legal/">Terms, Legal &amp; Accessibility</a></p></div>
   </footer>
   <script src="../js/script.js"></script>
 </body>
