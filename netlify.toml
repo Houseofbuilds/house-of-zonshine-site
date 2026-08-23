@@ -1,4 +1,5 @@
 [build]
+  command = "node tests/site-regression.mjs"
   publish = "."
 
 [[headers]]

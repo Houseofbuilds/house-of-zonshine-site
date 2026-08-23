@@ -35,6 +35,16 @@ Editorial real estate site for Julia Zonshine. Simple static build: no framework
 - Add every published neighborhood guide to Local Guides and connect it to the matching homes in The Zonshine Edit.
 - Place a guide in the clearest primary route instead of duplicating it across categories.
 
+## Regression check
+
+Run this before every homepage or navigation deployment:
+
+```sh
+node tests/site-regression.mjs
+```
+
+The check protects the homepage's permanent sections and primary destinations—including Stories and Blog—from being removed or substituted during an unrelated update. Netlify runs the same check as a required build gate and will refuse to deploy a broken homepage contract.
+
 ## Before public launch
 
 - Confirm the final excerpts selected from approved client material.
