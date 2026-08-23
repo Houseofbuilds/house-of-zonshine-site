@@ -21,15 +21,15 @@
   min-height: 76px;
 }
 
-.newsletter-archive-hero {
-  min-height: min(690px, 86dvh);
-  padding: clamp(9rem, 16vw, 14rem) max(4vw, calc((100vw - 1240px) / 2)) clamp(5rem, 9vw, 8rem);
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .55fr);
-  gap: clamp(4rem, 10vw, 10rem);
-  align-items: end;
+.newsletter-index-page .inner-header {
   background: var(--espresso);
-  color: white;
+}
+
+.newsletter-archive-hero {
+  min-height: 0;
+  padding: clamp(11rem, 15vw, 14rem) max(4vw, calc((100vw - 1240px) / 2)) clamp(5rem, 8vw, 7rem);
+  background: var(--plaster);
+  color: var(--espresso);
 }
 
 .newsletter-archive-hero > *,
@@ -38,33 +38,29 @@
 }
 
 .newsletter-archive-hero h1 {
-  max-width: 870px;
+  max-width: 980px;
   margin: 0;
-  font-size: clamp(3.7rem, 7.2vw, 6rem);
+  font-size: clamp(3.2rem, 5.7vw, 5.1rem);
   font-weight: 500;
   letter-spacing: -.04em;
-  line-height: .94;
+  line-height: .98;
   text-wrap: balance;
 }
 
 .newsletter-archive-intro {
-  max-width: 650px;
-  margin: 2rem 0 0;
-  color: rgba(255,255,255,.72);
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  max-width: 680px;
+  margin: 1.6rem 0 0;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
   line-height: 1.7;
 }
 
-.newsletter-archive-aside {
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,.25);
-}
-
-.newsletter-archive-aside > p {
-  margin: 0 0 1.35rem;
-  color: rgba(255,255,255,.68);
-  font-size: .9rem;
-  line-height: 1.65;
+.newsletter-archive-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.6rem;
+  align-items: center;
+  margin-top: 2.2rem;
 }
 
 .compact-signup {
@@ -74,7 +70,8 @@
 .compact-signup summary {
   width: fit-content;
   padding: .85rem 1.15rem;
-  border: 1px solid rgba(255,255,255,.65);
+  border: 1px solid var(--espresso);
+  background: var(--espresso);
   color: white;
   font-size: .66rem;
   font-weight: 600;
@@ -88,9 +85,15 @@
 .compact-signup summary::-webkit-details-marker { display: none; }
 .compact-signup summary:hover,
 .compact-signup summary:focus-visible {
-  background: var(--plaster);
-  color: var(--espresso);
+  border-color: var(--clay);
+  background: var(--clay);
+  color: white;
   transform: translateY(-2px);
+}
+
+.compact-signup[open] {
+  flex: 1 0 100%;
+  max-width: 760px;
 }
 
 .compact-signup[open] summary { margin-bottom: 1.5rem; }
@@ -114,7 +117,7 @@
 .compact-signup-field span {
   display: block;
   margin-bottom: .35rem;
-  color: rgba(255,255,255,.64);
+  color: var(--muted);
   font-size: .58rem;
   font-weight: 600;
   letter-spacing: .11em;
@@ -126,21 +129,21 @@
   min-width: 0;
   padding: .65rem 0;
   border: 0;
-  border-bottom: 1px solid rgba(255,255,255,.5);
+  border-bottom: 1px solid var(--line);
   border-radius: 0;
   outline: 0;
   background: transparent;
-  color: white;
+  color: var(--espresso);
 }
 
-.compact-signup-field input::placeholder { color: rgba(255,255,255,.42); }
+.compact-signup-field input::placeholder { color: var(--muted); }
 .compact-signup-field input:focus { border-color: var(--bronze); }
 
 .compact-signup-fields button {
   min-height: 43px;
   padding: 0 0 .6rem;
   border: 0;
-  border-bottom: 1px solid rgba(255,255,255,.5);
+  border-bottom: 1px solid var(--line);
   background: transparent;
   color: var(--bronze);
   font-size: .64rem;
@@ -156,7 +159,7 @@
   gap: .65rem;
   align-items: start;
   margin: 0;
-  color: rgba(255,255,255,.76);
+  color: var(--ink);
   font-size: .7rem;
   line-height: 1.5;
 }
@@ -169,73 +172,50 @@
 }
 
 .compact-signup-form > small {
-  color: rgba(255,255,255,.6);
+  color: var(--muted);
   font-size: .66rem;
   line-height: 1.5;
 }
 
 .compact-signup-form a { color: inherit; }
 
+.newsletter-latest-link {
+  padding: .25rem 0 .35rem;
+  border-bottom: 1px solid var(--clay);
+  color: var(--espresso);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.newsletter-latest-link span {
+  display: inline-block;
+  margin-left: .35rem;
+  transition: transform .2s ease;
+}
+
+.newsletter-latest-link:hover span,
+.newsletter-latest-link:focus-visible span { transform: translateX(4px); }
+
 .newsletter-archive-list {
   width: min(1240px, calc(100vw - 96px));
   margin: auto;
-  padding: clamp(6rem, 10vw, 10rem) 0;
+  padding: clamp(5rem, 8vw, 8rem) 0 clamp(7rem, 10vw, 10rem);
 }
 
 .newsletter-archive-heading {
   max-width: 760px;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .newsletter-archive-heading h2 {
   margin: 0;
-  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  font-size: clamp(2.7rem, 4.5vw, 4.5rem);
   font-weight: 500;
   letter-spacing: -.04em;
   line-height: .98;
-}
-
-.newsletter-archive-heading p {
-  max-width: 570px;
-  margin: 1.4rem 0 0;
-  color: var(--muted);
-}
-
-.newsletter-signup { scroll-margin-top: 110px; }
-
-.newsletter-archive-years {
-  display: grid;
-  gap: clamp(5rem, 8vw, 8rem);
-}
-
-.newsletter-archive-year-group {
-  display: grid;
-  grid-template-columns: minmax(96px, .16fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: start;
-}
-
-.newsletter-archive-year {
-  position: sticky;
-  top: 110px;
-  display: grid;
-  gap: .4rem;
-  padding-top: 1.1rem;
-}
-
-.newsletter-archive-year strong {
-  font-family: "Lora", Georgia, serif;
-  font-size: clamp(1.8rem, 2.5vw, 3.2rem);
-  font-weight: 500;
-  letter-spacing: -.03em;
-}
-
-.newsletter-archive-year span {
-  color: var(--muted);
-  font-size: .7rem;
-  font-weight: 600;
-  letter-spacing: .12em;
-  text-transform: uppercase;
 }
 
 .newsletter-archive-rows {
@@ -244,11 +224,11 @@
 
 .newsletter-archive-row {
   display: grid;
-  grid-template-columns: minmax(130px, .28fr) minmax(0, 1.15fr) minmax(210px, .62fr) auto;
+  grid-template-columns: minmax(130px, .26fr) minmax(0, 1fr) auto;
   gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
-  min-height: 176px;
-  padding: 2.25rem 0;
+  min-height: 126px;
+  padding: 1.8rem 0;
   border-bottom: 1px solid var(--line);
   color: var(--espresso);
   text-decoration: none;
@@ -264,35 +244,22 @@
 
 .newsletter-archive-row h3 {
   margin: 0;
-  font-size: clamp(1.8rem, 3vw, 3.15rem);
+  font-size: clamp(1.65rem, 2.7vw, 2.8rem);
   font-weight: 500;
   letter-spacing: -.03em;
   line-height: 1.08;
   text-wrap: balance;
 }
 
-.newsletter-archive-row p {
-  margin: 0;
-  color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.65;
-}
-
 .newsletter-archive-arrow {
-  display: grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border: 1px solid var(--line);
-  font-size: 1rem;
-  transition: background .2s ease, color .2s ease, transform .2s ease;
+  color: var(--clay);
+  font-size: 1.25rem;
+  transition: transform .2s ease;
 }
 
 .newsletter-archive-row:hover .newsletter-archive-arrow,
 .newsletter-archive-row:focus-visible .newsletter-archive-arrow {
-  background: var(--espresso);
-  color: white;
-  transform: translate(2px, -2px);
+  transform: translateX(5px);
 }
 
 .newsletter-archive-row:focus-visible {
@@ -301,9 +268,6 @@
 }
 
 .newsletter-archive-note {
-  display: flex;
-  justify-content: space-between;
-  gap: 3rem;
   margin-top: 2.5rem;
   color: var(--muted);
   font-size: .78rem;
@@ -525,6 +489,30 @@
   justify-self: end;
 }
 
+.newsletter-issue-actions .compact-signup summary {
+  border-color: rgba(255,255,255,.65);
+  background: transparent;
+}
+
+.newsletter-issue-actions .compact-signup summary:hover,
+.newsletter-issue-actions .compact-signup summary:focus-visible {
+  border-color: var(--plaster);
+  background: var(--plaster);
+  color: var(--espresso);
+}
+
+.newsletter-issue-actions .compact-signup-field span,
+.newsletter-issue-actions .compact-signup-form > small { color: rgba(255,255,255,.64); }
+
+.newsletter-issue-actions .compact-signup-field input {
+  border-color: rgba(255,255,255,.5);
+  color: white;
+}
+
+.newsletter-issue-actions .compact-signup-field input::placeholder { color: rgba(255,255,255,.42); }
+.newsletter-issue-actions .compact-signup-fields button { border-color: rgba(255,255,255,.5); }
+.newsletter-issue-actions .compact-signup-consent { color: rgba(255,255,255,.76); }
+
 .newsletter-issue-actions > .button {
   justify-self: end;
   min-width: max-content;
@@ -533,6 +521,7 @@
 .newsletter-issue-actions .compact-signup[open] {
   grid-column: 1 / -1;
   width: 100%;
+  max-width: none;
 }
 
 .newsletter-issue-navigation {
@@ -583,33 +572,14 @@
   }
 
   .newsletter-archive-hero {
-    min-height: 0;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 3.5rem;
     padding-top: 10rem;
-  }
-
-  .newsletter-archive-aside { max-width: 590px; }
-
-  .newsletter-archive-year-group {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .newsletter-archive-year {
-    position: static;
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    padding-top: 0;
   }
 
   .newsletter-archive-row {
     grid-template-columns: 110px minmax(0, 1fr) auto;
   }
 
-  .newsletter-archive-row p { grid-column: 2 / 3; }
-  .newsletter-archive-arrow { grid-column: 3; grid-row: 1 / 3; }
+  .newsletter-archive-arrow { grid-column: 3; }
 
   .newsletter-issue-hero-inner { grid-template-columns: minmax(0, 1fr); }
   .newsletter-issue-date { justify-self: start; }
@@ -635,6 +605,7 @@
 
   .newsletter-archive-hero,
   .newsletter-issue-hero {
+    box-sizing: border-box;
     width: 100%;
     max-width: 100vw;
     padding-right: 24px;
@@ -646,10 +617,10 @@
     max-width: calc(100vw - 48px);
   }
 
-  .newsletter-archive-hero { padding-top: 9rem; }
+  .newsletter-archive-hero { padding-top: 8.5rem; padding-bottom: 4.5rem; }
   .newsletter-archive-hero h1 {
     max-width: 100%;
-    font-size: clamp(3.15rem, 15vw, 4.5rem);
+    font-size: clamp(2.9rem, 11.5vw, 3.8rem);
     overflow-wrap: anywhere;
     text-wrap: pretty;
   }
@@ -662,13 +633,11 @@
   .compact-signup-fields { grid-template-columns: 1fr; }
   .compact-signup-fields button { text-align: left; }
 
-  .newsletter-archive-list { width: calc(100vw - 48px); }
+  .newsletter-archive-list { width: calc(100vw - 48px); padding-top: 4.5rem; }
   .newsletter-archive-row { grid-template-columns: 1fr auto; gap: .75rem 1.5rem; }
   .newsletter-archive-row time { grid-column: 1; }
   .newsletter-archive-row h3 { grid-column: 1; }
-  .newsletter-archive-row p { grid-column: 1; }
-  .newsletter-archive-arrow { grid-column: 2; grid-row: 1 / 4; }
-  .newsletter-archive-note { flex-direction: column; gap: .6rem; }
+  .newsletter-archive-arrow { grid-column: 2; grid-row: 1 / 3; }
 
   .newsletter-issue-hero { padding-top: 9.5rem; }
   .newsletter-issue-hero h1 { font-size: clamp(2.75rem, 12.5vw, 4rem); }
@@ -693,5 +662,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .compact-signup summary,
-  .newsletter-archive-arrow { transition: none; }
+  .newsletter-archive-arrow,
+  .newsletter-latest-link span { transition: none; }
 }
