@@ -437,6 +437,26 @@
   line-height: 1.5;
 }
 
+.newsletter-opening-lockup {
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-opening-lockup .newsletter-opening-feature {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.newsletter-opening-tag {
+  margin: .55rem 0 0;
+  color: var(--bronze);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
 .newsletter-issue-copy section {
   margin-top: clamp(5rem, 8vw, 7rem);
   scroll-margin-top: 110px;
@@ -536,6 +556,30 @@
   color: var(--clay);
   font-weight: 600;
 }
+
+.newsletter-site-preview {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+  margin: 0 0 2.25rem;
+}
+
+.newsletter-site-preview a {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--espresso);
+}
+
+.newsletter-site-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: filter .2s ease;
+}
+
+.newsletter-site-preview a:hover img,
+.newsletter-site-preview a:focus-visible img { filter: brightness(.88); }
 
 .newsletter-fact-image {
   width: min(240px, 45%);
@@ -812,6 +856,7 @@
   .newsletter-story-pair { grid-template-columns: 1fr; }
   .newsletter-story-pair img { min-height: 0; max-height: 520px; }
   .newsletter-photo-grid { grid-template-columns: 1fr; }
+  .newsletter-site-preview { grid-template-columns: 1fr; }
   .newsletter-fact-image { width: 42%; margin-left: 1rem; }
 
   .newsletter-issue-actions {
