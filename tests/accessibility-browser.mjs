@@ -18,7 +18,8 @@ const contentTypes = new Map([
   [".pdf", "application/pdf"]
 ]);
 
-const server = http.createServer(async (request, response) => {
+const productionMode = process.argv.includes("--production");
+const server = productionMode ? null : http.createServer(async (request, response) => {
   try {
     if (request.method === "POST") {
       request.resume();
@@ -40,8 +41,8 @@ const server = http.createServer(async (request, response) => {
     response.end("Not found");
   }
 });
-await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
-const baseURL = `http://127.0.0.1:${server.address().port}`;
+if (server) await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+const baseURL = productionMode ? "https://juliazonshine.com" : `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ headless: true, channel: process.env.CI ? undefined : "chrome" });
 const failures = [];
 
@@ -102,27 +103,40 @@ try {
   await page.locator('form[name="contact"] button[type="submit"]').click();
   assert.equal(await page.evaluate(() => document.activeElement?.classList.contains("form-error-summary")), true);
   assert.equal(await page.locator('form[name="contact"] [aria-invalid="true"]').count(), 3);
-  await page.locator('input[name="first-name"]').fill("Accessibility");
-  await page.locator('input[name="last-name"]').fill("Tester");
-  await email.fill("test@example.com");
-  await Promise.all([
-    page.waitForURL("**/thanks/contact/"),
-    page.locator('form[name="contact"] button[type="submit"]').click()
-  ]);
-  assert.match(await page.locator("h1").textContent(), /got it/i);
+  if (!productionMode) {
+    await page.locator('input[name="first-name"]').fill("Accessibility");
+    await page.locator('input[name="last-name"]').fill("Tester");
+    await email.fill("test@example.com");
+    await Promise.all([
+      page.waitForURL("**/thanks/contact/"),
+      page.locator('form[name="contact"] button[type="submit"]').click()
+    ]);
+    assert.match(await page.locator("h1").textContent(), /got it/i);
+  }
 
   await visit(page, "/newsletter/");
   await page.locator('form[name="newsletter"] button[type="submit"]').click();
   assert.equal(await page.evaluate(() => document.activeElement?.classList.contains("form-error-summary")), true);
   assert.equal(await page.locator('form[name="newsletter"] [aria-invalid="true"]').count(), 3);
-  await page.locator('#archive-full-name').fill("Accessibility Tester");
-  await page.locator('#archive-email').fill("test@example.com");
-  await page.locator('#archive-consent').check();
-  await Promise.all([
-    page.waitForURL("**/thanks/newsletter/"),
-    page.locator('form[name="newsletter"] button[type="submit"]').click()
-  ]);
-  assert.match(await page.locator("h1").textContent(), /on the list/i);
+  if (!productionMode) {
+    await page.locator('#archive-full-name').fill("Accessibility Tester");
+    await page.locator('#archive-email').fill("test@example.com");
+    await page.locator('#archive-consent').check();
+    await Promise.all([
+      page.waitForURL("**/thanks/newsletter/"),
+      page.locator('form[name="newsletter"] button[type="submit"]').click()
+    ]);
+    assert.match(await page.locator("h1").textContent(), /on the list/i);
+  }
+
+  if (productionMode) {
+    await visit(page, "/legal/");
+    const statement = await page.locator("#accessibility").locator("xpath=following-sibling::*").allTextContents();
+    const statementText = statement.join(" ");
+    assert.match(statementText, /WCAG\) 2\.2 Level AA/);
+    assert.match(statementText, /818-859-0762/);
+    assert.match(statementText, /two business days/);
+  }
   await context.close();
 
   const reflowContext = await browser.newContext({ viewport: { width: 320, height: 800 }, reducedMotion: "reduce" });
@@ -139,8 +153,10 @@ try {
   await reflowContext.close();
 
   assert.deepEqual(failures, [], `Browser accessibility checks failed:\n${failures.join("\n")}`);
-  console.log(`Browser accessibility checks passed: axe and 320px reflow on ${routes.length} pages, plus keyboard and complete form workflows.`);
+  console.log(productionMode
+    ? `Production accessibility checks passed: axe and 320px reflow on ${routes.length} live pages, plus keyboard, form-error, and statement checks.`
+    : `Browser accessibility checks passed: axe and 320px reflow on ${routes.length} pages, plus keyboard and complete form workflows.`);
 } finally {
   await browser.close();
-  await new Promise((resolve) => server.close(resolve));
+  if (server) await new Promise((resolve) => server.close(resolve));
 }

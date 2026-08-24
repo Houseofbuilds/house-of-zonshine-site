@@ -10,7 +10,7 @@
 
 **Implementation tester:** Codex
 
-**Status:** Source remediation and automated/developer-browser retest complete; independent assistive-technology audit, PDF audit, production deployment/retest, and owner/legal review remain open.
+**Status:** Source remediation, production deployment, and automated/developer-browser production retest complete; independent assistive-technology audit, PDF audit, and legal review remain open.
 
 ## Important limitation
 
@@ -68,6 +68,7 @@ Developer keyboard/browser inspection also found:
 | Motion | Carousel with `prefers-reduced-motion: reduce` | Pass: no automatic advance; pause state exposed |
 | Contact process | Empty errors → correction → valid submit → confirmation | Pass in the production-like local server |
 | Newsletter process | Empty errors → correction + consent → valid submit → confirmation | Pass in the production-like local server |
+| Production full-page retest | 27 live canonical pages at release `085d265` | Pass: 0 axe violations; 320px reflow, keyboard, form-error, and statement checks pass |
 | PDF static metadata inspection | Eight PDFs | Seven show tagging/language/title markers; relocation guide fails the marker check |
 
 Commands:
@@ -86,9 +87,8 @@ The source is not ready for a public WCAG/ADA conformance claim until all of the
 1. Independently test the deployed release with NVDA + Firefox or Chrome, VoiceOver + Safari on macOS, and VoiceOver + Safari on iPhone.
 2. Perform human keyboard, 200% text resize, text-spacing, touch-target, voice-control, and focus-obscuration tests on the production site.
 3. Audit all eight PDFs with a qualified PDF accessibility tool and assistive technology; remediate or replace the relocation guide with an accessible HTML/PDF alternative.
-4. Validate Netlify form delivery and any email notification/confirmation outside the static confirmation page. No subscriber-facing confirmation email exists in source and none was tested.
-5. Deploy the source changes, rerun the suite against production, and update the remediation log with production evidence.
-6. Retain an independent accessibility professional for audit and remediation retest.
-7. Have accessibility counsel review business-specific ADA/California exposure and the proposed public statement.
+4. Validate a real Netlify form delivery and any email notification/confirmation outside the static confirmation page. No subscriber-facing confirmation email exists in source and none was tested.
+5. Retain an independent accessibility professional for audit and remediation retest.
+6. Have accessibility counsel review business-specific ADA/California exposure and the public statement.
 
 See [remediation-plan.md](remediation-plan.md), [issue-register.csv](issue-register.csv), [manual-qa.md](manual-qa.md), and [independent-auditor-handoff.md](independent-auditor-handoff.md).

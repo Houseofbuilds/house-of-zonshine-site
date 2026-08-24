@@ -35,7 +35,7 @@ Perform an independent manual WCAG 2.2 Level AA audit of the final deployed Hous
 
 ## Known open items at handoff creation
 
-- The source changes have not yet been deployed or production-retested.
+- Release `085d265` was deployed on August 24, 2026. A safe automated production retest passed all 27 canonical pages for axe A/AA rules, 320 CSS-pixel reflow, keyboard navigation, form-error behavior, and the published statement. No fake valid form submissions were sent to the live business accounts.
 - No independent screen-reader test has been performed.
 - The relocation PDF shows no static tagging/title/language markers; the other seven require human verification.
 - Vendor ACRs/support evidence and production Netlify delivery tests remain open.
