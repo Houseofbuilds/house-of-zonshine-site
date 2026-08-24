@@ -130,31 +130,32 @@
         <h2 id="testimonials-title">My clients say it best.</h2>
       </div>
       <div class="testimonial-stage" aria-live="off">
-        <figure class="testimonial-card is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
+        <div class="testimonial-card is-active" role="group" aria-roledescription="slide" aria-label="1 of 4">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“My home and all of my personal property were destroyed in the Palisades fire. In the midst of my despair, I was fortunate enough to be referred to Julia… Not only did she listen with empathy to my plight, but she made the entire process seamless… She was instrumental in making my moving forward possible.”</blockquote>
-          <figcaption>Susan W. · Relocation Client</figcaption>
-        </figure>
-        <figure class="testimonial-card is-next" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
+          <p class="testimonial-attribution">Susan W. · Relocation Client</p>
+        </div>
+        <div class="testimonial-card is-next" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“Julia was incredible to work with. She is extremely knowledgeable and somehow made the entire experience of selling a house empowering and fun. The entire sale of my house from start to finish went smoothly. She went above and beyond to ensure the best outcome.”</blockquote>
-          <figcaption>Diva Z. · Seller</figcaption>
-        </figure>
-        <figure class="testimonial-card" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
+          <p class="testimonial-attribution">Diva Z. · Seller</p>
+        </div>
+        <div class="testimonial-card" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“This market is so stressful and intimidating. I am beyond grateful for Julia’s approach and the way she has pointed out every detail of where value can be found or lost. Finding a home felt impossible before her support.”</blockquote>
-          <figcaption>Kelsey O. · Buyer</figcaption>
-        </figure>
-        <figure class="testimonial-card is-prev" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
+          <p class="testimonial-attribution">Kelsey O. · Buyer</p>
+        </div>
+        <div class="testimonial-card is-prev" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
           <div class="testimonial-stars" aria-label="Five-star review">★★★★★</div>
           <blockquote>“Julia was a life saver! She was the most compassionate, responsive and attentive real estate agent I’ve ever worked with… Julia went out of her way to accommodate my constantly changing personal circumstances and ever-changing work schedule… She worked around the clock to present me options for my move and found some great homes.”</blockquote>
-          <figcaption>Lauren C. · Relocation Client</figcaption>
-        </figure>
+          <p class="testimonial-attribution">Lauren C. · Relocation Client</p>
+        </div>
       </div>
       <div class="testimonial-controls">
         <button class="testimonial-previous" type="button" aria-label="Show previous client review">←</button>
         <p><span class="testimonial-current">01</span> / <span class="testimonial-total">04</span></p>
         <button class="testimonial-next" type="button" aria-label="Show next client review">→</button>
+        <button class="testimonial-pause" type="button" aria-pressed="false">Pause reviews</button>
       </div>
     </section>
 
@@ -266,7 +267,8 @@
         <h2>Stories about houses,<br>people, and Los Angeles.</h2>
         <p>Some months it’s the story behind a home, like the Hollywood adobe with the glass atrium that pulled me in from the doorway. Other months it’s a conversation with someone who makes a neighborhood feel like a small town. It arrives once a month, usually just after the first-of-the-month rush.</p>
       </div>
-      <div class="newsletter-portrait" role="img" aria-label="Julia Zonshine smiling in a red dress in the doorway of a Los Angeles home">
+      <div class="newsletter-portrait">
+        <span class="sr-only">Julia Zonshine smiling in a red dress in the doorway of a Los Angeles home.</span>
         <div class="newsletter-route">
           <p>Signing up isn't a signal that you're ready to buy or sell, it's just an invitation to stick around.</p>
           <a class="button button-light" href="newsletter/">Read more and join</a>
@@ -283,17 +285,19 @@
         <p>This form is for real estate questions and consultation requests. You don’t need a perfect plan or a move-in date. Tell me what you’re considering, and we’ll take it from there.</p>
         <a href="mailto:julia.zonshine@compass.com">julia.zonshine@compass.com ↗</a>
       </div>
-      <form class="contact-form" name="contact" action="/thanks/contact/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+      <form class="contact-form" name="contact" action="/thanks/contact/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-accessible-form>
         <input type="hidden" name="form-name" value="contact">
         <input type="hidden" name="subject" value="New House of Zonshine website inquiry">
         <input type="hidden" name="privacy-notice-version" value="2026-08-14">
         <input type="hidden" name="collection-source" value="homepage-contact-form">
         <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+        <p class="form-required-note"><span class="required-marker" aria-hidden="true">*</span> Required fields</p>
+        <div class="form-error-summary" hidden tabindex="-1"></div>
         <div class="field-pair">
-          <label>First name<input name="first-name" autocomplete="given-name" required></label>
-          <label>Last name<input name="last-name" autocomplete="family-name" required></label>
+          <label>First name <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (required)</span><input name="first-name" autocomplete="given-name" required></label>
+          <label>Last name <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (required)</span><input name="last-name" autocomplete="family-name" required></label>
         </div>
-        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Email <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (required)</span><input name="email" type="email" autocomplete="email" required></label>
         <label>I’m thinking about
           <select name="interest">
             <option>Buying a home</option>
@@ -306,6 +310,7 @@
         <label>Tell me a little more<textarea name="message" rows="4" placeholder="What’s on your mind?"></textarea></label>
         <p class="form-note"><strong>Privacy notice:</strong> We collect your name, email, and any optional real estate interest or message to respond to your inquiry, provide requested real estate information, maintain appropriate business records, and protect the form from misuse. We may share the submission with Compass, members of Julia’s real estate team, and service providers that help operate the site and respond to you. This form does not subscribe you to marketing emails. See the <a href="privacy/">Privacy Policy</a> for retention, choices, and contact details.</p>
         <button class="button button-dark" type="submit">Get in touch</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </main>

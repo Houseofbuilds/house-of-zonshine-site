@@ -2,6 +2,9 @@
   var header = document.getElementById("site-header");
   var menuButton = document.getElementById("menu-button");
   var nav = document.getElementById("site-nav");
+  var main = document.querySelector("main");
+  var footer = document.querySelector("footer");
+  var mobileNavigation = window.matchMedia("(max-width: 900px)");
   var headerTicking = false;
   var headerScrolled = null;
 
@@ -21,21 +24,68 @@
     }
   }
 
-  function closeMenu() {
+  function setPageBehindMenuInert(inert) {
+    if (main) main.inert = inert;
+    if (footer) footer.inert = inert;
+  }
+
+  function syncMenuAvailability() {
+    var mobile = mobileNavigation.matches;
+    var open = mobile && nav.classList.contains("open");
+    nav.inert = mobile && !open;
+    if (mobile) {
+      nav.setAttribute("aria-hidden", String(!open));
+    } else {
+      nav.removeAttribute("aria-hidden");
+      nav.inert = false;
+      setPageBehindMenuInert(false);
+    }
+  }
+
+  function closeMenu(returnFocus) {
     nav.classList.remove("open");
     menuButton.setAttribute("aria-expanded", "false");
+    menuButton.querySelector(".sr-only").textContent = "Open menu";
     document.body.classList.remove("menu-open");
+    setPageBehindMenuInert(false);
+    syncMenuAvailability();
+    if (returnFocus) menuButton.focus();
   }
 
   menuButton.addEventListener("click", function () {
     var open = !nav.classList.contains("open");
     nav.classList.toggle("open", open);
     menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.querySelector(".sr-only").textContent = open ? "Close menu" : "Open menu";
     document.body.classList.toggle("menu-open", open);
+    setPageBehindMenuInert(open);
+    syncMenuAvailability();
+    if (open) nav.querySelector("a").focus();
   });
 
   nav.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", closeMenu);
+    link.addEventListener("click", function () { closeMenu(false); });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      closeMenu(true);
+    }
+  });
+
+  mobileNavigation.addEventListener("change", function () {
+    closeMenu(false);
+    syncMenuAvailability();
+  });
+  syncMenuAvailability();
+
+  document.querySelectorAll(".skip-link").forEach(function (link) {
+    var target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+    target.setAttribute("tabindex", "-1");
+    link.addEventListener("click", function () {
+      window.setTimeout(function () { target.focus({ preventScroll: true }); }, 0);
+    });
   });
 
   window.addEventListener("scroll", requestHeaderUpdate, { passive: true });
@@ -169,6 +219,7 @@
     var testimonialStage = testimonialCarousel.querySelector(".testimonial-stage");
     var testimonialPrevious = testimonialCarousel.querySelector(".testimonial-previous");
     var testimonialNext = testimonialCarousel.querySelector(".testimonial-next");
+    var testimonialPause = testimonialCarousel.querySelector(".testimonial-pause");
     var testimonialCurrent = testimonialCarousel.querySelector(".testimonial-current");
     var testimonialTotal = testimonialCarousel.querySelector(".testimonial-total");
     var testimonialIndex = 0;
@@ -176,6 +227,7 @@
     var testimonialTimer = null;
     var testimonialIsVisible = false;
     var testimonialIsInteracting = false;
+    var testimonialIsPaused = !motionAllowed;
 
     testimonialTotal.textContent = String(testimonialCards.length).padStart(2, "0");
 
@@ -190,6 +242,8 @@
       if (
         !testimonialIsVisible ||
         testimonialIsInteracting ||
+        testimonialIsPaused ||
+        !motionAllowed ||
         document.hidden
       ) return;
 
@@ -220,6 +274,39 @@
 
     testimonialNext.addEventListener("click", function () {
       showTestimonial(testimonialIndex + 1);
+      startTestimonialAutoplay();
+    });
+
+    function updateTestimonialPauseControl() {
+      testimonialPause.setAttribute("aria-pressed", String(testimonialIsPaused));
+      testimonialPause.textContent = testimonialIsPaused ? "Play reviews" : "Pause reviews";
+    }
+
+    testimonialPause.addEventListener("click", function () {
+      testimonialIsPaused = !testimonialIsPaused;
+      updateTestimonialPauseControl();
+      if (testimonialIsPaused) stopTestimonialAutoplay();
+      else startTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("mouseenter", function () {
+      testimonialIsInteracting = true;
+      stopTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("mouseleave", function () {
+      testimonialIsInteracting = false;
+      startTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("focusin", function () {
+      testimonialIsInteracting = true;
+      stopTestimonialAutoplay();
+    });
+
+    testimonialCarousel.addEventListener("focusout", function (event) {
+      if (testimonialCarousel.contains(event.relatedTarget)) return;
+      testimonialIsInteracting = false;
       startTestimonialAutoplay();
     });
 
@@ -351,6 +438,7 @@
       }
     });
 
+    updateTestimonialPauseControl();
     showTestimonial(0);
   }
 
@@ -361,6 +449,100 @@
       var isExpanded = button.getAttribute("aria-expanded") === "true";
       button.setAttribute("aria-expanded", String(!isExpanded));
       button.querySelector(".story-more-label").textContent = isExpanded ? "Read the full story" : "Show less";
+    });
+  });
+
+  document.querySelectorAll("form[data-accessible-form]").forEach(function (form, formIndex) {
+    form.noValidate = true;
+    var summary = form.querySelector(".form-error-summary");
+    var status = form.querySelector(".form-status");
+    var submitButton = form.querySelector('[type="submit"]');
+    var fields = Array.from(form.querySelectorAll("input:not([type=hidden]), select, textarea"));
+
+    fields.forEach(function (field, fieldIndex) {
+      if (!field.id) field.id = "form-" + formIndex + "-field-" + fieldIndex;
+      var label = field.labels && field.labels[0];
+      field.dataset.accessibleLabel = label
+        ? label.textContent.replace(/\s*\*\s*/g, " ").replace(/\s*\(required\)\s*/g, " ").trim()
+        : field.name || "This field";
+    });
+
+    function removeFieldError(field) {
+      var error = document.getElementById(field.id + "-error");
+      if (error) error.remove();
+      field.removeAttribute("aria-invalid");
+      var describedBy = (field.getAttribute("aria-describedby") || "")
+        .split(/\s+/)
+        .filter(function (id) { return id && id !== field.id + "-error"; });
+      if (describedBy.length) field.setAttribute("aria-describedby", describedBy.join(" "));
+      else field.removeAttribute("aria-describedby");
+    }
+
+    function messageFor(field) {
+      var label = field.dataset.accessibleLabel;
+      if (field.validity.valueMissing) return label + " is required.";
+      if (field.validity.typeMismatch && field.type === "email") return "Enter a valid email address.";
+      return "Check " + label + " and try again.";
+    }
+
+    function showFieldError(field, message) {
+      removeFieldError(field);
+      var error = document.createElement("span");
+      error.className = "field-error";
+      error.id = field.id + "-error";
+      error.textContent = message;
+      if (field.type === "checkbox" && field.labels && field.labels[0]) {
+        field.labels[0].insertAdjacentElement("afterend", error);
+      } else {
+        field.insertAdjacentElement("afterend", error);
+      }
+      field.setAttribute("aria-invalid", "true");
+      field.setAttribute("aria-describedby", [field.getAttribute("aria-describedby"), error.id].filter(Boolean).join(" "));
+    }
+
+    fields.forEach(function (field) {
+      ["input", "change"].forEach(function (eventName) {
+        field.addEventListener(eventName, function () {
+          if (field.validity.valid) removeFieldError(field);
+        });
+      });
+    });
+
+    form.addEventListener("submit", function (event) {
+      var invalid = fields.filter(function (field) { return !field.validity.valid; });
+      fields.forEach(removeFieldError);
+
+      if (invalid.length) {
+        event.preventDefault();
+        var list = document.createElement("ul");
+        invalid.forEach(function (field) {
+          var message = messageFor(field);
+          showFieldError(field, message);
+          var item = document.createElement("li");
+          var link = document.createElement("a");
+          link.href = "#" + field.id;
+          link.textContent = message;
+          link.addEventListener("click", function (clickEvent) {
+            clickEvent.preventDefault();
+            field.focus();
+          });
+          item.appendChild(link);
+          list.appendChild(item);
+        });
+        summary.replaceChildren(Object.assign(document.createElement("p"), { textContent: "Please correct the following:" }), list);
+        summary.hidden = false;
+        summary.focus();
+        if (status) status.textContent = "";
+        return;
+      }
+
+      summary.hidden = true;
+      if (submitButton) {
+        submitButton.setAttribute("aria-disabled", "true");
+        submitButton.dataset.originalText = submitButton.textContent;
+        submitButton.textContent = "Sending…";
+      }
+      if (status) status.textContent = "Your information is being submitted.";
     });
   });
 

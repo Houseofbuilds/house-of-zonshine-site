@@ -1,0 +1,14 @@
+{
+  "name": "house-of-zonshine-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:static",
+    "test:static": "node tests/site-regression.mjs && node tests/accessibility-static.mjs",
+    "test:a11y": "node tests/accessibility-browser.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "playwright": "1.62.1"
+  }
+}

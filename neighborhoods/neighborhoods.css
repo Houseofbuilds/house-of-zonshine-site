@@ -92,10 +92,16 @@
   position: absolute;
   right: .65rem;
   bottom: .45rem;
-  color: rgba(255, 255, 255, .75);
-  font-size: .48rem;
+  max-width: calc(100% - 1.3rem);
+  padding: .4rem .5rem;
+  background: rgba(33, 23, 19, .9);
+  color: white;
+  font-size: .65rem;
   letter-spacing: .03em;
+  line-height: 1.35;
 }
+
+.simple-guide-hero figcaption a { color: inherit; }
 
 .simple-guide-intro {
   display: grid;
@@ -305,7 +311,7 @@
 
 .simple-history figcaption {
   padding: .7rem .85rem;
-  color: rgba(255, 255, 255, .72);
+  color: white;
   background: var(--espresso);
   font-size: .56rem;
   line-height: 1.45;

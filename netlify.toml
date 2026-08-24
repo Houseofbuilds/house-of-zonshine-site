@@ -1,5 +1,5 @@
 [build]
-  command = "node tests/site-regression.mjs"
+  command = "npm run test:static"
   publish = "."
 
 [[headers]]

@@ -93,20 +93,23 @@
         <h1 id="newsletter-title">Stories about houses, people, and Los Angeles.</h1>
         <p class="newsletter-archive-intro">A monthly collection of house stories, strange little facts, new restaurants, local things worth knowing, and whatever else I couldn’t stop talking about that month.</p>
         <div class="newsletter-archive-actions">
-          <form class="compact-signup-form newsletter-inline-signup" id="subscribe" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form class="compact-signup-form newsletter-inline-signup" id="subscribe" name="newsletter" action="/thanks/newsletter/" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-accessible-form>
             <input type="hidden" name="form-name" value="newsletter">
             <input type="hidden" name="subject" value="New House of Zonshine newsletter subscriber">
             <input type="hidden" name="consent-version" value="newsletter-2026-08-14">
             <input type="hidden" name="privacy-notice-version" value="2026-08-14">
             <input type="hidden" name="collection-source" value="newsletter-archive">
             <p class="hidden-field"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+            <p class="form-required-note"><span class="required-marker" aria-hidden="true">*</span> Required fields</p>
+            <div class="form-error-summary" hidden tabindex="-1"></div>
             <div class="compact-signup-fields">
-              <label class="compact-signup-field" for="archive-full-name"><span>Full name</span><input id="archive-full-name" name="full-name" type="text" autocomplete="name" placeholder="Your full name" required></label>
-              <label class="compact-signup-field" for="archive-email"><span>Email address</span><input id="archive-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+              <label class="compact-signup-field" for="archive-full-name"><span>Full name <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (required)</span></span><input id="archive-full-name" name="full-name" type="text" autocomplete="name" placeholder="Your full name" required></label>
+              <label class="compact-signup-field" for="archive-email"><span>Email address <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (required)</span></span><input id="archive-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
               <button type="submit">Sign me up</button>
             </div>
-            <label class="compact-signup-consent" for="archive-consent"><input id="archive-consent" name="email-consent" type="checkbox" value="express-consent" required><span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time.</span></label>
+            <label class="compact-signup-consent" for="archive-consent"><input id="archive-consent" name="email-consent" type="checkbox" value="express-consent" required><span>I agree to receive the House of Zonshine monthly newsletter from Julia Zonshine. It may include real estate listings or services. I can unsubscribe at any time. <span class="required-marker" aria-hidden="true">*</span><span class="sr-only"> (required)</span></span></label>
             <small>Netlify and Compass systems process the subscriber record. See the <a href="../privacy/">Privacy Policy</a>.</small>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
           <a class="newsletter-latest-link" href="a-full-house/">Read the latest issue <span aria-hidden="true">→</span></a>
         </div>
