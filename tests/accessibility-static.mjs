@@ -1,10 +1,11 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
+const blogIndex = await readFile(path.join(root, "blog", "index.html"), "utf8");
 const routes = [...sitemap.matchAll(/<loc>https:\/\/juliazonshine\.com(.*?)<\/loc>/g)]
   .map((match) => match[1] || "/");
 const workflowRoutes = ["/thanks/contact/", "/thanks/newsletter/"];
@@ -35,6 +36,27 @@ for (const route of [...routes, ...workflowRoutes]) {
   check((html.match(/<h1\b/gi) || []).length === 1, route, "must contain exactly one h1");
   check(!/tabindex=["'](?:[1-9]|[1-9][0-9]+)["']/i.test(html), route, "positive tabindex is prohibited");
   check(!/<(?:a|button)\b[^>]*role=["']img["'][^>]*>[\s\S]*?<(?:a|button)\b/i.test(html), route, "interactive content must not be nested in role=img");
+
+  if (route.startsWith("/blog/") && route !== "/blog/") {
+    const articleSlug = route.slice("/blog/".length);
+    check(blogIndex.includes(`href="${articleSlug}"`), route, "blog index must link to every article");
+
+    const articleCopy = html.match(/<div class="article-copy">([\s\S]*?)<\/div>/i)?.[1] || "";
+    const articleLinks = [...articleCopy.matchAll(/<a\b[^>]*\bhref=(?:"([^"]+)"|'([^']+)')[^>]*>([\s\S]*?)<\/a>/gi)]
+      .map((match) => ({ href: match[1] ?? match[2], text: match[3].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim() }))
+      .filter(({ href }) => !/^(?:https?:|mailto:|tel:|#)/i.test(href));
+
+    check(articleLinks.length > 0, route, "article body must contain at least one contextual internal link");
+    for (const { href, text } of articleLinks) {
+      check(Boolean(text), route, `internal link has no descriptive anchor text: ${href}`);
+      const destination = new URL(href, `https://juliazonshine.com${route}`);
+      try {
+        await access(htmlPath(destination.pathname));
+      } catch {
+        check(false, route, `internal link destination is missing locally: ${href}`);
+      }
+    }
+  }
 
   if (!isConfirmation) {
     const skipTarget = html.match(/<a\b[^>]*class=["'][^"']*skip-link[^"']*["'][^>]*href=["']#([^"']+)["']/i)?.[1];
