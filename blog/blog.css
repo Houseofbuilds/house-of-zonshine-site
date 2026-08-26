@@ -10,8 +10,8 @@
 
 .article-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(380px, .8fr);
-  min-height: min(860px, 100dvh);
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .55fr);
+  min-height: min(700px, 88dvh);
   padding-top: 76px;
   background: var(--paper);
 }
@@ -70,8 +70,10 @@
 }
 
 .article-hero-image {
-  min-height: 620px;
-  margin: 0;
+  height: min(540px, calc(100dvh - 140px));
+  min-height: 360px;
+  align-self: center;
+  margin: 76px clamp(1.5rem, 3vw, 3rem) 0 0;
   overflow: hidden;
   background: var(--sand);
 }
@@ -281,8 +283,8 @@
 
 @media (max-width: 1020px) {
   .article-hero {
-    grid-template-columns: 1fr 42%;
-    min-height: 760px;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 38%);
+    min-height: 660px;
   }
 
   .article-hero-copy { padding-right: 3.5rem; padding-left: 2.5rem; }
@@ -343,7 +345,10 @@
   .article-byline span + span { padding-left: 0; border-left: 0; }
 
   .article-hero-image {
-    min-height: min(78dvh, 700px);
+    width: 100%;
+    height: min(52dvh, 440px);
+    min-height: 320px;
+    margin: 0;
   }
 
   .article-hero-image img { object-position: center 29%; }
@@ -382,7 +387,7 @@
 
 @media (max-width: 430px) {
   .article-math dl { grid-template-columns: 1fr; }
-  .article-hero-image { min-height: 64dvh; }
+  .article-hero-image { height: min(50dvh, 400px); min-height: 300px; }
 }
 
 .blog-index-hero {
@@ -465,8 +470,9 @@
 
 .blog-index-story {
   display: grid;
-  grid-template-columns: minmax(300px, .78fr) minmax(0, 1.22fr);
-  min-height: 590px;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  min-height: 0;
+  align-items: center;
   color: var(--espresso);
   text-decoration: none;
   background: var(--sand);
@@ -478,10 +484,10 @@
 
 .blog-index-story > img {
   width: 100%;
-  height: 100%;
-  max-height: 690px;
+  height: clamp(320px, 31vw, 380px);
+  max-height: 380px;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 26%;
   transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .7s ease;
 }
 
@@ -550,7 +556,11 @@
   .blog-index-hero figure { min-height: min(78dvh, 720px); }
   .blog-index-latest { width: min(calc(100vw - 40px), 680px); }
   .blog-index-story { grid-template-columns: 1fr; }
-  .blog-index-story > img { max-height: none; aspect-ratio: .84 / 1; }
+  .blog-index-story > img {
+    height: min(58vw, 320px);
+    max-height: 320px;
+    aspect-ratio: auto;
+  }
 }
 
 @media (max-width: 560px) {
