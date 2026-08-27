@@ -421,7 +421,10 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .obsession-detail-image > span { position: absolute; z-index: 2; left: 2rem; bottom: 1.8rem; font-size: .6rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
 .obsession-detail-image.has-corner-watermark > span { right: 2rem; left: auto; }
 .obsession-detail-heading { display: flex; flex-direction: column; justify-content: center; padding: clamp(4rem, 6vw, 7rem); }
-.obsession-back { align-self: flex-start; margin-bottom: auto; color: rgba(255,255,255,.68); font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .14em; }
+.obsession-detail-nav { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; width: 100%; margin-bottom: auto; }
+.obsession-back, .obsession-guide-link { color: rgba(255,255,255,.68); font-size: .62rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: .14em; }
+.obsession-guide-link { color: white; text-align: right; }
+.obsession-back:hover, .obsession-back:focus-visible, .obsession-guide-link:hover, .obsession-guide-link:focus-visible { color: white; text-decoration: underline; text-underline-offset: .35em; }
 .obsession-detail-heading .eyebrow { margin-top: auto; color: var(--bronze); }
 .obsession-detail-heading h1 { margin: 0; font-size: clamp(4.5rem, 7.5vw, 8.5rem); font-weight: 300; letter-spacing: -.06em; line-height: .78; }
 .obsession-detail-heading h1.long-address { font-size: clamp(3.2rem, 5vw, 5.6rem); line-height: .88; }
@@ -940,6 +943,11 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .available-guide-grid .guide-library-card { width: min(100%, 520px); margin: auto; }
   .upcoming-guide-grid .guide-library-card { width: min(100%, 520px); margin: auto; }
   .library-heading { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 520px) {
+  .obsession-detail-nav { align-items: flex-start; flex-direction: column; gap: .85rem; }
+  .obsession-guide-link { text-align: left; }
 }
 
 @media (max-width: 560px) {

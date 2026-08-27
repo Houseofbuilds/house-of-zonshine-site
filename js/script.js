@@ -289,27 +289,6 @@
       else startTestimonialAutoplay();
     });
 
-    testimonialCarousel.addEventListener("mouseenter", function () {
-      testimonialIsInteracting = true;
-      stopTestimonialAutoplay();
-    });
-
-    testimonialCarousel.addEventListener("mouseleave", function () {
-      testimonialIsInteracting = false;
-      startTestimonialAutoplay();
-    });
-
-    testimonialCarousel.addEventListener("focusin", function () {
-      testimonialIsInteracting = true;
-      stopTestimonialAutoplay();
-    });
-
-    testimonialCarousel.addEventListener("focusout", function (event) {
-      if (testimonialCarousel.contains(event.relatedTarget)) return;
-      testimonialIsInteracting = false;
-      startTestimonialAutoplay();
-    });
-
     testimonialCarousel.addEventListener("keydown", function (event) {
       if (event.key === "ArrowLeft") {
         showTestimonial(testimonialIndex - 1);

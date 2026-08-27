@@ -15,6 +15,10 @@ function includes(source, expected, label) {
   assert.ok(source.includes(expected), `${label} is missing: ${expected}`);
 }
 
+function excludes(source, unexpected, label) {
+  assert.ok(!source.includes(unexpected), `${label} must not include: ${unexpected}`);
+}
+
 const primaryNav = extract(
   /(<nav class="site-nav"[\s\S]*?<\/nav>)/,
   "Primary navigation"
@@ -80,4 +84,64 @@ includes(
 includes(script, 'document.querySelectorAll(".story-more-button")', "Story disclosure behavior");
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
-console.log("Site regression contract passed: permanent sections and destinations are intact.");
+const listingGuideDestinations = {
+  "2276-moreno-dr": "../../neighborhoods/silver-lake/",
+  "1190-n-wilson-ave": "../../neighborhoods/pasadena/",
+  "2666-aberdeen-ave": "../../neighborhoods/los-feliz/",
+  "485-madeline-dr": "../../neighborhoods/pasadena/",
+  "5114-cedros-ave": "../../neighborhoods/sherman-oaks/",
+  "3627-cody-rd": "../../neighborhoods/sherman-oaks/",
+  "1395-inverness-dr": "../../neighborhoods/pasadena/",
+  "2414-4th-ave": "../../guides/#local-guides",
+};
+const obsessionList = JSON.parse(
+  await readFile(new URL("../data/obsession-list.json", import.meta.url), "utf8")
+);
+
+assert.deepEqual(
+  obsessionList.map(({ slug }) => slug).sort(),
+  Object.keys(listingGuideDestinations).sort(),
+  "Every Zonshine Edit listing must have a verified guide destination"
+);
+
+for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
+  const listing = await readFile(
+    new URL(`../favorites/${slug}/index.html`, import.meta.url),
+    "utf8"
+  );
+  const topNavigation = listing.match(
+    /<nav class="obsession-detail-nav"[\s\S]*?<\/nav>/
+  );
+  const closingActions = listing.match(
+    /<div class="obsession-cta-actions">[\s\S]*?<\/div>/
+  );
+
+  assert.ok(topNavigation, `${slug} is missing its top listing navigation`);
+  assert.ok(closingActions, `${slug} is missing its closing listing actions`);
+  includes(topNavigation[0], `href="${guideHref}"`, `${slug} top guide link`);
+  includes(closingActions[0], `href="${guideHref}"`, `${slug} bottom guide link`);
+}
+
+for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks"]) {
+  await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
+}
+includes(
+  await readFile(new URL("../guides/index.html", import.meta.url), "utf8"),
+  'id="local-guides"',
+  "Local Guides fallback destination"
+);
+
+includes(script, "function startTestimonialAutoplay()", "Testimonial autoplay behavior");
+includes(script, "testimonialPause.addEventListener", "Testimonial pause control");
+excludes(
+  script,
+  'testimonialCarousel.addEventListener("mouseenter"',
+  "Testimonial autoplay while the pointer rests over the carousel"
+);
+excludes(
+  script,
+  'testimonialCarousel.addEventListener("focusin"',
+  "Testimonial autoplay after manual navigation"
+);
+
+console.log("Site regression contract passed: permanent sections, guide routes, and testimonial autoplay are intact.");
