@@ -60,14 +60,24 @@ for (const path of [
 assert.equal(
   (homepage.match(/class="story-more-button"/g) || []).length,
   3,
-  "Homepage must retain all three mobile story expand controls"
+  "Homepage must retain all three story expand controls"
 );
-includes(styles, "@media (max-width: 700px)", "Mobile story breakpoint");
+assert.equal(
+  (homepage.match(/class="story-more-label">Read More</g) || []).length,
+  3,
+  "Every homepage story must begin with a Read More control"
+);
 includes(
   styles,
   ".story-copy.is-collapsible .story-more-button",
-  "Condensed mobile story styling"
+  "Condensed story styling"
 );
-includes(script, 'document.querySelectorAll(".story-more-button")', "Mobile story behavior");
+includes(
+  styles,
+  '.story-more-button[aria-expanded="false"] + .story-continuation',
+  "Collapsed story continuation styling"
+);
+includes(script, 'document.querySelectorAll(".story-more-button")', "Story disclosure behavior");
+includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 console.log("Site regression contract passed: permanent sections and destinations are intact.");

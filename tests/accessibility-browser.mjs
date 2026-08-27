@@ -69,6 +69,21 @@ try {
     }
   }
 
+  await visit(page, "/");
+  const storyButton = page.locator(".story-more-button").first();
+  const storyPanel = page.locator("#story-sycamore-more");
+  assert.equal(await storyButton.isVisible(), true, "desktop story disclosure is not visible");
+  assert.equal(await storyButton.getAttribute("aria-expanded"), "false");
+  assert.equal(await storyPanel.isVisible(), false, "desktop story begins expanded");
+  assert.match(await storyButton.textContent(), /Read More/i);
+  await storyButton.click();
+  assert.equal(await storyButton.getAttribute("aria-expanded"), "true");
+  assert.equal(await storyPanel.isVisible(), true, "desktop story did not expand");
+  assert.match(await storyButton.textContent(), /Show Less/i);
+  await storyButton.click();
+  assert.equal(await storyButton.getAttribute("aria-expanded"), "false");
+  assert.equal(await storyPanel.isVisible(), false, "desktop story did not collapse again");
+
   await page.setViewportSize({ width: 390, height: 844 });
   await visit(page, "/");
   assert.equal(await page.locator("#site-nav").getAttribute("aria-hidden"), "true");

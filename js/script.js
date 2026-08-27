@@ -448,7 +448,7 @@
     button.addEventListener("click", function () {
       var isExpanded = button.getAttribute("aria-expanded") === "true";
       button.setAttribute("aria-expanded", String(!isExpanded));
-      button.querySelector(".story-more-label").textContent = isExpanded ? "Read the full story" : "Show less";
+      button.querySelector(".story-more-label").textContent = isExpanded ? "Read More" : "Show Less";
     });
   });
 
