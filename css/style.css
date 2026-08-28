@@ -407,6 +407,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .obsession-card-image img.image-focus-left, .obsession-detail-image img.image-focus-left, .obsession-visual img.image-focus-left { object-position: left center; }
 .obsession-card-image img.is-changing { opacity: .28; transform: scale(1.015); }
 .obsession-card-number { position: absolute; top: 1.2rem; left: 1.2rem; padding: .48rem .7rem; background: rgba(248,244,237,.92); color: var(--espresso); font-size: .58rem; font-weight: 600; letter-spacing: .16em; }
+.obsession-card-image .obsession-sold-badge, .obsession-detail-image > .obsession-sold-badge { position: absolute; z-index: 2; top: 1.2rem; right: 1.2rem; bottom: auto; left: auto; padding: .48rem .7rem; background: var(--clay); color: white; font-size: .58rem; font-weight: 600; letter-spacing: .16em; line-height: normal; text-transform: uppercase; }
 .obsession-card-copy { padding-top: 1.8rem; }
 .obsession-card-place { margin: 0; color: var(--clay-text); font-size: .62rem; font-weight: 600; text-transform: uppercase; letter-spacing: .16em; }
 .obsession-card-copy h3 { margin: .55rem 0 .75rem; font-size: clamp(2.3rem, 3.5vw, 4rem); font-weight: 300; letter-spacing: -.045em; line-height: 1; }
