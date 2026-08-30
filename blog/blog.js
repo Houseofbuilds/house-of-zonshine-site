@@ -20,6 +20,35 @@
     });
   }
 
+  var footer = document.querySelector("footer");
+  var footerMeta = footer && footer.querySelector(".footer-meta");
+  var licensing = footerMeta && footerMeta.querySelector("p");
+
+  if (licensing && !licensing.querySelector(".footer-compliance-marks")) {
+    var marks = document.createElement("span");
+    marks.className = "footer-compliance-marks";
+    marks.setAttribute("aria-label", "Professional membership and equal housing commitment");
+
+    [
+      {
+        alt: "REALTOR®, member of the National Association of REALTORS®",
+        className: "footer-realtor-mark"
+      },
+      {
+        alt: "Equal Housing Opportunity",
+        className: "footer-equal-housing-mark"
+      }
+    ].forEach(function (mark) {
+      var element = document.createElement("span");
+      element.className = mark.className;
+      element.setAttribute("role", "img");
+      element.setAttribute("aria-label", mark.alt);
+      marks.appendChild(element);
+    });
+
+    licensing.appendChild(marks);
+  }
+
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 })();
