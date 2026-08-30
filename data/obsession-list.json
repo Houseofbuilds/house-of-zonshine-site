@@ -187,5 +187,29 @@
     "listingAgentCredit": "Listed by Molly Kelley & Daria Greenbaum, Compass",
     "externalListingUrl": "https://oconnorestates.com/properties/2414-4th-ave/?id=1178123336",
     "dateAdded": "2026-07-29"
+  },
+  {
+    "slug": "3895-fredonia-dr",
+    "obsessionNumber": 9,
+    "status": "active",
+    "address": "3895 Fredonia Dr",
+    "neighborhood": "Studio City",
+    "city": "Los Angeles",
+    "price": 1695000,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 2257,
+    "lotSqft": 15287,
+    "photos": [
+      "obsession-list/3895-fredonia-dr-1.jpg",
+      "obsession-list/3895-fredonia-dr-2.jpg",
+      "obsession-list/3895-fredonia-dr-3.jpg",
+      "obsession-list/3895-fredonia-dr-4.jpg"
+    ],
+    "hook": "The living room ceiling is still the original 1929 bow-truss wood, and out back there's a hammock strung between two trees over a gravel garden that feels nothing like the city it's ten minutes from.",
+    "story": "This one sits right where the Cahuenga Pass folds into Studio City, close enough to the Metro stop and Ventura Boulevard that it counts, and it's a 1929 Spanish cottage that made me slow down walking through it. The story that comes with the listing is that a woman commissioned it and a woman named Frankie Faulkner designed it, one of the vanishingly few female architects working in LA at the time. I want that to be true because it is a genuinely good story, but I looked into it before I told it to you, and there is no licensure record or other known building anywhere for a Frankie Faulkner, nothing beyond this one listing's own description. So I am telling you the story as the story the house comes with, not something I can promise you is documented fact. What I can promise is real: the bow-truss wood ceiling and the Malibu tile fireplace are original, there is an untouched Art Deco bathroom, and a 1959 addition added a full guest house with its own kitchen and a vaulted, skylit ceiling. Out back is gravel paths, mature fruit trees, and a hammock with the hills rising right behind it. Three bedrooms, two baths, almost 2,300 square feet on a third of an acre that actually sits flat, which barely exists up in these hills. It already has an accepted offer, so I do not know how much longer there is to just look at it and dream, but if a real 1929 cottage with an unverified and slightly irresistible origin story is your kind of obsession too, I've got you.",
+    "listingAgentCredit": "Listed by James Harm & Benjamin Kahle, Compass",
+    "externalListingUrl": "https://www.compass.com/homedetails/3895-Fredonia-Dr-Los-Angeles-CA-90068/1J5LA8_pid/",
+    "dateAdded": "2026-08-30"
   }
 ]

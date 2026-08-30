@@ -85,6 +85,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "3895-fredonia-dr": "../../neighborhoods/studio-city/",
   "2276-moreno-dr": "../../neighborhoods/silver-lake/",
   "1190-n-wilson-ave": "../../neighborhoods/pasadena/",
   "2666-aberdeen-ave": "../../neighborhoods/los-feliz/",
