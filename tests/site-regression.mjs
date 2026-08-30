@@ -122,7 +122,7 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
   includes(closingActions[0], `href="${guideHref}"`, `${slug} bottom guide link`);
 }
 
-for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks"]) {
+for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city"]) {
   await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
 }
 includes(
