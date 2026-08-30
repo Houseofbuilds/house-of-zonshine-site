@@ -44,7 +44,8 @@
 
 .simple-guide-hero figure {
   position: relative;
-  min-height: 470px;
+  height: 470px;
+  min-height: 0;
   margin: 0;
   overflow: hidden;
   background: var(--sand);
@@ -705,7 +706,7 @@
 @media (max-width: 900px) {
   .simple-neighborhood-guide { width: min(680px, calc(100% - 40px)); }
   .simple-guide-hero { grid-template-columns: .82fr 1.18fr; }
-  .simple-guide-hero figure { min-height: 380px; }
+  .simple-guide-hero figure { height: 380px; }
   .los-feliz-guide-page .simple-guide-hero figure { height: 330px; }
   .simple-guide-intro,
   .simple-tuesday,
@@ -742,7 +743,7 @@
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  .simple-guide-hero figure { min-height: 330px; }
+  .simple-guide-hero figure { height: 330px; }
   .los-feliz-guide-page .simple-guide-hero figure { height: 285px; }
   .simple-hero-place { display: none; }
   .simple-guide-hero h1 { font-size: 3.25rem; }
