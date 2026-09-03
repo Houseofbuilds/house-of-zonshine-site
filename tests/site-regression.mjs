@@ -158,6 +158,32 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
 for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city"]) {
   await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
 }
+
+const goodPlaceGuideTitles = {
+  "silver-lake": "Is Silver Lake a good place to live?",
+  "los-feliz": "Is Los Feliz a good place to live?",
+  "sherman-oaks": "Is Sherman Oaks a good place to live?",
+  pasadena: "Is Pasadena a good place to live?",
+  "studio-city": "Is Studio City a good place to live?",
+};
+
+for (const [neighborhood, title] of Object.entries(goodPlaceGuideTitles)) {
+  const guide = await readFile(
+    new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url),
+    "utf8"
+  );
+  const heroStart = guide.indexOf('<header class="simple-guide-hero">');
+  const heroEnd = guide.indexOf("</header>", heroStart);
+  const goodPlaceSection = guide.indexOf('<section class="simple-good-place"');
+  const introSection = guide.indexOf('<section class="simple-guide-intro"');
+
+  includes(guide, `<h2 id="good-place-title">${title}</h2>`, `${neighborhood} good-place heading`);
+  assert.ok(
+    heroStart >= 0 && heroEnd < goodPlaceSection && goodPlaceSection < introSection,
+    `${neighborhood} good-place section must sit directly between the hero and intro`
+  );
+}
+
 includes(
   await readFile(new URL("../guides/index.html", import.meta.url), "utf8"),
   'id="local-guides"',
