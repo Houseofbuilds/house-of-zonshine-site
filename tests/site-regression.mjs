@@ -4,6 +4,15 @@ import { access, readFile } from "node:fs/promises";
 const homepage = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const styles = await readFile(new URL("../css/style.css", import.meta.url), "utf8");
 const script = await readFile(new URL("../js/script.js", import.meta.url), "utf8");
+const blogIndex = await readFile(new URL("../blog/index.html", import.meta.url), "utf8");
+const agentQuestionsPost = await readFile(
+  new URL("../blog/questions-to-ask-your-real-estate-agent/index.html", import.meta.url),
+  "utf8"
+);
+const commissionPost = await readFile(
+  new URL("../blog/how-much-commission-does-a-real-estate-agent-make/index.html", import.meta.url),
+  "utf8"
+);
 
 function extract(pattern, label) {
   const match = homepage.match(pattern);
@@ -60,6 +69,29 @@ for (const path of [
 ]) {
   await access(new URL(path, import.meta.url));
 }
+
+includes(
+  blogIndex,
+  'href="questions-to-ask-your-real-estate-agent/"',
+  "Agent questions blog-index link"
+);
+assert.ok(
+  blogIndex.indexOf('href="questions-to-ask-your-real-estate-agent/"') <
+    blogIndex.indexOf('href="homeowners-insurance-los-angeles-2026/"'),
+  "Newest agent questions post must appear first on the blog index"
+);
+for (const href of [
+  "../how-much-commission-does-a-real-estate-agent-make/",
+  "../../neighborhoods/pasadena/",
+  "../../#stories",
+]) {
+  includes(agentQuestionsPost, `href="${href}"`, `Agent questions internal link ${href}`);
+}
+includes(
+  commissionPost,
+  'href="../questions-to-ask-your-real-estate-agent/"',
+  "Commission article reciprocal agent-questions link"
+);
 
 assert.equal(
   (homepage.match(/class="story-more-button"/g) || []).length,
