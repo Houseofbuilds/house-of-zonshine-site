@@ -9,6 +9,10 @@ const agentQuestionsPost = await readFile(
   new URL("../blog/questions-to-ask-your-real-estate-agent/index.html", import.meta.url),
   "utf8"
 );
+const moneyToBuyPost = await readFile(
+  new URL("../blog/how-much-money-do-you-need-to-buy-a-house-in-los-angeles/index.html", import.meta.url),
+  "utf8"
+);
 const commissionPost = await readFile(
   new URL("../blog/how-much-commission-does-a-real-estate-agent-make/index.html", import.meta.url),
   "utf8"
@@ -72,6 +76,16 @@ for (const path of [
 
 includes(
   blogIndex,
+  'href="how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"',
+  "LA purchase-money blog-index link"
+);
+assert.ok(
+  blogIndex.indexOf('href="how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"') <
+    blogIndex.indexOf('href="questions-to-ask-your-real-estate-agent/"'),
+  "Newest LA purchase-money post must appear first on the blog index"
+);
+includes(
+  blogIndex,
   'href="questions-to-ask-your-real-estate-agent/"',
   "Agent questions blog-index link"
 );
@@ -91,6 +105,19 @@ includes(
   commissionPost,
   'href="../questions-to-ask-your-real-estate-agent/"',
   "Commission article reciprocal agent-questions link"
+);
+for (const href of [
+  "../questions-to-ask-your-real-estate-agent/",
+  "../homeowners-insurance-los-angeles-2026/",
+  "../../guides/#local-guides",
+  "../../#contact",
+]) {
+  includes(moneyToBuyPost, `href="${href}"`, `LA purchase-money internal link ${href}`);
+}
+includes(
+  agentQuestionsPost,
+  'href="../how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"',
+  "Agent questions reciprocal LA purchase-money link"
 );
 
 assert.equal(
