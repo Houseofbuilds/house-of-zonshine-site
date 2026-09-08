@@ -211,5 +211,29 @@
     "listingAgentCredit": "Listed by James Harm & Benjamin Kahle, Compass",
     "externalListingUrl": "https://www.compass.com/homedetails/3895-Fredonia-Dr-Los-Angeles-CA-90068/1J5LA8_pid/",
     "dateAdded": "2026-08-30"
+  },
+  {
+    "slug": "19950-collier-st",
+    "obsessionNumber": 10,
+    "status": "active",
+    "address": "19950 Collier St",
+    "neighborhood": "Woodland Hills",
+    "city": "Los Angeles",
+    "price": 3995000,
+    "beds": 4,
+    "baths": 4,
+    "sqft": 3756,
+    "lotSqft": 20393,
+    "photos": [
+      "obsession-list/19950-collier-st-1.jpg",
+      "obsession-list/19950-collier-st-2.jpg",
+      "obsession-list/19950-collier-st-3.jpg",
+      "obsession-list/19950-collier-st-4.jpg"
+    ],
+    "hook": "A soaring wood-beamed ceiling over a wall of hand-stacked stone and a floating copper fireplace hood, and it's R.M. Schindler's largest known residential project.",
+    "story": "This one stopped me the second I saw the ceiling. Angled wood beams climb two stories to a wall of clerestory glass, and underneath them a fireplace made of hand-stacked stone holds a floating copper hood that reads more like sculpture than fixture. It turns out there's a real reason it feels this considered: this is the Van Dekker House, R.M. Schindler's largest known residential project, built in 1940 and now a Los Angeles Historic-Cultural Monument. The restoration honored every bit of that, the beams, the stone, the glass, while quietly adding what a house like this actually needs now, an updated kitchen, a primary suite with its own gym, a billiard room with a wine cellar, and a salt-water pool tucked into almost half an acre of grounds behind a gate. Even the small stuff got the same care, there's a black iron rain chain at the front door doing the job of a downspout, the kind of detail you only notice because someone clearly wanted you to. Houses like this don't come up often, and I'd love to walk you through it.",
+    "listingAgentCredit": "Listed by Benjamin Kahle, Compass, and Desiree Zuckerman, Rodeo Realty",
+    "externalListingUrl": "https://www.compass.com/listing/2164708251789734825/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-09-06"
   }
 ]

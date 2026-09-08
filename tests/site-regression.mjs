@@ -95,12 +95,12 @@ includes(
 
 assert.equal(
   (homepage.match(/class="story-more-button"/g) || []).length,
-  3,
-  "Homepage must retain all three story expand controls"
+  4,
+  "Homepage must retain all four story expand controls"
 );
 assert.equal(
   (homepage.match(/class="story-more-label">Read More</g) || []).length,
-  3,
+  4,
   "Every homepage story must begin with a Read More control"
 );
 includes(
@@ -126,6 +126,7 @@ const listingGuideDestinations = {
   "3627-cody-rd": "../../neighborhoods/sherman-oaks/",
   "1395-inverness-dr": "../../neighborhoods/pasadena/",
   "2414-4th-ave": "../../guides/#local-guides",
+  "19950-collier-st": "../../neighborhoods/woodland-hills/",
 };
 const obsessionList = JSON.parse(
   await readFile(new URL("../data/obsession-list.json", import.meta.url), "utf8")
@@ -155,7 +156,7 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
   includes(closingActions[0], `href="${guideHref}"`, `${slug} bottom guide link`);
 }
 
-for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city"]) {
+for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills"]) {
   await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
 }
 
@@ -165,6 +166,7 @@ const goodPlaceGuideTitles = {
   "sherman-oaks": "Is Sherman Oaks a good place to live?",
   pasadena: "Is Pasadena a good place to live?",
   "studio-city": "Is Studio City a good place to live?",
+  "woodland-hills": "Is Woodland Hills a good place to live?",
 };
 
 for (const [neighborhood, title] of Object.entries(goodPlaceGuideTitles)) {
@@ -188,6 +190,20 @@ includes(
   await readFile(new URL("../guides/index.html", import.meta.url), "utf8"),
   'id="local-guides"',
   "Local Guides fallback destination"
+);
+
+const guidesIndex = await readFile(new URL("../guides/index.html", import.meta.url), "utf8");
+const woodlandGuide = await readFile(
+  new URL("../neighborhoods/woodland-hills/index.html", import.meta.url),
+  "utf8"
+);
+includes(guidesIndex, 'href="../neighborhoods/woodland-hills/"', "Woodland Hills guide-index link");
+includes(homepage, 'href="neighborhoods/woodland-hills/"', "Homepage relocation-story guide link");
+includes(woodlandGuide, 'href="../../favorites/19950-collier-st/"', "Woodland Hills listing link");
+includes(
+  await readFile(new URL("../favorites/index.html", import.meta.url), "utf8"),
+  'href="19950-collier-st/"',
+  "Zonshine Edit No. 010 card link"
 );
 
 includes(script, "function startTestimonialAutoplay()", "Testimonial autoplay behavior");
