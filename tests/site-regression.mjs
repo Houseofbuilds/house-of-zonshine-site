@@ -127,6 +127,7 @@ const listingGuideDestinations = {
   "1395-inverness-dr": "../../neighborhoods/pasadena/",
   "2414-4th-ave": "../../guides/#local-guides",
   "19950-collier-st": "../../neighborhoods/woodland-hills/",
+  "232-la-follette-dr": "../../neighborhoods/highland-park/",
 };
 const obsessionList = JSON.parse(
   await readFile(new URL("../data/obsession-list.json", import.meta.url), "utf8")
@@ -156,7 +157,7 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
   includes(closingActions[0], `href="${guideHref}"`, `${slug} bottom guide link`);
 }
 
-for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills"]) {
+for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park"]) {
   await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
 }
 
@@ -167,6 +168,7 @@ const goodPlaceGuideTitles = {
   pasadena: "Is Pasadena a good place to live?",
   "studio-city": "Is Studio City a good place to live?",
   "woodland-hills": "Is Woodland Hills a good place to live?",
+  "highland-park": "Is Highland Park a good place to live?",
 };
 
 for (const [neighborhood, title] of Object.entries(goodPlaceGuideTitles)) {
@@ -219,13 +221,24 @@ const woodlandGuide = await readFile(
   new URL("../neighborhoods/woodland-hills/index.html", import.meta.url),
   "utf8"
 );
+const highlandParkGuide = await readFile(
+  new URL("../neighborhoods/highland-park/index.html", import.meta.url),
+  "utf8"
+);
 includes(guidesIndex, 'href="../neighborhoods/woodland-hills/"', "Woodland Hills guide-index link");
+includes(guidesIndex, 'href="../neighborhoods/highland-park/"', "Highland Park guide-index link");
 includes(homepage, 'href="neighborhoods/woodland-hills/"', "Homepage relocation-story guide link");
 includes(woodlandGuide, 'href="../../favorites/19950-collier-st/"', "Woodland Hills listing link");
+includes(highlandParkGuide, 'href="../../favorites/232-la-follette-dr/"', "Highland Park listing link");
 includes(
   await readFile(new URL("../favorites/index.html", import.meta.url), "utf8"),
   'href="19950-collier-st/"',
   "Zonshine Edit No. 010 card link"
+);
+includes(
+  await readFile(new URL("../favorites/index.html", import.meta.url), "utf8"),
+  'href="232-la-follette-dr/"',
+  "Zonshine Edit No. 011 card link"
 );
 
 includes(script, "function startTestimonialAutoplay()", "Testimonial autoplay behavior");

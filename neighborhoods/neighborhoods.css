@@ -729,6 +729,18 @@
   margin-inline: auto;
 }
 
+.simple-nearby-guides {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 1.75rem;
+  margin-top: 2.25rem !important;
+}
+
+.simple-nearby-guides .text-link {
+  margin-top: 0;
+}
+
 @media (max-width: 900px) {
   .simple-neighborhood-guide { width: min(680px, calc(100% - 40px)); }
   .simple-guide-hero { grid-template-columns: .82fr 1.18fr; }

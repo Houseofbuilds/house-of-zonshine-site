@@ -235,5 +235,29 @@
     "listingAgentCredit": "Listed by Benjamin Kahle, Compass, and Desiree Zuckerman, Rodeo Realty",
     "externalListingUrl": "https://www.compass.com/listing/2164708251789734825/view?agent_id=671ba9d44d2fd40001057d9d",
     "dateAdded": "2026-09-06"
+  },
+  {
+    "slug": "232-la-follette-dr",
+    "obsessionNumber": 11,
+    "status": "active",
+    "address": "232 La Follette Dr",
+    "neighborhood": "Highland Park",
+    "city": "Los Angeles",
+    "price": 1350000,
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1531,
+    "lotSqft": 4707,
+    "photos": [
+      "obsession-list/232-la-follette-dr-1.jpg",
+      "obsession-list/232-la-follette-dr-2.jpg",
+      "obsession-list/232-la-follette-dr-3.jpg",
+      "obsession-list/232-la-follette-dr-4.jpg"
+    ],
+    "hook": "Homestead chic, or maybe turn-of-the-century Vogue, that's the closest I can get to describing this Highland Park house, and I still haven't landed on the right words for it.",
+    "story": "I walked through this one on caravan not expecting much, and about two rooms in I stopped and thought, homestead chic, or maybe turn-of-the-century Vogue, and then gave up trying to categorize it because it doesn't sit neatly in either box. The bones themselves are typical of a 1940s home, tucked into the winding, almost village-like streets of Mt. Angelus in Highland Park, three bedrooms and two baths across 1,531 square feet, already redone down to the electrical and the copper plumbing so the systems aren't going to surprise you. What will surprise you is the primary bathroom, which has a toilet and nothing else, not even a shower, there is exactly one shower in the entire house, and I genuinely did not care by the time I noticed, because you can just tell this home was made more special by the people who lived here. Every room had some small, considered thing in it, a mirror, a stack of books, a piece of art hung at exactly the right height, that told me someone loved this house enough to actually finish it. That's the real case for a place like this: you get the bones checked, you make sure the foundation and the systems hold up, and if they do, you're not just buying a house in Highland Park for $1,350,000, you're buying the design, the wallpaper, the built-ins, everything fixed and permanent, made with someone else's taste. It comes with the house, and that is exactly the kind of premium worth paying. If a house that hands you someone else's eye for design along with the keys is your kind of obsession too, I've got you.",
+    "listingAgentCredit": "Listed by Sara Lov, Maison Real Estate",
+    "externalListingUrl": "https://www.compass.com/homedetails/232-La-Follette-Dr-Los-Angeles-CA-90042/2175521322876089665_lid/?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-09-07"
   }
 ]
