@@ -193,6 +193,28 @@ includes(
 );
 
 const guidesIndex = await readFile(new URL("../guides/index.html", import.meta.url), "utf8");
+const insurancePost = await readFile(
+  new URL("../blog/homeowners-insurance-los-angeles-2026/index.html", import.meta.url),
+  "utf8"
+);
+for (const asset of [
+  "../freebies/pdfs/know-the-real-number-not-the-average.pdf",
+  "../images/freebies/know-the-real-number-not-the-average.png",
+]) {
+  await access(new URL(asset, import.meta.url));
+}
+for (const expected of [
+  'id="know-the-real-number"',
+  'href="../freebies/pdfs/know-the-real-number-not-the-average.pdf"',
+  'src="../images/freebies/know-the-real-number-not-the-average.png"',
+]) {
+  includes(guidesIndex, expected, "Know the Real Number guide-library entry");
+}
+includes(
+  insurancePost,
+  'href="../../guides/#know-the-real-number"',
+  "Insurance article link to Know the Real Number guide"
+);
 const woodlandGuide = await readFile(
   new URL("../neighborhoods/woodland-hills/index.html", import.meta.url),
   "utf8"
