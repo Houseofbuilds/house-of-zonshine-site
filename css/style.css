@@ -523,8 +523,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .guide-index-hero-copy .guide-accessibility-note { max-width: 52ch; margin-top: 1rem; color: var(--ink); font-size: .75rem; line-height: 1.6; }
 .guide-accessibility-note a { font-weight: 600; text-underline-offset: .2em; }
 .guide-index-hero-images { position: relative; grid-area: image; height: 440px; }
-.guide-index-hero-images img:first-child { position: absolute; inset: 0 14% 6% 0; width: 86%; height: 94%; object-fit: cover; object-position: center 48%; }
-.guide-index-hero-images img:last-child { position: absolute; right: 0; bottom: 0; width: 36%; height: 58%; padding: 7px; object-fit: cover; object-position: top; background: var(--paper); box-shadow: 0 24px 50px -28px rgba(43,31,26,.45); }
+.guide-index-hero-images img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .guide-start-menu { grid-area: menu; align-self: center; display: flex; width: 100%; flex-direction: column; justify-content: center; border-top: 1px solid var(--espresso); }
 .guide-start-menu h2 { margin: 0; padding: 1.1rem 0; color: var(--clay-text); font-size: .66rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .guide-start-menu > a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: end; padding: 1.5rem 0; border-top: 1px solid var(--line); color: var(--espresso); text-decoration: none; transition: padding .3s cubic-bezier(.23,1,.32,1), background-color .2s ease; }
@@ -1037,8 +1036,6 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .guide-index-hero-copy > p { font-size: .82rem; }
   .guide-index-hero-copy .guide-accessibility-note { font-size: .7rem; }
   .guide-index-hero-images { height: 380px; }
-  .guide-index-hero-images img:first-child { right: 12%; width: 88%; }
-  .guide-index-hero-images img:last-child { width: 38%; }
   .guide-start-menu h2 { padding: 1rem 0; }
   .guide-start-menu > a { grid-template-columns: 1fr; gap: .85rem; padding: 1.35rem 0; }
   .guide-start-copy strong { font-size: clamp(1.55rem, 7vw, 2rem); }
