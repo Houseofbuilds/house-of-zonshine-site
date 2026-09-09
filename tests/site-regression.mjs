@@ -117,6 +117,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "1811-micheltorena-st": "../../neighborhoods/silver-lake/",
   "3895-fredonia-dr": "../../neighborhoods/studio-city/",
   "2276-moreno-dr": "../../neighborhoods/silver-lake/",
   "1190-n-wilson-ave": "../../neighborhoods/pasadena/",
@@ -155,6 +156,19 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
   assert.ok(closingActions, `${slug} is missing its closing listing actions`);
   includes(topNavigation[0], `href="${guideHref}"`, `${slug} top guide link`);
   includes(closingActions[0], `href="${guideHref}"`, `${slug} bottom guide link`);
+
+  const neighborhoodMatch = guideHref.match(/^\.\.\/\.\.\/neighborhoods\/([^/]+)\/$/);
+  if (neighborhoodMatch) {
+    const guide = await readFile(
+      new URL(`../neighborhoods/${neighborhoodMatch[1]}/index.html`, import.meta.url),
+      "utf8"
+    );
+    includes(
+      guide,
+      `href="../../favorites/${slug}/"`,
+      `${slug} neighborhood-guide backlink`
+    );
+  }
 }
 
 for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park"]) {

@@ -259,5 +259,29 @@
     "listingAgentCredit": "Listed by Sara Lov, Maison Real Estate",
     "externalListingUrl": "https://www.compass.com/homedetails/232-La-Follette-Dr-Los-Angeles-CA-90042/2175521322876089665_lid/?agent_id=671ba9d44d2fd40001057d9d",
     "dateAdded": "2026-09-07"
+  },
+  {
+    "slug": "1811-micheltorena-st",
+    "obsessionNumber": 12,
+    "status": "active",
+    "address": "1811 Micheltorena St",
+    "neighborhood": "Silver Lake",
+    "city": "Los Angeles",
+    "price": 3350000,
+    "beds": 3,
+    "baths": 4,
+    "sqft": 2780,
+    "lotSqft": 7501,
+    "photos": [
+      "obsession-list/1811-micheltorena-st-1.jpg",
+      "obsession-list/1811-micheltorena-st-2.jpg",
+      "obsession-list/1811-micheltorena-st-3.jpg",
+      "obsession-list/1811-micheltorena-st-4.jpg"
+    ],
+    "hook": "I'm a sucker for a dark kitchen with exposed beams, and this Silver Lake compound had me at the ceiling.",
+    "story": "I'm a sucker for a dark kitchen with exposed beams, full stop, and I got to see this one on one of those rare cloudy, rainy Los Angeles days that just brought so much vibe to the whole place. Even with the clouds sitting low over the hills, it stayed so light inside, vaulted wood-beamed ceilings and windows stacked toward the view, which tells you everything about how well this 1913 Craftsman was actually reworked. The kitchen anchors the top level, near-black cabinetry and stone against all that warm timber overhead, and it opens straight into a dining and living space that never stops feeling sunnier than it is outside. Three bedrooms and four baths across 2,780 square feet, listed at $3,350,000, two up top and a primary suite downstairs with its own lounge, plus a pool and spa tucked into the hillside with panoramic views, all a short walk from the Sunset Junction spots I already send everyone to, Pine and Crane, Intelligentsia, Night and Market. Then there's the second structure, 440 square feet, fully detached, with its own separate entrance off the rear alley so it never has to touch the main house at all. Read the listing close enough and it tells you what it actually wants to be, a guest space, a home office, a creative studio, take your pick, music room, art studio, even something you could rent out down the line. It has this little industrial edge to it, exposed beams again but in a tighter, more workshop kind of way, and somehow it's still warm instead of cold, with fixtures in there that stopped me in my tracks. This is exactly the kind of property that keeps me up at night thinking about how someone could actually use it, and if that's your kind of obsession too, I've got you.",
+    "listingAgentCredit": "Listed by Rob Kallick & Laura Martinez, Compass",
+    "externalListingUrl": "https://www.compass.com/homedetails/1811-Micheltorena-St-Los-Angeles-CA-90026/2187193617353448449_lid/?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-09-08"
   }
 ]
