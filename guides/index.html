@@ -100,21 +100,31 @@
   <main id="main">
     <section class="guide-index-hero">
       <div class="guide-index-hero-copy">
-        <p class="page-kicker">The Guide Library</p>
-        <h1>Start with the question you’re asking now.</h1>
-        <p>Clear, useful guidance for buying, selling, relocating, and getting to know Los Angeles—without the wall of words.</p>
+        <h1>Find the guide for what you need next.</h1>
+        <p>Buying or selling, moving to Los Angeles, or trying to understand a neighborhood? Choose one place to begin. You can always move between them.</p>
         <p class="guide-accessibility-note">Need a guide in an accessible alternative format? <a href="mailto:julia.zonshine@compass.com?subject=Accessible%20guide%20request">Email Julia and name the guide you need.</a></p>
       </div>
-      <div class="guide-index-hero-images" aria-hidden="true">
-        <img src="../images/freebies/los-angeles-buyer-guide.png" alt="">
-        <img src="../images/freebies/los-angeles-relocation-guide.png" alt="">
-      </div>
+      <nav class="guide-start-menu" aria-labelledby="guide-start-title">
+        <h2 id="guide-start-title">Choose where to begin.</h2>
+        <a href="#buy-or-sell">
+          <span class="guide-start-copy"><strong>Buying or selling</strong><small>Offers, preparation, pricing, inspections, insurance, and closing.</small></span>
+          <span class="guide-start-action">See transaction guides <span aria-hidden="true">↓</span></span>
+        </a>
+        <a href="#relocating">
+          <span class="guide-start-copy"><strong>Relocating to Los Angeles</strong><small>Choose where to live, plan the search, and coordinate the move.</small></span>
+          <span class="guide-start-action">Plan your move <span aria-hidden="true">↓</span></span>
+        </a>
+        <a href="#local-guides">
+          <span class="guide-start-copy"><strong>Neighborhood guides</strong><small>Learn how each place lives, then see its standout homes in The Zonshine Edit.</small></span>
+          <span class="guide-start-action">Explore neighborhoods <span aria-hidden="true">↓</span></span>
+        </a>
+      </nav>
     </section>
 
     <nav class="guide-category-nav" aria-label="Guide categories">
-      <a href="#buy-or-sell"><span>01</span> Buy or sell</a>
-      <a href="#relocating"><span>02</span> Relocating</a>
-      <a href="#local-guides"><span>03</span> Local guides</a>
+      <a href="#buy-or-sell" data-guide-section="buy-or-sell"><strong>Buying + selling</strong><small>Transaction guides</small></a>
+      <a href="#relocating" data-guide-section="relocating"><strong>Relocating to LA</strong><small>Plan the move</small></a>
+      <a href="#local-guides" data-guide-section="local-guides"><strong>Neighborhoods + The Edit</strong><small>Learn the place, see the homes</small></a>
     </nav>
 
     <section class="guide-category" id="buy-or-sell">
@@ -174,8 +184,13 @@
     <section class="guide-category" id="local-guides">
       <header class="guide-category-heading">
         <div><p class="eyebrow">Local guides</p><h2>Know the neighborhood. Then see the houses.</h2></div>
-        <p>The guides explain how a place lives. The Zonshine Edit shows the homes that make its case.</p>
+        <p>These two collections are designed to be used together: understand the place first, then see the homes that make its case.</p>
       </header>
+      <div class="local-guides-pairing" aria-label="How Neighborhood Guides and The Zonshine Edit work together">
+        <div><strong>Neighborhood Guides</strong><span>Daily life, local character, architecture, useful context, and the honest tradeoffs.</span></div>
+        <span class="local-guides-pairing-mark" aria-hidden="true">+</span>
+        <div><strong>The Zonshine Edit</strong><span>The character-filled homes I keep thinking about, linked back to the neighborhoods they belong to.</span><a href="../favorites/">Browse The Zonshine Edit <span aria-hidden="true">↗</span></a></div>
+      </div>
       <p class="mobile-swipe-hint">Swipe to browse the neighborhoods <span aria-hidden="true">→</span></p>
       <div class="local-guide-grid">
       <article class="local-guide-feature">
@@ -208,8 +223,8 @@
       </article>
       </div>
       <aside class="local-guides-edit-connection">
-        <div><p class="eyebrow">The Zonshine Edit</p><h3>See the houses that make the case.</h3></div>
-        <p>Each neighborhood guide connects to the character-filled homes I keep thinking about.</p>
+        <div><p class="eyebrow">Continue with The Zonshine Edit</p><h3>Now see the houses that make the case.</h3></div>
+        <p>Keep the neighborhood context in mind while you browse the character-filled homes I cannot stop thinking about.</p>
         <a href="../favorites/">Explore The Zonshine Edit <span aria-hidden="true">↗</span></a>
       </aside>
     </section>

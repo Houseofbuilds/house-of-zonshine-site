@@ -132,6 +132,68 @@
     }
   });
 
+  var guideCategoryNav = document.querySelector(".guide-category-nav");
+  if (guideCategoryNav) {
+    var guideCategoryLinks = Array.from(guideCategoryNav.querySelectorAll("[data-guide-section]"));
+    var guideCategorySections = guideCategoryLinks
+      .map(function (link) { return document.getElementById(link.dataset.guideSection); })
+      .filter(Boolean);
+    var currentGuideSection = "";
+    var guideNavTicking = false;
+
+    function setCurrentGuideSection(sectionId) {
+      if (!sectionId || sectionId === currentGuideSection) return;
+      currentGuideSection = sectionId;
+
+      guideCategoryLinks.forEach(function (link) {
+        var current = link.dataset.guideSection === sectionId;
+        link.classList.toggle("is-current", current);
+        if (current) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+
+      var currentLink = guideCategoryNav.querySelector(".is-current");
+      if (currentLink && guideCategoryNav.scrollWidth > guideCategoryNav.clientWidth) {
+        guideCategoryNav.scrollTo({
+          left: currentLink.offsetLeft - (guideCategoryNav.clientWidth - currentLink.offsetWidth) / 2,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+        });
+      }
+    }
+
+    function updateGuideCategoryNav() {
+      var activeSection = guideCategorySections[0];
+      var activationLine = guideCategoryNav.getBoundingClientRect().bottom + 120;
+
+      guideCategorySections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= activationLine) activeSection = section;
+      });
+
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        activeSection = guideCategorySections[guideCategorySections.length - 1];
+      }
+
+      if (activeSection) setCurrentGuideSection(activeSection.id);
+      guideNavTicking = false;
+    }
+
+    function requestGuideCategoryUpdate() {
+      if (guideNavTicking) return;
+      guideNavTicking = true;
+      window.requestAnimationFrame(updateGuideCategoryNav);
+    }
+
+    guideCategoryLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        setCurrentGuideSection(link.dataset.guideSection);
+      });
+    });
+
+    window.addEventListener("scroll", requestGuideCategoryUpdate, { passive: true });
+    window.addEventListener("resize", requestGuideCategoryUpdate);
+    updateGuideCategoryNav();
+  }
+
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
