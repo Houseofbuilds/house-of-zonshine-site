@@ -17,6 +17,10 @@ const commissionPost = await readFile(
   new URL("../blog/how-much-commission-does-a-real-estate-agent-make/index.html", import.meta.url),
   "utf8"
 );
+const commissionCalculator = await readFile(
+  new URL("../blog/real-estate-commission-calculator/index.html", import.meta.url),
+  "utf8"
+);
 
 function extract(pattern, label) {
   const match = homepage.match(pattern);
@@ -106,6 +110,29 @@ includes(
   'href="../questions-to-ask-your-real-estate-agent/"',
   "Commission article reciprocal agent-questions link"
 );
+includes(
+  blogIndex,
+  'href="real-estate-commission-calculator/"',
+  "Commission-calculator blog-index link"
+);
+assert.ok(
+  blogIndex.indexOf('href="real-estate-commission-calculator/"') <
+    blogIndex.indexOf('href="how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"'),
+  "Newest commission calculator must appear first on the blog index"
+);
+includes(
+  commissionPost,
+  'href="../real-estate-commission-calculator/"',
+  "Commission article link to commission calculator"
+);
+includes(
+  commissionCalculator,
+  'href="../how-much-commission-does-a-real-estate-agent-make/"',
+  "Commission calculator link to deeper commission article"
+);
+for (const amount of ["$2,500", "$5,000", "$7,500", "$17,500", "$25,000", "$37,500", "$50,000", "$75,000"]) {
+  includes(commissionCalculator, amount, `Commission calculator static reference amount ${amount}`);
+}
 for (const href of [
   "../questions-to-ask-your-real-estate-agent/",
   "../homeowners-insurance-los-angeles-2026/",
