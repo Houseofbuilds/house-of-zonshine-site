@@ -186,6 +186,7 @@ const listingGuideDestinations = {
   "2414-4th-ave": "../../guides/#local-guides",
   "19950-collier-st": "../../neighborhoods/woodland-hills/",
   "232-la-follette-dr": "../../neighborhoods/highland-park/",
+  "2383-loma-vista-pl": "../../neighborhoods/silver-lake/",
 };
 const obsessionList = JSON.parse(
   await readFile(new URL("../data/obsession-list.json", import.meta.url), "utf8")

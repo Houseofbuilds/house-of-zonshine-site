@@ -1,5 +1,29 @@
 [
   {
+    "slug": "2383-loma-vista-pl",
+    "obsessionNumber": 16,
+    "status": "active",
+    "address": "2383 Loma Vista Pl",
+    "neighborhood": "Silver Lake",
+    "city": "Los Angeles",
+    "price": 2800000,
+    "beds": 3,
+    "baths": 4,
+    "sqft": 1798,
+    "lotSqft": 7502,
+    "photos": [
+      "obsession-list/2383-loma-vista-pl-1.jpg",
+      "obsession-list/2383-loma-vista-pl-2.jpg",
+      "obsession-list/2383-loma-vista-pl-3.jpg",
+      "obsession-list/2383-loma-vista-pl-4.jpg"
+    ],
+    "hook": "I parked so far down Glendale Boulevard I nearly turned around, and then I walked into a house without a single right angle in it.",
+    "story": "I almost didn't make it to this one. I parked so far down Glendale Boulevard that I nearly turned back, and it was hot, the kind of hot that makes you second-guess the walk, but I am so glad I kept going. This is Tattuplex, designed by architect Tom Marble in 2012 on a double-hexagon plan, which means exactly what it sounds like, there is not one right angle anywhere in the entire house. It's been published in Dwell and the LA Times, and Gebhard and Winters' guidebook to LA architecture once called it a remote hillside shrine, which felt about right the second the front door opened onto a room that just kept unfolding instead of boxing me in. Nearly every room frames the Silver Lake reservoir and the hills beyond it, the terraces step and shift with the hillside instead of fighting it, and the custom Douglas fir cabinetry and built-ins were designed for this exact geometry, not squeezed into it afterward. Right angles are overrated, honestly, there's something about a house that refuses to sit square that makes you feel a little less square too, like the architecture itself gave you permission to stop living inside the lines. Three bedrooms and four baths across 1,798 square feet, listed at $2,800,000, and it picked up an AIA award in 2016, which makes sense the moment you're standing in it. If a house that thinks in angles instead of boxes sounds like your kind of obsession too, I've got you.",
+    "listingAgentCredit": "Listed by Ilana Gafni, Crosby Doe Associates, Inc.",
+    "externalListingUrl": "https://www.compass.com/listing/2191585249716672153/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-09-17"
+  },
+  {
     "slug": "402-s-las-palmas-ave",
     "obsessionNumber": 15,
     "status": "active",
