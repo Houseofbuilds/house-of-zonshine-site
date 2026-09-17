@@ -1,0 +1,179 @@
+name: Publish AB 2992 article on September 24
+
+on:
+  schedule:
+    # 9:00–9:50 AM Pacific on September 24. Repeated triggers provide
+    # recovery if GitHub delays or drops a scheduled run.
+    - cron: "0,10,20,30,40,50 16 24 9 *"
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish now instead of running a dry-run test"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: publish-ab-2992-2026-09-24
+  cancel-in-progress: false
+
+env:
+  RELEASE_BRANCH: scheduled/ab-2992-2026-09-24
+  RELEASE_SHA: 12953cdfc466b7e65f3f55882c13c13b4f223399
+  RELEASE_DATE: 2026-09-24
+  RELEASE_DEADLINE: 2026-09-30
+  ARTICLE_PATH: blog/do-i-have-to-sign-a-contract-before-my-agent-shows-me-a-house/index.html
+  ARTICLE_URL: https://juliazonshine.com/blog/do-i-have-to-sign-a-contract-before-my-agent-shows-me-a-house/
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Check out the live branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Confirm the release window
+        id: guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          today=$(TZ=America/Los_Angeles date +%F)
+          if [[ "$today" < "$RELEASE_DATE" || "$today" > "$RELEASE_DEADLINE" ]]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Skipping: $today is outside the one-time release window."
+            exit 0
+          fi
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
+      - name: Apply the approved release commit
+        id: prepare
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git cat-file -e "HEAD:$ARTICLE_PATH" 2>/dev/null; then
+            echo "already=true" >> "$GITHUB_OUTPUT"
+            echo "The article is already present on main."
+            exit 0
+          fi
+
+          git fetch origin "$RELEASE_BRANCH"
+          actual_sha=$(git rev-parse "origin/$RELEASE_BRANCH")
+          if [[ "$actual_sha" != "$RELEASE_SHA" ]]; then
+            echo "Release branch changed: expected $RELEASE_SHA, found $actual_sha" >&2
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git cherry-pick "$RELEASE_SHA"
+          echo "already=false" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node
+        if: steps.guard.outputs.run == 'true' && steps.prepare.outputs.already != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install test dependencies
+        if: steps.guard.outputs.run == 'true' && steps.prepare.outputs.already != 'true'
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Run regression and browser checks
+        if: steps.guard.outputs.run == 'true' && steps.prepare.outputs.already != 'true'
+        run: |
+          npm run test:static
+          npm run test:a11y
+
+      - name: Publish to main
+        if: >-
+          steps.guard.outputs.run == 'true' &&
+          steps.prepare.outputs.already != 'true' &&
+          (github.event_name == 'schedule' || inputs.publish == true)
+        run: git push origin HEAD:main
+
+      - name: Verify the real production result
+        if: >-
+          steps.guard.outputs.run == 'true' &&
+          (github.event_name == 'schedule' || inputs.publish == true)
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 40); do
+            cache_key="${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${attempt}"
+            article=$(curl --fail --location --silent --show-error "${ARTICLE_URL}?deploy=${cache_key}" || true)
+            index=$(curl --fail --location --silent --show-error "https://juliazonshine.com/blog/?deploy=${cache_key}" || true)
+            sitemap=$(curl --fail --location --silent --show-error "https://juliazonshine.com/sitemap.xml?deploy=${cache_key}" || true)
+            related=$(curl --fail --location --silent --show-error "https://juliazonshine.com/blog/questions-to-ask-your-real-estate-agent/?deploy=${cache_key}" || true)
+
+            if grep -Fq "Do I Really Have to Sign a Contract Before My Agent Shows Me a House?" <<< "$article" &&
+               grep -Fq '"datePublished": "2026-09-24"' <<< "$article" &&
+               grep -Fq "do-i-have-to-sign-a-contract-before-my-agent-shows-me-a-house/" <<< "$index" &&
+               grep -Fq "$ARTICLE_URL" <<< "$sitemap" &&
+               grep -Fq "what California's buyer-agreement rules actually mean" <<< "$related"; then
+              curl --fail --location --silent --show-error --output /dev/null "https://juliazonshine.com/images/julia-doorway.jpg?deploy=${cache_key}"
+              echo "Published and verified: $ARTICLE_URL" >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+
+            echo "Waiting for the production deploy (attempt $attempt of 40)."
+            sleep 15
+          done
+
+          echo "The release reached main but the complete live result could not be verified." >&2
+          exit 1
+
+      - name: Record a dry-run success
+        if: >-
+          steps.guard.outputs.run == 'true' &&
+          github.event_name == 'workflow_dispatch' &&
+          inputs.publish != true
+        run: echo "Dry run passed. No production files were changed." >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open a visible failure issue
+        if: >-
+          failure() &&
+          steps.guard.outputs.run == 'true' &&
+          (github.event_name == 'schedule' || inputs.publish == true)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = "Automatic AB 2992 publication failed";
+            const { owner, repo } = context.repo;
+            const issues = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: "open",
+              per_page: 100,
+            });
+            if (!issues.data.some((issue) => issue.title === title)) {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body: [
+                  "The scheduled September 24 AB 2992 article did not complete or could not be verified live.",
+                  "",
+                  `Review the failed run: ${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`,
+                  "",
+                  `Expected live page: ${process.env.ARTICLE_URL}`,
+                ].join("\n"),
+              });
+            }
