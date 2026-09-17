@@ -1,6 +1,10 @@
 name: Publish AB 2992 article on September 24
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-ab-2992-2026-09-24.yml
   schedule:
     # 9:00–9:50 AM Pacific on September 24. Repeated triggers provide
     # recovery if GitHub delays or drops a scheduled run.
@@ -46,7 +50,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" || "$GITHUB_EVENT_NAME" == "push" ]]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -143,8 +147,8 @@ jobs:
       - name: Record a dry-run success
         if: >-
           steps.guard.outputs.run == 'true' &&
-          github.event_name == 'workflow_dispatch' &&
-          inputs.publish != true
+          (github.event_name == 'push' ||
+          (github.event_name == 'workflow_dispatch' && inputs.publish != true))
         run: echo "Dry run passed. No production files were changed." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Open a visible failure issue
