@@ -171,6 +171,9 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "402-s-las-palmas-ave": "../../neighborhoods/hancock-park/",
+  "2165-ponet-dr": "../../neighborhoods/los-feliz/",
+  "5730-cazaux-dr": "../../neighborhoods/los-feliz/",
   "1811-micheltorena-st": "../../neighborhoods/silver-lake/",
   "3895-fredonia-dr": "../../neighborhoods/studio-city/",
   "2276-moreno-dr": "../../neighborhoods/silver-lake/",
@@ -225,11 +228,12 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
   }
 }
 
-for (const neighborhood of ["silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park"]) {
+for (const neighborhood of ["hancock-park", "silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park"]) {
   await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
 }
 
 const goodPlaceGuideTitles = {
+  "hancock-park": "Is Hancock Park a good place to live?",
   "silver-lake": "Is Silver Lake a good place to live?",
   "los-feliz": "Is Los Feliz a good place to live?",
   "sherman-oaks": "Is Sherman Oaks a good place to live?",
@@ -295,6 +299,7 @@ const highlandParkGuide = await readFile(
 );
 includes(guidesIndex, 'href="../neighborhoods/woodland-hills/"', "Woodland Hills guide-index link");
 includes(guidesIndex, 'href="../neighborhoods/highland-park/"', "Highland Park guide-index link");
+includes(guidesIndex, 'href="../neighborhoods/hancock-park/"', "Hancock Park guide-index link");
 includes(homepage, 'href="neighborhoods/woodland-hills/"', "Homepage relocation-story guide link");
 includes(woodlandGuide, 'href="../../favorites/19950-collier-st/"', "Woodland Hills listing link");
 includes(highlandParkGuide, 'href="../../favorites/232-la-follette-dr/"', "Highland Park listing link");

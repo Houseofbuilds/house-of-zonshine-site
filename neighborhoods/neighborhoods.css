@@ -645,10 +645,26 @@
 .simple-home-grid--single article { border-right: 0; }
 
 .simple-home-image {
+  position: relative;
   display: block;
   margin: 0 -1.5rem 2rem;
   overflow: hidden;
   background: var(--sand);
+}
+
+.simple-home-sold-badge {
+  position: absolute;
+  z-index: 2;
+  top: 1.2rem;
+  right: 1.2rem;
+  padding: .48rem .7rem;
+  background: var(--clay);
+  color: white;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  line-height: normal;
+  text-transform: uppercase;
 }
 
 .simple-home-image img {
