@@ -27,7 +27,7 @@ concurrency:
 
 env:
   RELEASE_BRANCH: scheduled/ab-2992-2026-09-24
-  RELEASE_SHA: 12953cdfc466b7e65f3f55882c13c13b4f223399
+  RELEASE_SHA: 15bf641af1bd4de3074c60f1c0b77733b2da4c48
   RELEASE_DATE: 2026-09-24
   RELEASE_DEADLINE: 2026-09-30
   ARTICLE_PATH: blog/do-i-have-to-sign-a-contract-before-my-agent-shows-me-a-house/index.html
