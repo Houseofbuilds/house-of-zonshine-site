@@ -111,6 +111,8 @@ includes(preferredSourcesScript, 'footer .footer-links', "Footer Preferred Sourc
 
 for (const source of [shermanOaksGuide, studioCityGuide]) {
   includes(source, 'href="../sherman-oaks-vs-studio-city/"', "Neighborhood-guide comparison link");
+  includes(source, 'class="comparison-teaser"', "Neighborhood-guide comparison callout");
+  includes(source, 'class="comparison-teaser-question"', "Neighborhood-guide comparison question");
 }
 includes(shermanStudioComparison, "<h1>Sherman Oaks <span>vs</span> Studio City</h1>", "Comparison-page H1");
 includes(shermanStudioComparison, '<table>', "Semantic comparison table");

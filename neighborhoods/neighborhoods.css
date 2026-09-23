@@ -1170,12 +1170,33 @@
   text-transform: uppercase;
 }
 
+/* Reuse this reciprocal callout in every neighborhood guide that has a comparison page. */
 .comparison-teaser {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .75rem 1.5rem;
+  width: min(100%, 560px);
   margin: 2rem auto !important;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: var(--espresso) !important;
+  padding: 1.05rem 1.25rem;
+  background: var(--sage);
+  color: white !important;
+  font-size: 1.02rem !important;
+  line-height: 1.45 !important;
+  text-align: left;
+}
+
+.comparison-teaser a {
+  color: white;
+  white-space: nowrap;
+  text-decoration-color: rgba(255, 255, 255, .6);
+}
+
+.comparison-teaser a:hover { color: var(--plaster); }
+
+.comparison-teaser a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
 }
 
 @media (max-width: 900px) {
@@ -1191,6 +1212,11 @@
 }
 
 @media (max-width: 600px) {
+  .comparison-teaser {
+    grid-template-columns: 1fr;
+    padding: 1rem 1.1rem 1.1rem;
+  }
+
   .comparison-guide { width: calc(100% - 32px); padding-top: 6.25rem; }
   .comparison-hero { min-height: 520px; }
   .comparison-hero-panel + .comparison-hero-panel { border-left-width: 4px; }
