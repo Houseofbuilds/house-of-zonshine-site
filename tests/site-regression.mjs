@@ -5,6 +5,7 @@ const homepage = await readFile(new URL("../index.html", import.meta.url), "utf8
 const styles = await readFile(new URL("../css/style.css", import.meta.url), "utf8");
 const script = await readFile(new URL("../js/script.js", import.meta.url), "utf8");
 const blogIndex = await readFile(new URL("../blog/index.html", import.meta.url), "utf8");
+const blogScript = await readFile(new URL("../blog/blog.js", import.meta.url), "utf8");
 const agentQuestionsPost = await readFile(
   new URL("../blog/questions-to-ask-your-real-estate-agent/index.html", import.meta.url),
   "utf8"
@@ -82,6 +83,21 @@ includes(
   blogIndex,
   'href="how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"',
   "LA purchase-money blog-index link"
+);
+includes(
+  blogScript,
+  'preferredSourceFallback.href = "https://www.google.com/preferences/source?q=juliazonshine.com"',
+  "Google Preferred Sources fallback link"
+);
+includes(
+  blogScript,
+  'preferredSourceScript.src = "https://news.google.com/swg/js/v1/publisher.js"',
+  "Google Preferred Sources publisher library"
+);
+includes(
+  blogScript,
+  'preferredSourceButton.setAttribute("google-add-preferred-source-btn", "")',
+  "Google Preferred Sources button"
 );
 assert.ok(
   blogIndex.indexOf('href="how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"') <
