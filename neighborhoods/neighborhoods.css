@@ -872,3 +872,357 @@
   .simple-local-essentials { padding-inline: 16px; }
   .simple-guide-close { gap: 5rem; }
 }
+
+/* Sherman Oaks vs Studio City */
+.comparison-guide-page { background: var(--paper); }
+
+.comparison-guide {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 7.5rem 0 0;
+}
+
+.comparison-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 680px;
+  overflow: hidden;
+  background: var(--espresso);
+}
+
+.comparison-hero::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(33, 23, 19, .76), transparent 56%);
+  content: "";
+  pointer-events: none;
+}
+
+.comparison-hero-panel {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.comparison-hero-panel + .comparison-hero-panel { border-left: 8px solid var(--paper); }
+
+.comparison-hero-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.82) contrast(.96);
+}
+
+.comparison-hero-panel--sherman img { object-position: 54% center; }
+.comparison-hero-panel--studio img { object-position: 50% center; }
+
+.comparison-hero-panel > strong {
+  position: absolute;
+  z-index: 2;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: .55rem .7rem;
+  color: white;
+  background: rgba(33, 23, 19, .88);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.comparison-hero-panel figcaption {
+  position: absolute;
+  z-index: 2;
+  right: .75rem;
+  bottom: .65rem;
+  color: rgba(255, 255, 255, .76);
+  font-size: .6rem;
+}
+
+.comparison-hero-panel figcaption a { color: inherit; }
+
+.comparison-hero h1 {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.5rem, 5vw, 5rem);
+  bottom: clamp(2rem, 6vw, 5.5rem);
+  width: min(980px, calc(100% - 3rem));
+  margin: 0;
+  color: white;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  letter-spacing: -.04em;
+  line-height: .9;
+  text-wrap: balance;
+}
+
+.comparison-hero h1 span {
+  color: var(--bronze);
+  font-style: italic;
+}
+
+.comparison-answer {
+  display: grid;
+  grid-template-columns: minmax(280px, .75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  padding: clamp(4rem, 8vw, 7rem) .75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.comparison-answer h2,
+.comparison-section-heading h2,
+.comparison-editorial h2,
+.comparison-change h2,
+.comparison-schools h2,
+.comparison-close h2 {
+  margin: 0;
+  color: var(--espresso);
+  font-family: "Lora", Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -.03em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.comparison-answer p,
+.comparison-editorial-copy p,
+.comparison-change p,
+.comparison-schools p,
+.comparison-close > p {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.04rem;
+  line-height: 1.76;
+}
+
+.comparison-facts { padding: clamp(6rem, 10vw, 10rem) .75rem; }
+
+.comparison-section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .6fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+  align-items: end;
+}
+
+.comparison-section-heading p {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.comparison-swipe-hint { display: none; }
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  outline: none;
+  scrollbar-color: var(--bronze) var(--sand);
+}
+
+.comparison-table-wrap:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 6px;
+}
+
+.comparison-table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.comparison-table-wrap th,
+.comparison-table-wrap td {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+  line-height: 1.55;
+}
+
+.comparison-table-wrap thead th {
+  color: white;
+  background: var(--espresso);
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.comparison-table-wrap thead th:first-child { width: 22%; }
+
+.comparison-table-wrap tbody th {
+  color: var(--espresso);
+  background: var(--sand);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.comparison-table-wrap tbody td { color: var(--ink); background: var(--plaster); }
+
+.comparison-editorial {
+  display: grid;
+  grid-template-columns: minmax(320px, .78fr) minmax(0, 1.22fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  padding: clamp(6rem, 10vw, 10rem) .75rem;
+  align-items: center;
+  border-top: 1px solid var(--line);
+}
+
+.comparison-editorial--reverse .comparison-editorial-copy { order: 2; }
+.comparison-editorial-copy h2 { margin-bottom: 2rem; }
+.comparison-editorial-copy p + p { margin-top: 1.5rem; }
+
+.comparison-image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.comparison-image-pair figure {
+  position: relative;
+  min-width: 0;
+  min-height: 520px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.comparison-image-pair img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.86);
+}
+
+.comparison-image-pair figcaption {
+  position: absolute;
+  right: .75rem;
+  bottom: .75rem;
+  left: .75rem;
+  padding: .6rem .7rem;
+  color: white;
+  background: rgba(33, 23, 19, .9);
+  font-size: .65rem;
+  line-height: 1.4;
+}
+
+.comparison-image-pair figcaption a { color: inherit; }
+
+.comparison-change {
+  margin: 0 .75rem;
+  padding: clamp(4rem, 8vw, 7rem);
+  display: grid;
+  grid-template-columns: minmax(280px, .78fr) minmax(0, 1.22fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  background: var(--espresso);
+}
+
+.comparison-change h2 { color: white; }
+.comparison-change p { color: rgba(255, 255, 255, .78); }
+
+.comparison-schools {
+  display: grid;
+  grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(3rem, 7vw, 7rem);
+  padding: clamp(6rem, 10vw, 10rem) .75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.comparison-schools a {
+  color: var(--espresso);
+  text-underline-offset: 4px;
+}
+
+.comparison-close {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: clamp(6rem, 10vw, 10rem) .75rem;
+  text-align: center;
+}
+
+.comparison-close h2 { margin-inline: auto; }
+.comparison-close > p { margin: 1.75rem auto 0; }
+.comparison-close > .button { margin-top: 2rem; }
+
+.comparison-guide-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-top: 2.5rem;
+}
+
+.comparison-guide-links a,
+.comparison-teaser a {
+  color: var(--espresso);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-decoration-color: var(--bronze);
+  text-underline-offset: 5px;
+  text-transform: uppercase;
+}
+
+.comparison-teaser {
+  margin: 2rem auto !important;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--espresso) !important;
+}
+
+@media (max-width: 900px) {
+  .comparison-guide { width: min(680px, calc(100% - 40px)); }
+  .comparison-hero { min-height: 580px; }
+  .comparison-answer,
+  .comparison-editorial,
+  .comparison-change,
+  .comparison-schools { grid-template-columns: 1fr; }
+  .comparison-editorial--reverse .comparison-editorial-copy { order: 0; }
+  .comparison-section-heading { grid-template-columns: 1fr; gap: 1.5rem; }
+  .comparison-image-pair figure { min-height: 460px; }
+}
+
+@media (max-width: 600px) {
+  .comparison-guide { width: calc(100% - 32px); padding-top: 6.25rem; }
+  .comparison-hero { min-height: 520px; }
+  .comparison-hero-panel + .comparison-hero-panel { border-left-width: 4px; }
+  .comparison-hero-panel > strong { top: 1rem; left: 1rem; padding: .45rem .5rem; font-size: .58rem; }
+  .comparison-hero-panel figcaption { display: none; }
+  .comparison-hero h1 { bottom: 2rem; font-size: clamp(2.65rem, 12vw, 3.5rem); line-height: .94; }
+  .comparison-answer,
+  .comparison-facts,
+  .comparison-editorial,
+  .comparison-schools,
+  .comparison-close { padding-right: 0; padding-left: 0; }
+  .comparison-answer h2,
+  .comparison-section-heading h2,
+  .comparison-editorial h2,
+  .comparison-change h2,
+  .comparison-schools h2,
+  .comparison-close h2 { font-size: 2.35rem; }
+  .comparison-swipe-hint {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 1rem;
+    color: var(--clay-text);
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .comparison-table-wrap table { min-width: 720px; }
+  .comparison-table-wrap th,
+  .comparison-table-wrap td { padding: 1.15rem; }
+  .comparison-image-pair { grid-template-columns: 1fr; }
+  .comparison-image-pair figure { min-height: 380px; }
+  .comparison-change { margin-inline: 0; padding: 3.5rem 24px; }
+  .comparison-guide-links { align-items: center; flex-direction: column; }
+}

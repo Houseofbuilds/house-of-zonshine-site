@@ -4,8 +4,12 @@ import { access, readFile } from "node:fs/promises";
 const homepage = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const styles = await readFile(new URL("../css/style.css", import.meta.url), "utf8");
 const script = await readFile(new URL("../js/script.js", import.meta.url), "utf8");
+const preferredSourcesScript = await readFile(new URL("../js/preferred-sources.js", import.meta.url), "utf8");
 const blogIndex = await readFile(new URL("../blog/index.html", import.meta.url), "utf8");
 const blogScript = await readFile(new URL("../blog/blog.js", import.meta.url), "utf8");
+const shermanOaksGuide = await readFile(new URL("../neighborhoods/sherman-oaks/index.html", import.meta.url), "utf8");
+const studioCityGuide = await readFile(new URL("../neighborhoods/studio-city/index.html", import.meta.url), "utf8");
+const shermanStudioComparison = await readFile(new URL("../neighborhoods/sherman-oaks-vs-studio-city/index.html", import.meta.url), "utf8");
 const agentQuestionsPost = await readFile(
   new URL("../blog/questions-to-ask-your-real-estate-agent/index.html", import.meta.url),
   "utf8"
@@ -85,20 +89,33 @@ includes(
   "LA purchase-money blog-index link"
 );
 includes(
-  blogScript,
-  'preferredSourceFallback.href = "https://www.google.com/preferences/source?q=juliazonshine.com"',
+  preferredSourcesScript,
+  'var sourceUrl = "https://www.google.com/preferences/source?q=juliazonshine.com"',
   "Google Preferred Sources fallback link"
 );
 includes(
-  blogScript,
-  'preferredSourceScript.src = "https://news.google.com/swg/js/v1/publisher.js"',
+  preferredSourcesScript,
+  'publisherScript.src = "https://news.google.com/swg/js/v1/publisher.js"',
   "Google Preferred Sources publisher library"
 );
 includes(
-  blogScript,
-  'preferredSourceButton.setAttribute("google-add-preferred-source-btn", "")',
-  "Google Preferred Sources button"
+  preferredSourcesScript,
+  'preferredSourceClient.addPreferredSource()',
+  "Google Preferred Sources custom trigger"
 );
+includes(script, 'preferredSourcesFeature.src = "/js/preferred-sources.js?v=20260923"', "Global Preferred Sources loader");
+includes(blogScript, 'preferredSourcesFeature.src = "/js/preferred-sources.js?v=20260923"', "Blog Preferred Sources loader");
+includes(preferredSourcesScript, 'document.body.classList.contains("home-page")', "Homepage Preferred Sources placement");
+includes(preferredSourcesScript, 'document.body.classList.contains("newsletter-index-page")', "Newsletter Preferred Sources placement");
+includes(preferredSourcesScript, 'footer .footer-links', "Footer Preferred Sources placement");
+
+for (const source of [shermanOaksGuide, studioCityGuide]) {
+  includes(source, 'href="../sherman-oaks-vs-studio-city/"', "Neighborhood-guide comparison link");
+}
+includes(shermanStudioComparison, "<h1>Sherman Oaks <span>vs</span> Studio City</h1>", "Comparison-page H1");
+includes(shermanStudioComparison, '<table>', "Semantic comparison table");
+includes(shermanStudioComparison, 'href="../sherman-oaks/"', "Comparison link to Sherman Oaks guide");
+includes(shermanStudioComparison, 'href="../studio-city/"', "Comparison link to Studio City guide");
 assert.ok(
   blogIndex.indexOf('href="how-much-money-do-you-need-to-buy-a-house-in-los-angeles/"') <
     blogIndex.indexOf('href="questions-to-ask-your-real-estate-agent/"'),

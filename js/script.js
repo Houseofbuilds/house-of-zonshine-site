@@ -557,4 +557,8 @@
   });
 
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  var preferredSourcesFeature = document.createElement("script");
+  preferredSourcesFeature.src = "/js/preferred-sources.js?v=20260923";
+  document.head.appendChild(preferredSourcesFeature);
 })();
