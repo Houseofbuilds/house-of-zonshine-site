@@ -206,7 +206,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
-  "7728-woodrow-wilson-dr": "../../guides/#local-guides",
+  "7728-woodrow-wilson-dr": "../../neighborhoods/west-hollywood/",
   "402-s-las-palmas-ave": "../../neighborhoods/hancock-park/",
   "2165-ponet-dr": "../../neighborhoods/los-feliz/",
   "5730-cazaux-dr": "../../neighborhoods/los-feliz/",
@@ -265,8 +265,16 @@ for (const [slug, guideHref] of Object.entries(listingGuideDestinations)) {
   }
 }
 
-for (const neighborhood of ["hancock-park", "silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park"]) {
+for (const neighborhood of ["hancock-park", "silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park", "west-hollywood"]) {
   await access(new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url));
+}
+
+for (const neighborhood of ["hancock-park", "silver-lake", "pasadena", "los-feliz", "sherman-oaks", "studio-city", "woodland-hills", "highland-park"]) {
+  const guide = await readFile(
+    new URL(`../neighborhoods/${neighborhood}/index.html`, import.meta.url),
+    "utf8"
+  );
+  includes(guide, 'href="../west-hollywood/"', `${neighborhood} nearby West Hollywood link`);
 }
 
 const goodPlaceGuideTitles = {
@@ -278,6 +286,7 @@ const goodPlaceGuideTitles = {
   "studio-city": "Is Studio City a good place to live?",
   "woodland-hills": "Is Woodland Hills a good place to live?",
   "highland-park": "Is Highland Park a good place to live?",
+  "west-hollywood": "Is West Hollywood safe?",
 };
 
 for (const [neighborhood, title] of Object.entries(goodPlaceGuideTitles)) {
@@ -337,9 +346,15 @@ const highlandParkGuide = await readFile(
 includes(guidesIndex, 'href="../neighborhoods/woodland-hills/"', "Woodland Hills guide-index link");
 includes(guidesIndex, 'href="../neighborhoods/highland-park/"', "Highland Park guide-index link");
 includes(guidesIndex, 'href="../neighborhoods/hancock-park/"', "Hancock Park guide-index link");
+includes(guidesIndex, 'href="../neighborhoods/west-hollywood/"', "West Hollywood guide-index link");
 includes(homepage, 'href="neighborhoods/woodland-hills/"', "Homepage relocation-story guide link");
 includes(woodlandGuide, 'href="../../favorites/19950-collier-st/"', "Woodland Hills listing link");
 includes(highlandParkGuide, 'href="../../favorites/232-la-follette-dr/"', "Highland Park listing link");
+includes(
+  await readFile(new URL("../neighborhoods/west-hollywood/index.html", import.meta.url), "utf8"),
+  'href="../../favorites/7728-woodrow-wilson-dr/"',
+  "West Hollywood listing link"
+);
 includes(
   await readFile(new URL("../favorites/index.html", import.meta.url), "utf8"),
   'href="7728-woodrow-wilson-dr/"',
