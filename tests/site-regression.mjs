@@ -206,6 +206,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "7728-woodrow-wilson-dr": "../../guides/#local-guides",
   "402-s-las-palmas-ave": "../../neighborhoods/hancock-park/",
   "2165-ponet-dr": "../../neighborhoods/los-feliz/",
   "5730-cazaux-dr": "../../neighborhoods/los-feliz/",
@@ -339,6 +340,11 @@ includes(guidesIndex, 'href="../neighborhoods/hancock-park/"', "Hancock Park gui
 includes(homepage, 'href="neighborhoods/woodland-hills/"', "Homepage relocation-story guide link");
 includes(woodlandGuide, 'href="../../favorites/19950-collier-st/"', "Woodland Hills listing link");
 includes(highlandParkGuide, 'href="../../favorites/232-la-follette-dr/"', "Highland Park listing link");
+includes(
+  await readFile(new URL("../favorites/index.html", import.meta.url), "utf8"),
+  'href="7728-woodrow-wilson-dr/"',
+  "Zonshine Edit No. 017 card link"
+);
 includes(
   await readFile(new URL("../favorites/index.html", import.meta.url), "utf8"),
   'href="19950-collier-st/"',

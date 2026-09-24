@@ -455,6 +455,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .obsession-detail-heading .eyebrow { margin-top: auto; color: var(--bronze); }
 .obsession-detail-heading h1 { margin: 0; font-size: clamp(4.5rem, 7.5vw, 8.5rem); font-weight: 300; letter-spacing: -.06em; line-height: .78; }
 .obsession-detail-heading h1.long-address { font-size: clamp(3.2rem, 5vw, 5.6rem); line-height: .88; }
+.obsession-detail-heading h1.extra-long-address { font-size: clamp(3rem, 4.5vw, 5rem); }
 .obsession-detail-hook { max-width: 43ch; margin: 2.5rem 0 0; color: rgba(255,255,255,.82); font-size: clamp(1rem, 1.35vw, 1.2rem); line-height: 1.7; }
 .obsession-property-bar { width: 100%; display: grid; grid-template-columns: 1.45fr repeat(4, 1fr); background: var(--sand); border-bottom: 1px solid var(--line); }
 .obsession-property-bar p { margin: 0; padding: 2rem clamp(1rem, 3vw, 3rem); border-right: 1px solid var(--line); }
@@ -1119,6 +1120,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .obsession-detail-heading { min-height: 540px; padding: 3.5rem 24px 4.5rem; }
   .obsession-detail-heading h1 { font-size: clamp(4.25rem, 21vw, 6.25rem); }
   .obsession-detail-heading h1.long-address { font-size: clamp(3.1rem, 14vw, 4.5rem); }
+  .obsession-detail-heading h1.extra-long-address { font-size: clamp(1.9rem, 10vw, 3.8rem); }
   .obsession-property-bar p { padding: 1.5rem; }
   .obsession-story { padding-top: 6rem; padding-bottom: 6rem; }
   .obsession-gallery { padding-right: 16px; padding-left: 16px; }
