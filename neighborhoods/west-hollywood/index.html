@@ -12,12 +12,12 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://juliazonshine.com/neighborhoods/west-hollywood/">
   <meta property="og:site_name" content="House of Zonshine">
-  <meta property="og:image" content="https://juliazonshine.com/images/neighborhoods/west-hollywood-rainbow-crosswalk.jpg">
-  <meta property="og:image:alt" content="Rainbow crosswalk at Santa Monica and San Vicente Boulevards in West Hollywood">
+  <meta property="og:image" content="https://juliazonshine.com/images/neighborhoods/west-hollywood-sunset-tower.jpg">
+  <meta property="og:image:alt" content="Sunset Tower above Sunset Boulevard in West Hollywood">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="West Hollywood Neighborhood Guide | House of Zonshine">
   <meta name="twitter:description" content="An honest guide to West Hollywood, California.">
-  <meta name="twitter:image" content="https://juliazonshine.com/images/neighborhoods/west-hollywood-rainbow-crosswalk.jpg">
+  <meta name="twitter:image" content="https://juliazonshine.com/images/neighborhoods/west-hollywood-sunset-tower.jpg">
   <link rel="canonical" href="https://juliazonshine.com/neighborhoods/west-hollywood/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +26,18 @@
   <link rel="stylesheet" href="../neighborhoods.css">
   <style>
     .west-hollywood-guide-page .simple-hero-title::after { position: absolute; z-index: 1; inset: 0; background: linear-gradient(90deg, rgba(33, 23, 19, .68), rgba(33, 23, 19, .08) 82%); content: ""; pointer-events: none; }
-    .west-hollywood-guide-page .simple-hero-title img { filter: saturate(.9) brightness(.78); object-position: 50% 56%; }
+    .west-hollywood-guide-page .simple-hero-title img { filter: saturate(.9) brightness(.76); object-position: 62% 58%; }
     .west-hollywood-guide-page .simple-hero-title h1 { z-index: 2; font-size: clamp(2.85rem, 5vw, 5.25rem); }
     .west-hollywood-guide-page .simple-guide-hero figcaption { z-index: 3; }
-    .west-hollywood-guide-page .simple-hero-place img { filter: saturate(.76) contrast(1.02); object-position: center 48%; }
+    .west-hollywood-guide-page .simple-hero-place img { filter: saturate(.78) contrast(1.02); object-position: center 54%; }
     .west-hollywood-guide-page .simple-tuesday-mark strong { max-width: 8ch; font-size: clamp(2.8rem, 5vw, 5.25rem); }
-    .west-hollywood-guide-page .simple-history img { object-position: center 58%; }
+    .west-hollywood-guide-page .simple-history { grid-template-columns: minmax(220px, .62fr) minmax(0, 1.38fr); width: min(920px, calc(100% - 48px)); margin-bottom: clamp(4.5rem, 8vw, 7rem); }
+    .west-hollywood-guide-page .simple-history img { min-height: 265px; max-height: 320px; object-position: center 58%; }
+    .west-hollywood-guide-page .simple-history > p { padding: clamp(1.75rem, 3.5vw, 3rem); }
+    .west-hollywood-guide-page .simple-history p { font-size: clamp(.98rem, 1.25vw, 1.1rem); line-height: 1.62; }
+    .west-hollywood-guide-page .simple-history strong { font-size: 1.1em; }
     .west-hollywood-guide-page .simple-park-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .west-hollywood-guide-page .simple-park-image img { aspect-ratio: 16 / 10; }
     .west-hollywood-guide-page .simple-neighborhood-homes { padding-bottom: clamp(1rem, 2vw, 2rem); }
     .west-hollywood-guide-page .simple-guide-close { padding-top: clamp(1rem, 2vw, 2rem); }
     .weho-photo-credit { margin: -.85rem 0 1.2rem !important; color: var(--muted) !important; font-size: .62rem !important; line-height: 1.45 !important; }
@@ -43,12 +48,15 @@
     .weho-dining-heading h2 { max-width: 8ch; margin: 0; color: white; font-size: clamp(2.6rem, 4.5vw, 4.75rem); line-height: .98; }
     .weho-dining-heading > p { max-width: 52ch; margin: 0; color: rgba(255, 255, 255, .72); line-height: 1.7; }
     .weho-dining-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid rgba(255, 255, 255, .3); }
-    .weho-dining-grid article { padding: 1.6rem 1.1rem 0 0; border-right: 1px solid rgba(255, 255, 255, .18); }
+    .weho-dining-grid article { padding: 1.15rem 1.1rem 0 0; border-right: 1px solid rgba(255, 255, 255, .18); }
     .weho-dining-grid article + article { padding-left: 1.1rem; }
     .weho-dining-grid article:last-child { border-right: 0; }
     .weho-dining-grid h3 { margin-bottom: .8rem; font-size: clamp(1.15rem, 1.7vw, 1.65rem); line-height: 1.1; }
     .weho-dining-grid h3 a { color: white; text-decoration-color: #d5b99a; text-underline-offset: 5px; }
     .weho-dining-grid p { margin: 0; color: rgba(255, 255, 255, .7); font-size: .84rem; line-height: 1.6; }
+    .weho-dining-image { display: block; margin: 0 0 1rem; overflow: hidden; background: rgba(255, 255, 255, .08); }
+    .weho-dining-image img { display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; }
+    .weho-dining-grid .weho-photo-credit { margin: -.5rem 0 .85rem !important; color: rgba(255, 255, 255, .55) !important; }
     @media (max-width: 900px) {
       .weho-dining-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .weho-dining-grid article { padding: 1.5rem 1.25rem 1.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, .18); }
@@ -56,6 +64,8 @@
       .weho-dining-grid article:nth-child(2n) { padding-right: 0; }
       .weho-dining-grid article:nth-child(odd) { padding-left: 0; }
       .weho-dining-grid article:last-child { border-bottom: 0; }
+      .west-hollywood-guide-page .simple-history { grid-template-columns: 1fr; }
+      .west-hollywood-guide-page .simple-history img { min-height: 280px; max-height: 360px; }
     }
     @media (max-width: 640px) {
       .west-hollywood-guide-page .simple-hero-title h1 { font-size: 2.7rem; }
@@ -63,6 +73,8 @@
       .weho-dining { margin-inline: 0; padding: 2.5rem 1.5rem; }
       .weho-dining-heading, .weho-dining-grid { grid-template-columns: 1fr; }
       .weho-dining-grid article, .weho-dining-grid article + article { padding: 1.35rem 0; border-right: 0; }
+      .weho-dining-image img { aspect-ratio: 16 / 8; max-height: 210px; }
+      .west-hollywood-guide-page .simple-history img { min-height: 235px; }
     }
   </style>
   <script type="application/ld+json">
@@ -76,7 +88,7 @@
         "name": "West Hollywood Neighborhood Guide",
         "description": "An honest guide to West Hollywood, California, including walkability, location, local character, schools, parks, history, nightlife, restaurants, and tradeoffs.",
         "datePublished": "2026-09-24",
-        "dateModified": "2026-09-24",
+        "dateModified": "2026-09-25",
         "inLanguage": "en-US",
         "author": { "@id": "https://juliazonshine.com/#julia-zonshine" },
         "about": { "@id": "https://juliazonshine.com/neighborhoods/west-hollywood/#place" },
@@ -124,17 +136,17 @@
     <nav class="neighborhood-breadcrumb" aria-label="Breadcrumb"><a href="../../">Home</a><span aria-hidden="true">/</span><a href="../../guides/#local-guides">Neighborhood Guides</a><span aria-hidden="true">/</span><span>West Hollywood</span></nav>
 
     <header class="simple-guide-hero">
-      <figure class="simple-hero-title"><img src="../../images/neighborhoods/west-hollywood-rainbow-crosswalk.jpg" alt="Rainbow crosswalk at Santa Monica Boulevard and San Vicente Boulevard in West Hollywood"><h1>West<br>Hollywood</h1><figcaption>Santa Monica and San Vicente Boulevards. <a href="https://commons.wikimedia.org/wiki/File:Rainbow_crossing_-_Intersection_of_San_Vicente_Boulevard_and_Santa_Monica_Boulevard_West_Hollywood_-_2016.jpg" target="_blank" rel="noopener">Steve Parker / CC BY 2.0</a>.</figcaption></figure>
-      <figure class="simple-hero-place"><img src="../../images/neighborhoods/west-hollywood-sunset-strip-night.jpg" alt="Sunset Strip glowing at night beneath billboards and palm trees in West Hollywood"><figcaption>Sunset Strip after dark. <a href="https://commons.wikimedia.org/wiki/File:Sunset_Strip,_1-12AM_-_Flickr_-_Chalky_Lives.jpg" target="_blank" rel="noopener">Chalky Lives / CC BY 2.0</a>.</figcaption></figure>
+      <figure class="simple-hero-title"><img src="../../images/neighborhoods/west-hollywood-sunset-tower.jpg" alt="Sunset Tower above Sunset Boulevard and the West Hollywood streetscape"><h1>West<br>Hollywood</h1><figcaption>Sunset Tower and Sunset Boulevard. <a href="https://commons.wikimedia.org/wiki/File:Sunset_Tower,_8358_Sunset_Blvd._West_Hollywood_2370.jpg" target="_blank" rel="noopener">Mike Jiroch / CC BY-SA 3.0</a>.</figcaption></figure>
+      <figure class="simple-hero-place"><img src="../../images/neighborhoods/west-hollywood-melrose-design-district.jpg" alt="Melrose Avenue and La Cienega Boulevard in the West Hollywood Design District at dusk"><figcaption>Melrose and La Cienega, West Hollywood Design District. <a href="https://commons.wikimedia.org/wiki/File:8500_Melrose.jpg" target="_blank" rel="noopener">Mike Kelley / CC BY-SA 4.0</a>.</figcaption></figure>
     </header>
 
     <section class="simple-good-place" aria-labelledby="good-place-title">
-      <h2 id="good-place-title">Is West Hollywood safe?</h2>
-      <p>West Hollywood is one of the most walkable cities in the country, and that density is a big part of why it can still feel active at 1 a.m. on a Saturday. Its Walk Score is 91 out of 100, and the city is served by a dedicated Los Angeles County Sheriff’s Station. <a href="https://weho.granicus.com/MetaViewer.php?event_id=1737&amp;meta_id=317010&amp;view_id=" target="_blank" rel="noopener">An early-2026 Sheriff’s report</a> showed Part I crime down 21% through February year over year, aggravated assault down 44%, and robbery down 40%. The city had also <a href="https://weho.granicus.com/MetaViewer.php?event_id=1590&amp;meta_id=289137&amp;view_id=" target="_blank" rel="noopener">added four station positions</a>—including one deputy and an entertainment-policing sergeant. It isn’t a perfect record, and property crime in a dense, visitor-heavy stretch never fully disappears, but it’s a place I always felt like I could walk home in.</p>
+      <h2 id="good-place-title">Is West Hollywood a good place to live?</h2>
+      <p>Yes. It’s compact, walkable, lively, and full of places you can reach without planning your day around the car. Crime is down, the city has its own dedicated Sheriff’s Station, and the streets stay active well into the evening. Property crime still comes with a dense, visitor-heavy neighborhood, but I always felt comfortable walking home here.</p>
     </section>
 
     <section class="simple-guide-intro" aria-labelledby="intro-title">
-      <div class="simple-facts" aria-label="West Hollywood city facts"><dl><div><dt>City since</dt><dd>1984</dd></div><div><dt>Area</dt><dd>1.9 sq mi</dd></div><div><dt>Walk Score</dt><dd>91 / 100</dd></div><div><dt>Law enforcement</dt><dd>LASD WeHo Station</dd></div><div><dt>Between</dt><dd>Hollywood + Beverly Hills</dd></div></dl><p>Walkability and city size via the <a href="https://www.weho.org/community/arts-and-culture/about/walking-in-weho" target="_blank" rel="noopener">City of West Hollywood</a>. Public-safety figures are snapshots, not guarantees; review the <a href="https://lasd.org/west-hollywood/" target="_blank" rel="noopener">West Hollywood Sheriff’s Station</a> for current information.</p></div>
+      <div class="simple-facts" aria-label="West Hollywood city facts"><dl><div><dt>People with dogs</dt><dd>70%*</dd></div><div><dt>City size</dt><dd>1.9 sq mi</dd></div><div><dt>Independent since</dt><dd>1984</dd></div><div><dt>Sunset Strip</dt><dd>1.5 miles</dd></div></dl><p>*Extremely unscientific, based purely on my own walks. I stand by it anyway.</p></div>
       <div class="simple-intro-copy"><p class="eyebrow">West Hollywood Real Estate Agent</p><h2 id="intro-title">West Hollywood holds a very specific place in my heart.</h2><p>I lived there three different times, in three different apartments, back before Sherman Oaks and my husband and my kids, and it is genuinely where I figured out how to be a young, single adult in this city. There’s a version of me that still lives on those blocks a little, the one who could walk to dinner, walk to a show, walk home again without ever getting in a car, and never once thought that was a luxury until I left.</p><p>What I actually loved about it wasn’t any one restaurant or any one night out, it was the density of the whole thing. Everything was close enough that plans just happened. You’d go out for one drink and run into three people you knew. You’d walk somewhere for coffee and end up staying for two hours. It’s a small city, less than two square miles, and that smallness is the whole point, it makes it feel like a real neighborhood instead of just a stretch of LA you pass through.</p><p>I don’t live there anymore, but I still send people there constantly, for a night out, for a walk, for a version of LA that isn’t trying to be anything other than exactly what it is.</p><a class="button button-outline" href="../../#contact">Let me give you a tour</a></div>
     </section>
 
@@ -144,19 +156,19 @@
 
     <aside class="simple-history" aria-label="A short history of West Hollywood"><figure><img src="../../images/neighborhoods/west-hollywood-sunset-strip-1975.jpg" alt="Traffic and billboards along the Sunset Strip in West Hollywood in 1975"><figcaption>Sunset Strip, 1975. <a href="https://commons.wikimedia.org/wiki/File:Sunset_Strip_in_Hollywood,_1975.jpg" target="_blank" rel="noopener">Los Angeles Times / CC BY 4.0</a>.</figcaption></figure><p><strong>A little history.</strong> West Hollywood became its own city on November 6, 1984, and it did it in a way no other city in the country had, with the first city council in America made up of a majority of openly gay and lesbian members. The push to incorporate came from an unlikely coalition: gay men, elderly rent-control tenants, and the neighborhood’s large Russian Jewish community, all worried about what would happen when LA County’s rent-control protections were set to expire. Once incorporated, that first council moved fast on rent control and legal protections for gay residents and people with HIV/AIDS. Since then it has stayed one of the country’s most consistently influential small cities on LGBTQ policy. That same stretch of Sunset was already rewriting American music before any of that happened. It’s a small city with two very different legacies running through it at once, and somehow both are still exactly as present as they’ve always been. <a href="https://www.visitwesthollywood.com/history-of-west-hollywood/" target="_blank" rel="noopener">Read more West Hollywood history</a>.</p></aside>
 
-    <section class="simple-approved" aria-labelledby="approved-title"><div class="simple-section-heading"><p class="eyebrow">After dark</p><h2 id="approved-title">Four rooms that still make the night.</h2><p>The Strip’s working music venues and the Rainbow District institution that have outlasted whole eras around them.</p></div><p class="mobile-swipe-hint">Swipe to browse the places <span aria-hidden="true">→</span></p><div class="simple-place-grid">
-      <article><a class="simple-place-image" href="https://whiskyagogo.com/" target="_blank" rel="noopener" aria-label="Visit the Whisky a Go Go website"><img src="../../images/neighborhoods/west-hollywood-whisky-a-go-go.jpg" alt="Whisky a Go Go exterior and marquee on the Sunset Strip" loading="lazy"></a><p class="weho-photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Whisky_A_Go_Go_Sunset_Strip.jpg" target="_blank" rel="noopener">Ken Lund / CC BY-SA 2.0</a>.</p><h3><a href="https://whiskyagogo.com/" target="_blank" rel="noopener">Whisky a Go Go</a></h3><p>Open since 1964, the old Doors house-band stage is still a real working venue rather than a museum piece.</p></article>
-      <article><a class="simple-place-image" href="https://troubadour.com/" target="_blank" rel="noopener" aria-label="Visit the Troubadour website"><img src="../../images/neighborhoods/west-hollywood-troubadour.jpg" alt="The Troubadour’s white stucco exterior and marquee in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Troubadour_WeHo_2026_June.jpg" target="_blank" rel="noopener">Jengod / CC BY-SA 4.0</a>.</p><h3><a href="https://troubadour.com/" target="_blank" rel="noopener">Troubadour</a></h3><p>Running since 1957, intimate enough that even a show you came to casually can feel like the one everyone will mention later.</p></article>
-      <article><a class="simple-place-image" href="https://www.theroxy.com/" target="_blank" rel="noopener" aria-label="Visit The Roxy Theatre website"><img src="../../images/neighborhoods/west-hollywood-roxy.jpg" alt="The Roxy Theatre neon sign and marquee glowing at night on Sunset Boulevard" loading="lazy"></a><p class="weho-photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Roxy01.jpg" target="_blank" rel="noopener">Gary Minnaert / public domain</a>.</p><h3><a href="https://www.theroxy.com/" target="_blank" rel="noopener">The Roxy</a></h3><p>Lou Adler’s 1973 room, still pulling real acts beneath the same unmistakable red neon on Sunset.</p></article>
+    <section class="simple-approved" aria-labelledby="approved-title"><div class="simple-section-heading"><p class="eyebrow">After dark</p><h2 id="approved-title">Four rooms with staying power.</h2><p>The places that still give West Hollywood a real night out: a landmark, a hidden cocktail room, a longtime dive, and a working music venue.</p></div><p class="mobile-swipe-hint">Swipe to browse the places <span aria-hidden="true">→</span></p><div class="simple-place-grid">
       <article><a class="simple-place-image" href="https://www.theabbeyweho.com/" target="_blank" rel="noopener" aria-label="Visit The Abbey Food and Bar website"><img src="../../images/neighborhoods/west-hollywood-abbey.jpg" alt="Tables, colorful lighting, and Pride decorations inside The Abbey in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://commons.wikimedia.org/wiki/File:The_Abbey_West_Hollywood_02.png" target="_blank" rel="noopener">MOSSALA101 / CC BY 3.0</a>.</p><h3><a href="https://www.theabbeyweho.com/" target="_blank" rel="noopener">The Abbey</a></h3><p>A West Hollywood gay-bar institution, sprawling across indoor and outdoor rooms near Robertson and Santa Monica.</p></article>
+      <article><a class="simple-place-image" href="https://therogerroom.com/" target="_blank" rel="noopener" aria-label="Visit The Roger Room website"><img src="../../images/neighborhoods/west-hollywood-roger-room.jpg" alt="Warmly lit bar at The Roger Room in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://www.timeout.com/los-angeles/bars/best-west-hollywood-bars" target="_blank" rel="noopener">Time Out Los Angeles</a>.</p><h3><a href="https://therogerroom.com/" target="_blank" rel="noopener">The Roger Room</a></h3><p>Tucked behind a psychic shop, with two neon tarot cards out front and a properly dim, velvet kind of mood inside.</p></article>
+      <article><a class="simple-place-image" href="https://barneysbeanery.com/" target="_blank" rel="noopener" aria-label="Visit Barney’s Beanery website"><img src="../../images/neighborhoods/west-hollywood-barneys-beanery.jpg" alt="The yellow sign and striped awning at Barney’s Beanery in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://barneysbeanery.com/" target="_blank" rel="noopener">Barney’s Beanery</a>.</p><h3><a href="https://barneysbeanery.com/" target="_blank" rel="noopener">Barney’s Beanery</a></h3><p>An old Route 66 dive with pool, games, chili, and the kind of unpolished energy that is getting harder to find.</p></article>
+      <article><a class="simple-place-image" href="https://www.theroxy.com/" target="_blank" rel="noopener" aria-label="Visit The Roxy Theatre website"><img src="../../images/neighborhoods/west-hollywood-roxy.jpg" alt="The Roxy Theatre neon sign and marquee glowing at night on Sunset Boulevard" loading="lazy"></a><p class="weho-photo-credit"><a href="https://commons.wikimedia.org/wiki/File:Roxy01.jpg" target="_blank" rel="noopener">Gary Minnaert / public domain</a>.</p><h3><a href="https://www.theroxy.com/" target="_blank" rel="noopener">The Roxy</a></h3><p>A working Sunset room with the same unmistakable red neon and an always-good reason to check the calendar.</p></article>
     </div></section>
 
     <section class="weho-dining" aria-labelledby="dining-title"><div class="weho-dining-heading"><div><p class="eyebrow">At the table</p><h2 id="dining-title">Five useful places to know.</h2></div><p>These aren’t presented as my personal greatest-hits list. They’re current, well-established neighborhood anchors that cover the dinner moods West Hollywood actually gives you.</p></div><div class="weho-dining-grid">
-      <article><h3><a href="https://www.granville.com/" target="_blank" rel="noopener">GRANVILLE</a></h3><p>Modern-casual all-day food and a full bar on Beverly Boulevard.</p></article>
-      <article><h3><a href="https://www.labohemeweho.com/" target="_blank" rel="noopener">La Bohème</a></h3><p>A longtime Santa Monica Boulevard dining room with chandeliers, patio seating, and live entertainment.</p></article>
-      <article><h3><a href="https://puravitalosangeles.com/" target="_blank" rel="noopener">Pura Vita</a></h3><p>Plant-based Italian food and wine with a dedicated West Hollywood following.</p></article>
-      <article><h3><a href="https://traktirla.com/west-hollywood" target="_blank" rel="noopener">Traktir</a></h3><p>An Eastern European tavern serving borscht, pelmeni, and infused vodkas since 2002.</p></article>
-      <article><h3><a href="https://www.ladyhawkrestaurant.com/" target="_blank" rel="noopener">Ladyhawk</a></h3><p>Eastern Mediterranean plates inside the Kimpton La Peer in the Design District.</p></article>
+      <article><a class="weho-dining-image" href="https://www.granville.com/" target="_blank" rel="noopener"><img src="../../images/neighborhoods/west-hollywood-granville.jpg" alt="Warm dining room at GRANVILLE West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://bittondesign.com/granville-west-hollywood" target="_blank" rel="noopener">Bitton Design</a>.</p><h3><a href="https://www.granville.com/" target="_blank" rel="noopener">GRANVILLE</a></h3><p>Modern-casual all-day food and a full bar on Beverly Boulevard.</p></article>
+      <article><a class="weho-dining-image" href="https://www.labohemeweho.com/" target="_blank" rel="noopener"><img src="../../images/neighborhoods/west-hollywood-la-boheme.jpg" alt="Chandeliers in the La Bohème dining room in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://www.labohemeweho.com/private-dining/" target="_blank" rel="noopener">La Bohème</a>.</p><h3><a href="https://www.labohemeweho.com/" target="_blank" rel="noopener">La Bohème</a></h3><p>A longtime Santa Monica Boulevard dining room with chandeliers, patio seating, and live entertainment.</p></article>
+      <article><a class="weho-dining-image" href="https://puravitalosangeles.com/" target="_blank" rel="noopener"><img src="../../images/neighborhoods/west-hollywood-pura-vita.jpg" alt="Plant-based lasagna from Pura Vita in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://vegnews.com/vegan-italian-pura-vita-los-angeles" target="_blank" rel="noopener">Linda Pianigiani / VegNews</a>.</p><h3><a href="https://puravitalosangeles.com/" target="_blank" rel="noopener">Pura Vita</a></h3><p>Plant-based Italian food and wine with a dedicated West Hollywood following.</p></article>
+      <article><a class="weho-dining-image" href="https://traktirla.com/west-hollywood" target="_blank" rel="noopener"><img src="../../images/neighborhoods/west-hollywood-traktir.jpg" alt="Traktir Russian Cuisine awning in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://www.tagvenue.com/us/venues/los-angeles/19450/traktir-restaurant-west-hollywood" target="_blank" rel="noopener">Tagvenue</a>.</p><h3><a href="https://traktirla.com/west-hollywood" target="_blank" rel="noopener">Traktir</a></h3><p>An Eastern European tavern serving borscht, pelmeni, and infused vodkas since 2002.</p></article>
+      <article><a class="weho-dining-image" href="https://www.ladyhawkrestaurant.com/" target="_blank" rel="noopener"><img src="../../images/neighborhoods/west-hollywood-ladyhawk.jpg" alt="Dining room at Ladyhawk in West Hollywood" loading="lazy"></a><p class="weho-photo-credit"><a href="https://www.lapeerhotel.com/west-hollywood-restaurants/lady-hawk/meet-the-chef/" target="_blank" rel="noopener">Kimpton La Peer</a>.</p><h3><a href="https://www.ladyhawkrestaurant.com/" target="_blank" rel="noopener">Ladyhawk</a></h3><p>Eastern Mediterranean plates inside the Kimpton La Peer in the Design District.</p></article>
     </div></section>
 
     <section class="simple-local-essentials">

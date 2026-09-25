@@ -286,7 +286,7 @@ const goodPlaceGuideTitles = {
   "studio-city": "Is Studio City a good place to live?",
   "woodland-hills": "Is Woodland Hills a good place to live?",
   "highland-park": "Is Highland Park a good place to live?",
-  "west-hollywood": "Is West Hollywood safe?",
+  "west-hollywood": "Is West Hollywood a good place to live?",
 };
 
 for (const [neighborhood, title] of Object.entries(goodPlaceGuideTitles)) {
