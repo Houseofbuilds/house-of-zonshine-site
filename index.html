@@ -25,27 +25,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://juliazonshine.com/#julia-zonshine",
-    "name": "Julia Zonshine",
-    "alternateName": "House of Zonshine",
-    "url": "https://juliazonshine.com/",
-    "jobTitle": "California Real Estate Salesperson",
-    "identifier": "California DRE #02246696",
-    "worksFor": {
-      "@type": "RealEstateAgent",
-      "name": "Compass California, Inc.",
-      "identifier": "California DRE #01991628",
-      "url": "https://www.compass.com/"
-    },
-    "email": "julia.zonshine@compass.com",
-    "image": "https://juliazonshine.com/images/julia-trust-photo.jpg",
-    "sameAs": [
-      "https://www.instagram.com/houseofzonshine/",
-      "https://youtube.com/@houseofzonshine"
-    ],
-    "areaServed": ["Sherman Oaks", "Studio City", "Woodland Hills", "Los Feliz", "Silver Lake", "Echo Park", "Hollywood", "Glendale", "Pasadena", "Northeast Los Angeles"],
-    "description": "Los Angeles real estate guidance for buyers and sellers across the Valley, Northeast LA and the Eastside."
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://juliazonshine.com/#julia-zonshine",
+        "name": "Julia Zonshine",
+        "alternateName": "House of Zonshine",
+        "url": "https://juliazonshine.com/",
+        "jobTitle": "California Real Estate Salesperson",
+        "identifier": "California DRE #02246696",
+        "worksFor": {
+          "@type": "RealEstateAgent",
+          "name": "Compass California, Inc.",
+          "identifier": "California DRE #01991628",
+          "url": "https://www.compass.com/"
+        },
+        "email": "julia.zonshine@compass.com",
+        "image": "https://juliazonshine.com/images/julia-trust-photo.jpg",
+        "sameAs": [
+          "https://www.instagram.com/houseofzonshine/",
+          "https://youtube.com/@houseofzonshine"
+        ],
+        "areaServed": ["Sherman Oaks", "Studio City", "Woodland Hills", "Los Feliz", "Silver Lake", "Echo Park", "Hollywood", "Glendale", "Pasadena", "Northeast Los Angeles"],
+        "description": "Los Angeles real estate guidance for buyers and sellers across the Valley, Northeast LA and the Eastside."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://juliazonshine.com/#website",
+        "name": "House of Zonshine",
+        "url": "https://juliazonshine.com/",
+        "publisher": {"@id": "https://juliazonshine.com/#julia-zonshine"}
+      }
+    ]
   }
   </script>
 </head>
