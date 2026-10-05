@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "npm run test:static",
-    "test:static": "node tests/site-regression.mjs && node tests/accessibility-static.mjs",
+    "test:static": "node tests/site-regression.mjs && node tests/accessibility-static.mjs && node tests/seo-static.mjs",
     "test:a11y": "node tests/accessibility-browser.mjs",
     "test:a11y:production": "node tests/accessibility-browser.mjs --production"
   },
