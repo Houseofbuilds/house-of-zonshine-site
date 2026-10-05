@@ -62,6 +62,16 @@ for (const route of routes) {
   }
 }
 
+const homepage = await readFile(path.join(root, "index.html"), "utf8");
+const homepageSchema = [...homepage.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
+  .flatMap((match) => nodes(JSON.parse(match[1].trim())));
+const business = homepageSchema.find((node) => node["@id"] === "https://juliazonshine.com/#real-estate-agent");
+assert.ok(business, "Homepage must define the verified RealEstateAgent entity.");
+assert.equal(business["@type"], "RealEstateAgent", "Business entity must use the RealEstateAgent type.");
+assert.equal(business.name, "Julia Zonshine Real Estate Agent", "Business name must match the public Google Business Profile.");
+assert.equal(business.telephone, "+1-818-859-0762", "Business phone must match the public Google Business Profile.");
+assert.equal(business.url, "https://juliazonshine.com/", "Business website must point to the canonical homepage.");
+
 assert.equal(routes.length, 49, `Expected 49 canonical sitemap URLs, found ${routes.length}`);
 assert.deepEqual(failures, [], `SEO static contract failed:\n${failures.join("\n")}`);
 console.log(`SEO static contract passed for ${routes.length} canonical sitemap pages.`);
