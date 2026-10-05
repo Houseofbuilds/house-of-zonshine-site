@@ -71,6 +71,10 @@ assert.equal(business["@type"], "RealEstateAgent", "Business entity must use the
 assert.equal(business.name, "Julia Zonshine Real Estate Agent", "Business name must match the public Google Business Profile.");
 assert.equal(business.telephone, "+1-818-859-0762", "Business phone must match the public Google Business Profile.");
 assert.equal(business.url, "https://juliazonshine.com/", "Business website must point to the canonical homepage.");
+const person = homepageSchema.find((node) => node["@id"] === "https://juliazonshine.com/#julia-zonshine");
+assert.ok(person, "Homepage must define the Julia Zonshine person entity.");
+assert.ok(person.alternateName?.includes("House of Zonshine"), "Person schema must retain the House of Zonshine brand name.");
+assert.ok(person.alternateName?.includes("Julia Voth"), "Person schema must retain Julia Voth as a verified alternate name.");
 
 assert.equal(routes.length, 49, `Expected 49 canonical sitemap URLs, found ${routes.length}`);
 assert.deepEqual(failures, [], `SEO static contract failed:\n${failures.join("\n")}`);
