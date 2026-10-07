@@ -320,6 +320,8 @@ const insurancePost = await readFile(
 for (const asset of [
   "../freebies/pdfs/know-the-real-number-not-the-average.pdf",
   "../images/freebies/know-the-real-number-not-the-average.png",
+  "../freebies/pdfs/the-power-was-never-the-rate.pdf",
+  "../images/freebies/the-power-was-never-the-rate.png",
 ]) {
   await access(new URL(asset, import.meta.url));
 }
