@@ -313,6 +313,21 @@ includes(
 );
 
 const guidesIndex = await readFile(new URL("../guides/index.html", import.meta.url), "utf8");
+const completeGuidesSection = guidesIndex.slice(
+  guidesIndex.indexOf('<section class="guide-category" id="buy-or-sell">'),
+  guidesIndex.indexOf('<section class="guide-category guide-category-tint" id="local-guides">')
+);
+const completeGuideOrder = [
+  "los-angeles-seller-guide.png",
+  "los-angeles-buyer-guide.png",
+  "los-angeles-relocation-guide.png",
+  'id="the-power-was-never-the-rate"',
+].map((marker) => completeGuidesSection.indexOf(marker));
+assert.ok(
+  completeGuideOrder.every((position) => position >= 0) &&
+    completeGuideOrder.every((position, index) => index === 0 || position > completeGuideOrder[index - 1]),
+  "Complete guides must remain first in seller, buyer, relocation order before one-page field guides"
+);
 const insurancePost = await readFile(
   new URL("../blog/homeowners-insurance-los-angeles-2026/index.html", import.meta.url),
   "utf8"
