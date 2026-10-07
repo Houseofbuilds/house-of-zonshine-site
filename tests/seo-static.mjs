@@ -76,6 +76,6 @@ assert.ok(person, "Homepage must define the Julia Zonshine person entity.");
 assert.ok(person.alternateName?.includes("House of Zonshine"), "Person schema must retain the House of Zonshine brand name.");
 assert.ok(person.alternateName?.includes("Julia Voth"), "Person schema must retain Julia Voth as a verified alternate name.");
 
-assert.equal(routes.length, 49, `Expected 49 canonical sitemap URLs, found ${routes.length}`);
+assert.equal(routes.length, 51, `Expected 51 canonical sitemap URLs, found ${routes.length}`);
 assert.deepEqual(failures, [], `SEO static contract failed:\n${failures.join("\n")}`);
 console.log(`SEO static contract passed for ${routes.length} canonical sitemap pages.`);

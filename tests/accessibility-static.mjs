@@ -92,6 +92,6 @@ for (const route of [...routes, ...workflowRoutes]) {
   }
 }
 
-assert.equal(routes.length, 49, `Expected 49 canonical sitemap URLs, found ${routes.length}`);
+assert.equal(routes.length, 51, `Expected 51 canonical sitemap URLs, found ${routes.length}`);
 assert.deepEqual(failures, [], `Accessibility static contract failed:\n${failures.join("\n")}`);
 console.log(`Accessibility static contract passed for ${routes.length} canonical pages and ${workflowRoutes.length} confirmation pages.`);
