@@ -206,6 +206,9 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "4301-manson-ave": "../../neighborhoods/woodland-hills/",
+  "2351-canyon-dr": "../../neighborhoods/los-feliz/",
+  "954-hillside-ter": "../../neighborhoods/pasadena/",
   "7728-woodrow-wilson-dr": "../../neighborhoods/west-hollywood/",
   "402-s-las-palmas-ave": "../../neighborhoods/hancock-park/",
   "2165-ponet-dr": "../../neighborhoods/los-feliz/",
