@@ -426,6 +426,15 @@
     text-wrap: wrap;
   }
 
+  .red-flags-page .article-hero h1 {
+    width: 100%;
+    max-width: calc(100vw - 48px);
+    font-size: clamp(2.25rem, 10.2vw, 2.65rem);
+    letter-spacing: -.045em;
+    line-height: 1.01;
+    text-wrap: wrap;
+  }
+
   .article-deck { max-width: 100%; font-size: 1rem; }
   .article-byline { flex-direction: column; gap: .5rem; margin-top: 2rem; }
   .article-byline span + span { padding-left: 0; border-left: 0; }
