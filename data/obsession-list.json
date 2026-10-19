@@ -170,7 +170,7 @@
   {
     "slug": "5730-cazaux-dr",
     "obsessionNumber": 13,
-    "status": "active",
+    "status": "pending",
     "address": "5730 Cazaux Dr",
     "neighborhood": "Los Feliz",
     "city": "Los Angeles",
@@ -194,7 +194,7 @@
   {
     "slug": "2276-moreno-dr",
     "obsessionNumber": 8,
-    "status": "active",
+    "status": "sold",
     "address": "2276 Moreno Dr",
     "neighborhood": "Moreno Highlands",
     "city": "Los Angeles",
@@ -242,7 +242,7 @@
   {
     "slug": "2666-aberdeen-ave",
     "obsessionNumber": 6,
-    "status": "active",
+    "status": "sold",
     "address": "2666 Aberdeen Ave",
     "neighborhood": "Los Feliz",
     "city": "Los Angeles",
@@ -313,7 +313,7 @@
   {
     "slug": "3627-cody-rd",
     "obsessionNumber": 3,
-    "status": "active",
+    "status": "sold",
     "address": "3627 Cody Rd",
     "neighborhood": "Sherman Oaks",
     "city": "Sherman Oaks",
@@ -431,7 +431,7 @@
   {
     "slug": "232-la-follette-dr",
     "obsessionNumber": 11,
-    "status": "active",
+    "status": "sold",
     "address": "232 La Follette Dr",
     "neighborhood": "Highland Park",
     "city": "Los Angeles",
@@ -455,7 +455,7 @@
   {
     "slug": "1811-micheltorena-st",
     "obsessionNumber": 12,
-    "status": "active",
+    "status": "sold",
     "address": "1811 Micheltorena St",
     "neighborhood": "Silver Lake",
     "city": "Los Angeles",
