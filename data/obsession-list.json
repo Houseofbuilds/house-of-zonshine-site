@@ -1,5 +1,29 @@
 [
   {
+    "slug": "2753-nichols-canyon-rd",
+    "obsessionNumber": 21,
+    "status": "active",
+    "address": "2753 Nichols Canyon Rd",
+    "neighborhood": "Nichols Canyon",
+    "city": "Los Angeles",
+    "price": 4994000,
+    "beds": 4,
+    "baths": 4,
+    "sqft": 2798,
+    "lotSqft": 21240,
+    "photos": [
+      "obsession-list/2753-nichols-canyon-rd-1.jpg",
+      "obsession-list/2753-nichols-canyon-rd-2.jpg",
+      "obsession-list/2753-nichols-canyon-rd-3.jpg",
+      "obsession-list/2753-nichols-canyon-rd-4.jpg"
+    ],
+    "hook": "The infinity pool looks like it is floating over the canyon, but it was the way the light moved through the house that I could not stop thinking about.",
+    "story": "I saw this house around 11:30 in the morning, which sounds specific until you walk in and see what the light is doing. It moves through the wood ceilings, terrazzo, and glass in a way that makes the whole house feel alive. By the time I got to the deck and the infinity pool, it felt like you were floating right on top of Nichols Canyon, looking out through the trees and across the hills. The pool itself cantilevers over the hillside, so the view does not really end at the edge of the deck. I kept thinking about what this place would be like at golden hour, or at twilight when the canyon starts to disappear and the city lights come on. Completely magical. The house was built in 1978 and has been reimagined by Los Angeles design studio Ome Dezin, but it still has the warmth that makes a hillside home feel like somewhere you would actually want to spend a whole day. Four bedrooms, four baths, and 2,798 square feet on nearly half an acre, listed at $4,994,000. The pool is incredible, obviously. But it is the light that got me.",
+    "listingAgentCredit": "Listed by Claire O'Connor & Samantha O'Connor, Compass",
+    "externalListingUrl": "https://www.compass.com/app/listing/2753-Nichols-Canyon-Rd-Los-Angeles-CA-90046/2219770746674845825",
+    "dateAdded": "2026-10-20"
+  },
+  {
     "slug": "4301-manson-ave",
     "obsessionNumber": 20,
     "status": "active",
