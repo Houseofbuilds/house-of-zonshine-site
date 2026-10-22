@@ -206,6 +206,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "2560-micheltorena-st": "../../neighborhoods/silver-lake/",
   "3585-military": "../../guides/#local-guides",
   "1200-olancha-dr": "../../guides/#local-guides",
   "2753-nichols-canyon-rd": "../../guides/#local-guides",
