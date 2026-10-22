@@ -1,5 +1,29 @@
 [
   {
+    "slug": "3585-military",
+    "obsessionNumber": 23,
+    "status": "active",
+    "address": "3585 Military",
+    "neighborhood": "Westside Village",
+    "city": "Los Angeles",
+    "price": 1895000,
+    "beds": 3,
+    "baths": 3,
+    "sqft": 2391,
+    "lotSqft": 5416,
+    "photos": [
+      "obsession-list/3585-military-1.jpg",
+      "obsession-list/3585-military-2.jpg",
+      "obsession-list/3585-military-3.jpg",
+      "obsession-list/3585-military-4.jpg"
+    ],
+    "hook": "I am a sucker for natural wood and arches, and this house has both in exactly the right places.",
+    "story": "I am a sucker for natural wood and arches, and this house has both in exactly the right places. The warm wood starts outside at the entry, runs across the ceiling, and picks back up under your feet inside. It is not trying too hard to be rustic or precious. It just makes the whole place feel grounded.\n\nThen the arches take over. They frame the dining room, the kitchen, and the living space without chopping the house into little boxes. I love the way they soften the clean midcentury lines and make the rooms feel connected to each other. The big arch between the dining room and living room is the one that got me. You can see the wood ceiling, the fireplace, and the trees through the windows all at once.\n\nThe home was remodeled by its architect owners about 20 years ago, and it has the kind of personality that comes from people making real choices instead of chasing a trend. There are wood floors, a fireplace, a double-height entry, a bonus room, a two-car garage, and seller-owned solar. Three bedrooms, three baths, and 2,391 square feet on a 5,416-square-foot lot in Westside Village, listed at $1,895,000. Give me good natural materials and an arch with a point of view, and I am in.",
+    "listingAgentCredit": "Listed by Mark Berger, Keller Williams Realty-Studio City",
+    "externalListingUrl": "https://www.compass.com/listing/2206364149527763241/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-10-22"
+  },
+  {
     "slug": "1200-olancha-dr",
     "obsessionNumber": 22,
     "status": "active",
