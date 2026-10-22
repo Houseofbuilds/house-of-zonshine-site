@@ -1,5 +1,29 @@
 [
   {
+    "slug": "1200-olancha-dr",
+    "obsessionNumber": 22,
+    "status": "active",
+    "address": "1200 Olancha Dr",
+    "neighborhood": "Mount Washington",
+    "city": "Los Angeles",
+    "price": 1685000,
+    "beds": 4,
+    "baths": 3,
+    "sqft": 2016,
+    "lotSqft": 4792,
+    "photos": [
+      "obsession-list/1200-olancha-dr-1.jpg",
+      "obsession-list/1200-olancha-dr-2.jpg",
+      "obsession-list/1200-olancha-dr-3.jpg",
+      "obsession-list/1200-olancha-dr-4.jpg"
+    ],
+    "hook": "The mountain view is beautiful, but it is the light moving through those original beams and all that glass that got me.",
+    "story": "I keep coming back to the way this house holds the light. It comes in through the skylights, slips past the clerestory windows, and lands on the original beams in a way that makes the whole main room feel different from one minute to the next. The ceiling has that warm, slightly rough midcentury texture you cannot fake, and the glass keeps pulling the hills right into the room.\n\nThen there are the views. From the living room, dining room, kitchen, primary bedroom, and the two decks, you get that wide Mount Washington mix of trees, foothills, and mountains. At night, the primary looks out at the lights across the hills. It is not just a view house; it is a house that gives the view somewhere to live.\n\nBuilt in 1958 and carefully updated, it still knows what it is. There is a brick fireplace, vaulted ceilings, a lower-level suite with its own entrance and kitchenette, a fire-pit patio under the trees, and a two-car garage with direct entry, which is no small thing up here. Four bedrooms, three baths, and 2,016 square feet, listed at $1,685,000. The views are the first thing you see. The beams and the light are why I kept looking.",
+    "listingAgentCredit": "Listed by Alana Gospodnetich, Compass & William Schwartz, Figure 8 Realty",
+    "externalListingUrl": "https://www.compass.com/listing/2221416505414179305/view?agent_id=671ba9d44d2fd40001057d9d",
+    "dateAdded": "2026-10-22"
+  },
+  {
     "slug": "2753-nichols-canyon-rd",
     "obsessionNumber": 21,
     "status": "active",

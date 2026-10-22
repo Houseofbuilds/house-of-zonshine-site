@@ -206,6 +206,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "1200-olancha-dr": "../../guides/#local-guides",
   "2753-nichols-canyon-rd": "../../guides/#local-guides",
   "4301-manson-ave": "../../neighborhoods/woodland-hills/",
   "2351-canyon-dr": "../../neighborhoods/los-feliz/",
