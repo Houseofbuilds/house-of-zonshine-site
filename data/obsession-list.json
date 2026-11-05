@@ -171,7 +171,7 @@
   {
     "slug": "2383-loma-vista-pl",
     "obsessionNumber": 16,
-    "status": "active",
+    "status": "sold",
     "address": "2383 Loma Vista Pl",
     "neighborhood": "Silver Lake",
     "city": "Los Angeles",
@@ -229,10 +229,10 @@
     "sqft": 2749,
     "lotSqft": 10038,
     "photos": [
-      "obsession-list/2165-ponet-dr-1.jpg",
       "obsession-list/2165-ponet-dr-2.jpg",
       "obsession-list/2165-ponet-dr-3.jpg",
-      "obsession-list/2165-ponet-dr-4.jpg"
+      "obsession-list/2165-ponet-dr-4.jpg",
+      "obsession-list/2165-ponet-dr-1.jpg"
     ],
     "hook": "There's a chair tucked right into the corner of floor-to-ceiling glass where the whole downtown skyline shows up past the palm trees, and I sat there longer than I probably should have on the walkthrough.",
     "story": "This one made the list for that corner. There's a chair pulled right up into a wall of glass where you can see straight to the DTLA skyline past the palm trees, and I ended up sitting there far longer than I needed to, just watching the light change over the concrete and the wood beams overhead. William Adams Architects designed the house in 2000, gated and set into the same Los Feliz hillside as some of the city's best known modern builds, and the floating staircase cutting through the middle of it, wood treads suspended off black steel rails with nothing solid underneath, is the kind of thing you notice the second you walk in. Upstairs the main living space opens under a wood-beamed ceiling with the skyline picking back up through another wall of glass by the dining table, and downstairs it's a chef's kitchen, a primary suite with its own spa tub, three bedrooms and three baths across 2,749 square feet, plus a heated pool and spa tucked into the hillside lot behind the gate. It's a different kind of house than the ones I usually fall for, more modern than my typical old-bones obsession, but that view earned it a spot anyway. If a corner like that is worth building a whole house around for you too, let's talk.",
@@ -243,7 +243,7 @@
   {
     "slug": "5730-cazaux-dr",
     "obsessionNumber": 13,
-    "status": "pending",
+    "status": "sold",
     "address": "5730 Cazaux Dr",
     "neighborhood": "Los Feliz",
     "city": "Los Angeles",
@@ -363,7 +363,7 @@
   {
     "slug": "5114-cedros-ave",
     "obsessionNumber": 4,
-    "status": "active",
+    "status": "cancelled",
     "address": "5114 Cedros Ave",
     "neighborhood": "Sherman Oaks",
     "city": "Sherman Oaks",

@@ -423,8 +423,16 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 .favorites-board-heading { max-width: 780px; margin-bottom: clamp(3.5rem, 7vw, 6.5rem); }
 .favorites-board-heading h2 { margin: 0; font-size: clamp(3rem, 5.2vw, 5.6rem); }
 .favorites-board-heading p { max-width: 48ch; margin: 1.7rem 0 0; color: var(--ink); font-size: 1rem; }
-.obsession-board-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-.obsession-board-grid .obsession-card:nth-child(even) { margin-top: clamp(3rem, 7vw, 7rem); }
+.edit-chapter-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .66fr); gap: clamp(2rem, 7vw, 7rem); align-items: end; margin: 0 0 clamp(2.5rem, 5vw, 4rem); padding-top: clamp(1rem, 2vw, 2rem); border-top: 1px solid var(--line); }
+.edit-chapter-heading h2, .edit-archive-break h2 { margin: 0; font-size: clamp(2.6rem, 4.5vw, 4.7rem); font-weight: 300; letter-spacing: -.04em; line-height: .95; }
+.edit-chapter-heading p, .edit-archive-break p { max-width: 34ch; margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.7; }
+.obsession-board-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2.75rem, 5vw, 5rem); align-items: start; }
+.obsession-board-grid .obsession-card:not([data-listing-status="sold"]) { order: 1; }
+.obsession-board-grid .obsession-card[data-listing-status="sold"] { order: 3; }
+.edit-archive-break { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, .96fr) minmax(280px, .7fr); min-height: clamp(270px, 28vw, 400px); order: 2; margin: clamp(4rem, 9vw, 9rem) 0 clamp(1rem, 3vw, 3rem); padding: clamp(3rem, 6vw, 6rem); align-items: end; background: var(--sage); color: var(--paper); }
+.edit-archive-break > div { grid-column: 2; }
+.edit-archive-break h2 { color: var(--paper); }
+.edit-archive-break p { margin-top: 1.5rem; color: rgba(248,244,237,.76); }
 .obsession-card { min-width: 0; }
 .obsession-card-image { position: relative; display: block; aspect-ratio: 1.08 / 1; overflow: hidden; background: var(--espresso); touch-action: pan-y pinch-zoom; }
 .obsession-card-image img { width: 100%; height: 100%; object-fit: cover; transition: opacity .24s ease, transform .65s cubic-bezier(.23,1,.32,1); }
@@ -1054,8 +1062,10 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .favorites-landing-image, .favorites-landing-image img { min-height: min(72svh, 680px); }
   .favorites-landing-copy { padding: 5rem max(20px, calc((100vw - 680px)/2)); }
   .favorites-framework { grid-template-columns: 1fr; gap: 4rem; }
+  .edit-chapter-heading { grid-template-columns: 1fr; gap: 1rem; }
   .obsession-board-grid { grid-template-columns: 1fr; }
-  .obsession-board-grid .obsession-card:nth-child(even) { margin-top: 1rem; }
+  .edit-archive-break { grid-template-columns: 1fr; min-height: 0; margin-top: 4rem; padding: 3rem 2rem; }
+  .edit-archive-break > div { grid-column: auto; }
   .obsession-card { max-width: 680px; }
   .obsession-detail-hero { grid-template-columns: 1fr; padding-top: 70px; }
   .obsession-detail-image { min-height: 68svh; }

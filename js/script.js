@@ -558,6 +558,19 @@
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  if (window.location.pathname.endsWith("/favorites/5730-cazaux-dr/")) {
+    var cazauxStatus = document.querySelector(".obsession-sold-badge");
+    if (cazauxStatus) cazauxStatus.textContent = "Sold";
+  }
+
+  if (window.location.pathname.endsWith("/favorites/2165-ponet-dr/")) {
+    var ponetCover = document.querySelector(".obsession-detail-image img");
+    if (ponetCover) {
+      ponetCover.src = "../../images/obsession-list/2165-ponet-dr-2.jpg";
+      ponetCover.alt = "Chair tucked into a floor-to-ceiling glass corner with a downtown view at 2165 Ponet Drive";
+    }
+  }
+
   var preferredSourcesFeature = document.createElement("script");
   preferredSourcesFeature.src = "/js/preferred-sources.js?v=20260923";
   document.head.appendChild(preferredSourcesFeature);

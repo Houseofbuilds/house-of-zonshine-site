@@ -223,7 +223,6 @@ const listingGuideDestinations = {
   "1190-n-wilson-ave": "../../neighborhoods/pasadena/",
   "2666-aberdeen-ave": "../../neighborhoods/los-feliz/",
   "485-madeline-dr": "../../neighborhoods/pasadena/",
-  "5114-cedros-ave": "../../neighborhoods/sherman-oaks/",
   "3627-cody-rd": "../../neighborhoods/sherman-oaks/",
   "1395-inverness-dr": "../../neighborhoods/pasadena/",
   "2414-4th-ave": "../../guides/#local-guides",
@@ -236,7 +235,7 @@ const obsessionList = JSON.parse(
 );
 
 assert.deepEqual(
-  obsessionList.map(({ slug }) => slug).sort(),
+  obsessionList.filter(({ status }) => status !== "cancelled").map(({ slug }) => slug).sort(),
   Object.keys(listingGuideDestinations).sort(),
   "Every Zonshine Edit listing must have a verified guide destination"
 );
