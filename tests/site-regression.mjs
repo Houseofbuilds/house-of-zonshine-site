@@ -184,12 +184,12 @@ includes(
 
 assert.equal(
   (homepage.match(/class="story-more-button"/g) || []).length,
-  4,
-  "Homepage must retain all four story expand controls"
+  5,
+  "Homepage must retain all five story expand controls"
 );
 assert.equal(
   (homepage.match(/class="story-more-label">Read More</g) || []).length,
-  4,
+  5,
   "Every homepage story must begin with a Read More control"
 );
 includes(

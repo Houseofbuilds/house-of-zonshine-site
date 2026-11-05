@@ -214,6 +214,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .visual-glendale::before { background: linear-gradient(rgba(43,31,26,.02), rgba(43,31,26,.18)), url("../images/sycamore-living-room.jpg") center / cover; }
 .visual-valley::before { background: linear-gradient(rgba(43,31,26,.04), rgba(43,31,26,.2)), url("../images/east-glenoaks-house.jpg") center 48% / cover; }
 .visual-relocation::before { background: linear-gradient(rgba(43,31,26,.04), rgba(43,31,26,.2)), url("../images/woodland-hills-relocation-house.jpg") center / cover; }
+.visual-relocation-sight-unseen::before { background: linear-gradient(rgba(43,31,26,.05), rgba(43,31,26,.25)), url("../images/los-angeles-relocation-sight-unseen.jpg") center / cover; }
 .visual-glassell { min-height: 250px; background: var(--sage); }
 .visual-glassell::before { background: linear-gradient(rgba(43,31,26,.02), rgba(43,31,26,.18)), url("../images/glassell-park-craftsman.jpg") center / cover; }
 .story-visual span { position: absolute; left: 1.5rem; top: 1.5rem; padding: .45rem .7rem; background: rgba(43,31,26,.82); color: white; font-size: .55rem; text-transform: uppercase; letter-spacing: .15em; }
