@@ -53,11 +53,9 @@ button, input, select, textarea { font: inherit; }
 .site-intro::before, .site-intro::after { content: ""; position: absolute; z-index: 0; top: 0; bottom: 0; width: 50.1%; background: var(--espresso); animation-duration: 1.08s; animation-timing-function: cubic-bezier(.76,0,.24,1); animation-delay: 1.64s; animation-fill-mode: forwards; }
 .site-intro::before { left: 0; animation-name: curtain-left; }
 .site-intro::after { right: 0; animation-name: curtain-right; }
-.site-intro-mark { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; line-height: .9; animation: intro-mark 1.1s cubic-bezier(.2,.7,.2,1) both, intro-mark-out .52s ease 1.6s forwards; }
-.site-intro-mark span { font-size: var(--hero-title-size); font-weight: 300; letter-spacing: -.055em; }
-.site-intro-mark strong { color: var(--bronze); font-size: var(--hero-title-size); font-weight: 300; letter-spacing: -.055em; }
-.site-intro-mark small { margin-top: 1.7rem; font-size: .55rem; font-weight: 600; letter-spacing: .25em; text-transform: uppercase; opacity: .58; }
-.site-intro-line { position: absolute; z-index: 1; top: 50%; left: 50%; width: 1px; height: 0; background: rgba(255,255,255,.5); transform: translate(-50%, -50%); animation: intro-line .72s ease .18s forwards, intro-line-open .5s ease 1.56s forwards; }
+.site-intro-mark { position: relative; z-index: 2; width: min(560px, 76vw); aspect-ratio: 2116 / 792; background: url("../images/hz-logo-white.png") center / contain no-repeat; animation: intro-mark 1.1s cubic-bezier(.2,.7,.2,1) both, intro-mark-out .52s ease 1.6s forwards; }
+.site-intro-mark span, .site-intro-mark strong, .site-intro-mark small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.site-intro-line { display: none; }
 @keyframes intro-mark {
   from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: none; }
@@ -89,9 +87,8 @@ button, input, select, textarea { font: inherit; }
 }
 .site-header.scrolled { min-height: 70px; background: rgba(43,31,26,.96); backdrop-filter: blur(12px); }
 .brand-lockup { display: flex; align-items: center; gap: 1rem; }
-.brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1.1; }
-.brand span { font-size: 1.22rem; font-weight: 400; letter-spacing: .015em; }
-.brand small { margin-top: .4rem; font-size: .52rem; text-transform: uppercase; letter-spacing: .28em; opacity: .75; }
+.brand { display: block; width: clamp(142px, 14vw, 190px); aspect-ratio: 2116 / 792; background: url("../images/hz-logo-white.png") center / contain no-repeat; text-decoration: none; }
+.brand span, .brand small { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 .brand-divider { width: 1px; height: 34px; background: rgba(255,255,255,.34); }
 .rsr-brand { display: flex; align-items: center; opacity: .82; transition: opacity .25s ease, transform .25s ease; }
 .rsr-brand:hover { opacity: 1; transform: translateY(-1px); }
@@ -357,9 +354,8 @@ button[aria-disabled="true"] { cursor: wait; opacity: .72; }
 .hidden-field { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; }
 
 footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: #211713; color: white; }
-.footer-brand { display: flex; flex-direction: column; }
-.footer-brand strong { font-size: 1.6rem; font-weight: 300; }
-.footer-brand span { margin-top: .5rem; color: var(--bronze); font-size: .62rem; text-transform: uppercase; letter-spacing: .18em; }
+.footer-brand { width: clamp(190px, 18vw, 250px); aspect-ratio: 2116 / 792; background: url("../images/hz-logo-white.png") left center / contain no-repeat; }
+.footer-brand strong, .footer-brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 .footer-links { display: flex; justify-content: flex-end; gap: 1.6rem; flex-wrap: wrap; }
 .footer-links a { font-size: .6rem; text-decoration: none; text-transform: uppercase; letter-spacing: .13em; }
 .footer-meta { grid-column: 1 / -1; padding-top: 2rem; display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.68); font-size: .7rem; line-height: 1.7; }
@@ -1109,8 +1105,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
 @media (max-width: 560px) {
   :root { --hero-title-size: clamp(3.5rem, 16.5vw, 4.8rem); }
   .brand-lockup { gap: .65rem; }
-  .brand span { font-size: 1rem; }
-  .brand small { font-size: .42rem; letter-spacing: .2em; }
+  .brand { width: 118px; }
   .brand-divider { height: 28px; }
   .rsr-brand img { width: 48px; }
   .hero-copy { justify-content: center; padding-bottom: 4rem; }
