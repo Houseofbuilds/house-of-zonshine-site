@@ -203,7 +203,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5vw, 5rem); font-weight: 300; letter-sp
 .story-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.5rem; }
 .story-card { display: grid; background: var(--plaster); box-shadow: 0 10px 30px rgba(43,31,26,.04); transition: translate .4s ease, box-shadow .4s ease; }
 .story-feature { grid-row: span 2; }
-.story-origin { grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); margin-top: 1.5rem; }
+.story-origin { grid-column: 2; grid-template-columns: minmax(360px, .9fr) minmax(0, 1.1fr); }
 .story-origin .story-visual { min-height: 100%; }
 .story-visual { position: relative; z-index: 0; min-height: 330px; overflow: hidden; }
 .story-visual::before { content: ""; position: absolute; z-index: -1; inset: -3%; background: linear-gradient(rgba(43,31,26,.08),rgba(43,31,26,.42)), url("../images/hero-poster-3.jpg") 62% center / cover; transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .8s ease; }
@@ -1023,7 +1023,7 @@ footer { position: relative; padding: 4rem 4vw 2rem; display: grid; grid-templat
   .section-heading { align-items: flex-start; flex-direction: column; }
   .story-grid { grid-template-columns: 1fr; }
   .story-feature { grid-row: auto; }
-  .story-origin { grid-template-columns: 1fr; }
+  .story-origin { grid-column: auto; grid-template-columns: 1fr; }
   .story-origin .story-visual { min-height: 280px; }
   .visual-glendale { min-height: 420px; }
   .depth-stage .obsession-edit { grid-template-columns: 1fr; min-height: 0; padding: 0; }
