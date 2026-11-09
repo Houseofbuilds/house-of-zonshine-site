@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 
 const homepage = await readFile(new URL("../index.html", import.meta.url), "utf8");
 const styles = await readFile(new URL("../css/style.css", import.meta.url), "utf8");
@@ -39,6 +39,18 @@ function includes(source, expected, label) {
 
 function excludes(source, unexpected, label) {
   assert.ok(!source.includes(unexpected), `${label} must not include: ${unexpected}`);
+}
+
+async function findHtmlFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    if ([".git", "node_modules", ".netlify"].includes(entry.name)) continue;
+    const path = new URL(`${entry.name}${entry.isDirectory() ? "/" : ""}`, directory);
+    if (entry.isDirectory()) files.push(...await findHtmlFiles(path));
+    if (entry.isFile() && entry.name.endsWith(".html")) files.push(path);
+  }
+  return files;
 }
 
 const primaryNav = extract(
@@ -408,5 +420,18 @@ excludes(
   'testimonialCarousel.addEventListener("focusin"',
   "Testimonial autoplay after manual navigation"
 );
+
+for (const fontAsset of [
+  "../assets/fonts/raleway-latin.woff2",
+  "../assets/fonts/karla-latin.woff2",
+  "../assets/fonts/lora-latin.woff2",
+  "../assets/fonts/lora-latin-italic.woff2",
+]) {
+  await access(new URL(fontAsset, import.meta.url));
+}
+for (const page of await findHtmlFiles(new URL("../", import.meta.url))) {
+  excludes(await readFile(page, "utf8"), "fonts.googleapis.com", `Remote Google Fonts in ${page.pathname}`);
+  excludes(await readFile(page, "utf8"), "fonts.gstatic.com", `Remote Google Fonts in ${page.pathname}`);
+}
 
 console.log("Site regression contract passed: permanent sections, guide routes, and testimonial autoplay are intact.");
