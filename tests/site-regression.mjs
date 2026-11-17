@@ -218,6 +218,7 @@ includes(script, 'document.querySelectorAll(".story-more-button")', "Story discl
 includes(script, 'isExpanded ? "Read More" : "Show Less"', "Story disclosure labels");
 
 const listingGuideDestinations = {
+  "2563-nichols-canyon-rd": "../../guides/#local-guides",
   "2449-panorama-ter": "../../neighborhoods/silver-lake/",
   "2376-canyon-dr": "../../neighborhoods/los-feliz/",
   "2560-micheltorena-st": "../../neighborhoods/silver-lake/",
